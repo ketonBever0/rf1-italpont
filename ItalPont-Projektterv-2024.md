@@ -7,15 +7,6 @@ Az italnagyker webshopok általában széles kínálattal rendelkeznek, beleért
 Online vásárlással a rendelést bármikor és bárhonnan leadhatod, így nem szükséges fizikailag megjelenni egy üzletben. Ez idő- és energiatakarékos megoldás.
 Ha cégek vagy vendéglátóhelyek számára vásárolsz, gyakran lehetőség van egyéni árajánlatokra, hosszú távú együttműködésre és egyéb üzleti kedvezményekre.
 
-```
-A dokumentumban a szürke háttérrel rendelkező szövegnek illetve a blokkokkal (keretben) kiemelt szövegeknek két jelentése van: 
-(a) minta/sablon szöveg, amit le kell cserélni (pl. gyakorlatvezető neve).
-(b) segítő/magyarázó szöveg. 
-
-Az átadott (beadott) dokumentumban már nem szerepelhetnek se szürke hátterű, se blokkban szereplő részek!
-Azaz a dokumentum kitöltése közben ezeket formázás nélküli szövegre kell cserélni.
-Az eredetileg is feketével írt részek törlése tilos, azok közösek.
-```
 
 ## 2. A projekt bemutatása
 
@@ -51,7 +42,8 @@ A rendelkezésünkre áll összesen 7 * 70 = 490 pont.
 
 ## 4. Szervezeti felépítés és felelősségmegosztás
 
-A projekt megrendelője Dr. Pflanzner Tamás. A ItalPont projektet a projektcsapat fogja végrehajtani, amely `jelenleg hét fejlesztőből áll. A csapatban található tapasztalt és pályakezdő webprogramozó is, A tapasztalt projekttagok több éve dolgoznak az iparban, számos sikeres projektten vannak túl.`
+A projekt megrendelője Dr. Pflanzner Tamás. A ItalPont projektet a projektcsapat fogja végrehajtani, amely jelenleg hét fejlesztőből áll. A csapatban található tapasztalt és pályakezdő webprogramozó is, A tapasztalt projekttagok között valaki frontend valaki backend területen jártasabb. A tapasztaltabbak mindenképp törekednek a többieket segíteni.
+
  - `Szabó Bence (3 év ipari tapasztalat a Számító Gép Kft.-nél)`
  - `Papp Bence (3 év egyetemi tapasztalat)`
  - `Racskó Ádám (<1 év tapasztalatő)`
@@ -60,8 +52,6 @@ A projekt megrendelője Dr. Pflanzner Tamás. A ItalPont projektet a projektcsap
  - `Szántó Mihály (<1 év tapasztalatő)`
  - Szegedi Bence (1 év webszerkesztő tapasztalat React és JS-ben.)
 
-
-
 ### 4.1 Projektcsapat
 
 A projekt a következő emberekből áll:
@@ -69,7 +59,7 @@ A projekt a következő emberekből áll:
 | Név          | Pozíció          |   E-mail cím (stud-os)        |
 |--------------|------------------|-------------------------------|
 | Szegedi Bence | Projektmenedzser | h269466@stud.u-szeged.hu    |
-| Szabó Bence | Projekt tag      | `h654321@stud.u-szeged.hu`    |
+| Szabó Bence   | Projekt tag      | `h654321@stud.u-szeged.hu`    |
 | Kurucz László   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
 | Racskó Ádám Ákos | Projekt tag | `h269466@stud.u-szeged.hu`    |
 | Papp Bence | Projekt tag      | `h654321@stud.u-szeged.hu`    |
@@ -105,24 +95,19 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
  
 ### 5.2. Rizikómenedzsment
 
-| Kockázat                                    | Leírás                                                                                                                                                                                     | Valószínűség | Hatás  |
-|---------------|-----------|--------------|--------|
-| Betegség | `Súlyosságtól függően hátráltatja vagy bizonyos esetekben teljes mértékben korlátozza a munkavégzőt, így az egész projektre kihatással van. Megoldás: a feladatok átcsoportosítása`        | `nagy`| `erős` |
-| `Kommunikációs fennakadás a csapattagokkal` | `A csapattagok között nem elégséges az információ áramlás, nem pontosan, esetleg késve vagy nem egyértelműen tájékoztatjuk egymást. Megoldás: még gyakoribb megbeszélések és ellenőrzések` | `kis`        | `erős` |
+| Kockázat| Leírás| Valószínűség | Hatás  |
+|---------|-------|--------------|--------|
+| Betegség | Súlyosságtól függően hátráltatja vagy bizonyos esetekben teljes mértékben korlátozza a munkavégzőt, így az egész projektre kihatással van. Megoldás: a feladatok átcsoportosítása|nagy| erős |
+| Kommunikációs fennakadás a csapattagokkal | A csapattagok között nem elégséges az információ áramlás, nem pontosan, esetleg késve vagy nem egyértelműen tájékoztatjuk egymást. Megoldás: még gyakoribb és behatóbb megbeszélések és ellenőrzések | kis | erős |
+| Laptop használhatatlanná válik| Laptop nélkül kényelmetlen és egyes esetekben kivitelezhetetlen lehet a kiosztott feladat elvégzése. Megoldás: Laptop kölcsönadása, közösmunka, feladatok átcsoportosítása| közepes | erős |
+| a | b | c | d |
+| a | b | c | d |
 
-```
-A rizikótényezők bemutatása, amely hátráltathatja a projekt befejezését. 
-Minden rizikót érdemes megemlíteni, részletezve, hogy mit jelent, 
-milyen valószínűséggel következhet be (kis, közepes és nagy), 
-mekkora a várható hatása (gyenge, közepes és erős) 
-és hogy milyen tervvel készültök, amennyiben egy ilyen esemény bekövetkezik. 
-Pl.: betegség, szoftver-hardver probléma, tag kiesése, extrém ZH időszak, pandémia, stb. 
-```
 
 ## 6. Jelentések
 
 ### 6.1. Munka menedzsment
-A munkát Szegedi Bence koordinálja. `Fő feladata, hogy folyamatosan egyeztessen a csapattagokkal az előrehaladásról és a fellépő problémákról, esetlegesen a megoldásban is segítséget nyújhat a projekt csúszásának elkerülése végett. További feladata a heti szinten tartandó csoportgyűlések időpontjának és helyszínének leszervezése, erről messenger-ben tájékoztatja a projektcsapatot.`
+A munkát Szegedi Bence koordinálja. Fő feladata, hogy folyamatosan egyeztessen a csapattagokkal az előrehaladásról és a fellépő problémákról, esetlegesen a megoldásban is segítséget nyújhat a projekt csúszásának elkerülése végett. További feladata a heti szinten tartandó csoportgyűlések időpontjának és helyszínének leszervezése, erről messenger-ben tájékoztatja a projektcsapatot.
 
 
 ### 6.2. Csoportgyűlések
@@ -201,7 +186,7 @@ A főbb átadandók és határidők a projekt időtartama alatt a következők:
 |:-----------:|:--------------:|:-------------:|
 |      D1     |  Projektterv és Gantt chart, prezentáció, egyéni jelentés    | 2024-10-14  |
 |    P1+D2    |   UML, adatbázis- és képernyőtervek, prezentáció, egyéni jelentés   | 2024-10-28  |
-|    P1+D3   | Prototípus I. és tesztelési dokumentáció, egyéni jelentés    | 2021-11-18  |
+|    P1+D3   | Prototípus I. és tesztelési dokumentáció, egyéni jelentés    | 2024-11-18  |
 |    P2+D4    |      Prototípus II. és frissített tesztelési dokumentáció, egyéni jelentés  | 2024-12-02  |
 
 
@@ -387,17 +372,9 @@ Tartam:  5 nap
 
 Erőforrásigény:  2 személynap
 
-`#### 8.3.11. Járművek kezelése (CRUD) és a szükséges adatok létrehozása az adatbázisban`
-
-Felelős: `Lev Elek`
-
-Tartam:  `3 nap`
-
-Erőforrásigény:  `2 személynap`
-
 #### 8.3.12. Rendelés kezelése (CR)
 
-Felelős: Szegedi Bence
+Felelős: Kovács-Némedi Máté
 
 Tartam:  4 nap
 
@@ -426,14 +403,6 @@ Felelős: Kurucz László
 Tartam:  4 nap
 
 Erőforrásigény:  2 személynap
-
-`#### 8.3.16. Fuvar útvonalának megjelenítése térképen a kezdő és a végponttal együtt`
-
-Felelős: `Remek Elek`
-
-Tartam:  `5 nap`
-
-Erőforrásigény:  `3 személynap`
 
 #### 8.3.17. Biztonsági mentés automatikus létrehozása
 
@@ -606,4 +575,4 @@ minden módosítható oszlopában legalább 1 pontnak szerepelni kell.
 | Szántó Mihály     | `1`   | `4`   | `13` | `3`   | `21`     |
 | Racskó Ádám       | `1`   | `2.5` | `10` | `3.5` | `17`     |
 
-Szeged, ` utolsó módosítás: 2024-10-06 13:40 `
+Szeged, ` utolsó módosítás: 2024-10-07 19:00 `

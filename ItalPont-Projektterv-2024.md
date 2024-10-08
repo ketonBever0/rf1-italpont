@@ -18,13 +18,23 @@ Alapvető funkció, hogy az italnagyker kínálatában lévő összes terméket 
 
 ### 2.2. Funkcionális követelmények
 
- - Felhasználók kezelése (admin, kisker vásárló, üzleti partner) (CRUD)
- - Felhasználói munkamenet megvalósítása több jogosultsági szinttel 
- - Raktárak kezelése (CRUD)
- - Árukészletek kezelése (CRUD)
- - Rendelések kezelése (CRUD)
- - Email-es visszajelzés új rendelés esetén a megrendelőnek és a raktárnak
- - Biztonsági mentés automatikus létrehozása
+ ###### Felhasználók kezelése (admin, kisker vásárló, üzleti partner) (CRUD)
+ -
+ ###### Felhasználói munkamenet megvalósítása több jogosultsági szinttel. 
+- Felhasználók: admin, szerződött partner, vásárló, vendég. Az adminnak van jogosultsága új italt hozzá adni az adatbázishoz, szerkeszteni azokat, bevételezni új árút vagy épp törölni a kifutó termékeket. Ezek mellett hozzá fér a vásárlók és rendelések adataihoz is, hogy javításokat módosításokat tudjon eszközölni. A raktárak adatait is képes módosítani ( kapacitás, új funkció ).
+- A szerződött partner több akciót lát és olcsóbb a kiszállítás a számára. 10000 Ft felett már ingyenes a kiszállítás, egyébként 2000 Ft. Nyomon tudja követni a rendeléseit és az aktuális hónapban a költéseit. 10 ugyan olyan tétel után 10% kedvezmény jár. A kiszállítás helyét és a saját adatait módosíthatja.
+- A sima vásárlók abban különböznek a szerződött parnertől, hogy kevesebb akciót kapnak, nincsen mennyiségi kedvezmény, valamint 20000 Ft felett ingyenes csak a szállítás. 
+- A vendég felhasználók csak a termékeket tudják megnézni és kosárba rakni, rendelni csak akkor tudnak, ha regisztrálnak vagy bejelentkeznek.
+ ###### Raktárak kezelése (CRUD)
+-
+ ###### Árukészletek kezelése (CRUD)
+ - 
+ ###### Rendelések kezelése (CRUD)
+ - 
+ ###### Email-es visszajelzés új rendelés esetén a megrendelőnek és a raktárnak
+ - 
+ ###### Biztonsági mentés automatikus létrehozása
+-
 
 ### 2.3. Nem funkcionális követelmények
 
@@ -33,6 +43,7 @@ Alapvető funkció, hogy az italnagyker kínálatában lévő összes terméket 
  - Az érzékeny adatokat biztonságosan tároljuk
  - A legfrissebb technológiákat használja a rendszer
  - Intuitív, átláthatóság könnyű
+ - Email validálás regisztrációkor
 
 ## 3. Költség- és erőforrás-szükségletek
 
@@ -102,7 +113,9 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | Laptop használhatatlanná válik| Laptop nélkül kényelmetlen és egyes esetekben kivitelezhetetlen lehet a kiosztott feladat elvégzése. Megoldás: Laptop kölcsönadása, közösmunka, feladatok átcsoportosítása| közepes | erős |
 | a | b | c | d |
 | a | b | c | d |
-
+| a | b | c | d |
+| a | b | c | d |
+| a | b | c | d |
 
 ## 6. Jelentések
 
@@ -127,10 +140,10 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
  - Érintett témák: Projektterv szerkesztése, feladatok kiosztása
 
 3. Megbeszélés:
- - `Időpont: 2021.09.29.`
- - `Hely: TIK – Szeged, Ady tér 10.`
- - `Résztvevők: Teszt Elek, Remek Elek`
- - `Érintett témák: Egyeztetés az UML diagramokról, illetve az adatbázis táblák és kapcsolatok meghatározása`
+ - Időpont: 2024.10.08.
+ - Hely: Bohém Tanya
+ - Résztvevők: Szabó Bence, Papp Bence, Kovács-Némedi Máté, Racskó Ádám, Kurucz Láaszló, Szegedi Bence
+ - Érintett témák: Adatbázis megtervezése, projektterv kiegészítése, feladatok szétosztása, feladatok pontosítása
  
  4. Megbeszélés:
  - `Időpont: 2021.09.29.`
@@ -200,11 +213,11 @@ Ennek a feladatnak az a célja, hogy megvalósításhoz szükséges lépéseket,
 
 Részfeladatai a következők:
 
-#### 8.1.1. Projektterv kitöltése
+#### 8.1.1. Feladatok szétosztása, apróbb szövegek megírása
 
-Felelős: Mindenki
+Felelős: Szegedi Bence
 
-Tartam:  4 nap
+Tartam:  1 nap
 
 Erőforrásigény:  1 személynap/fő
 
@@ -217,9 +230,29 @@ Tartam:  2 nap
 
 Erőforrásigény:  0.5 személynap
 
-```
-A mérföldkőhöz tartozó feladatok bemutatása PPT keretében, pl. téma, tervezett funkciók, tagok, Gantt diagram.`
-```
+#### 8.1.3. Gantt diagram elkészítése
+
+Felelős: Szabó Bence
+
+Tartam:  1 nap
+
+Erőforrásigény:  0.5 személynap
+
+#### 8.1.4. Feladatok részletezése
+
+Felelős: Kurucz László
+
+Tartam:  1 nap
+
+Erőforrásigény:  0.5 személynap
+
+#### 8.1.5. Projekt specifikációja
+
+Felelős: Szántó Mihály
+
+Tartam:  1 nap
+
+Erőforrásigény:  0.5 személynap
 
 ### 8.2. UML és adatbázis- és képernyőtervek (2. mérföldkő)
 
@@ -239,9 +272,9 @@ Erőforrásigény:  1 személynap
 
 Felelős: Kovács-Némedi Máté
 
-Tartam:  4 nap
+Tartam:  2 nap
 
-Erőforrásigény:  2 személynap
+Erőforrásigény:  1 személynap
 
 #### 8.2.3. Sequence diagram
 
@@ -265,7 +298,7 @@ Felelős: Szabó Bence
 
 Tartam:  3 nap
 
-Erőforrásigény:  0.5 személynap
+Erőforrásigény:  1 személynap
 
 #### 8.2.6. Képernyőtervek
 
@@ -281,11 +314,7 @@ Felelős: Szántó Mihály
 
 Tartam:  1 nap
 
-Erőforrásigény:  0.5 személynap
-
-```
-A mérföldkőhöz tartozó feladatok bemutatása PPT keretében (elkészült diagramok és képernyőtervek)`
-```
+Erőforrásigény:  1 személynap
 
 ### 8.3. Prototípus I. (3. mérföldkő)
 
@@ -317,14 +346,24 @@ Tartam:  3 nap
 Erőforrásigény:  1 személynap
 
 #### 8.3.4. Felhasználói munkamenet megvalósítása több jogosultsági szinttel
-
+##### Admin jogosultsága
 Felelős: Szegedi Bence
-
-Tartam:  10 nap
-
+Tartam:  5 nap
 Erőforrásigény:  2 személynap
+##### Szerződött partner jogosultsága
+Felelős: Szegedi Bence
+Tartam:  3 nap
+Erőforrásigény:  2 személynap
+##### Kisker vásárló jogosultsága
+Felelős: Szegedi Bence
+Tartam:  2 nap
+Erőforrásigény:  2 személynap
+##### Vendég vásárló jogosultsága
+Felelős: Szegedi Bence
+Tartam:  1 nap
+Erőforrásigény:  1 személynap
 
-#### 8.3.5. Raktárak kezelése (CRUD)
+#### 8.3.5.4. Raktárak kezelése (CRUD)
 
 Felelős: Szabó Bence
 
@@ -388,13 +427,15 @@ Tartam:  5 nap
 
 Erőforrásigény:  2 személynap
 
-#### 8.3.14. Rendelés szükséges adatok létrehozása az adatbázisban
-
+#### 8.3.14. Vásárlók és rendelések adatainak létrehozása az adatbázisban
+##### Alap vásárlók
 Felelős: Szegedi Bence
-
-Tartam:  3 nap
-
-Erőforrásigény:  1 személynap
+Tartam:  1 nap
+Erőforrásigény:  0.5 személynap
+##### Alap rendelések
+Felelős: Szegedi Bence
+Tartam:  1 nap
+Erőforrásigény:  0.5 személynap
 
 #### 8.3.15. Email-es kiértesítés elfogadott rendelés esetén a megrendelőnek
 
@@ -413,13 +454,34 @@ Tartam: 3 nap
 Erőforrásigény:  1 személynap
 
 #### 8.3.18. Tesztelési dokumentum az összes funkcióhoz (TP, TC)
-
-Felelős: Mindenki
-
-Tartam:  7 nap
-
+##### Regisztráció és bejelentkezés tesztelése (TP, TC)
+Felelős: Racskó Ádám
+Tartam:  1 nap
+Erőforrásigény:  0.5 személynap/fő
+##### Termék megjelenések tesztelése (TP, TC)
+Felelős: Kovács-Némedi Máté
+Tartam:  1 nap
+Erőforrásigény:  0.5 személynap/fő
+##### Rendelés összeállítás és megrendelés tesztelése (TP, TC)
+Felelős: Szántó Mihály
+Tartam:  2 nap
 Erőforrásigény:  1 személynap/fő
-
+##### Jogosultsági szintek tesztelése (TP, TC)
+Felelős: Kurucz László
+Tartam:  1 nap
+Erőforrásigény:  1 személynap/fő
+##### Raktárak tesztelése (TP, TC)
+Felelős: Szegedi Bence
+Tartam:  1 nap
+Erőforrásigény:  1 személynap/fő
+##### Email kiértesítés tesztelése (TP, TC)
+Felelős: Papp Bence
+Tartam:  1 nap
+Erőforrásigény:  0.5 személynap/fő
+##### Rendelés összeállítás és megrendelés tesztelése (TP, TC)
+Felelős: Szántó Mihány
+Tartam:  2 nap
+Erőforrásigény:  1 személynap/fő
 #### 8.3.19. A prototípus kitelepítése éles környezetbe
 
 Felelős: Szegedi Bence, Kurucz László
@@ -437,79 +499,78 @@ Részfeladatai a következők:
 
 #### 8.4.1. Javított minőségű prototípus új funkciókkal
 
-Felelős: `Teszt Elek`
+Felelős: Szegedi Bence
 
-Tartam:  `5 nap`
+Tartam:  5 nap
 
-Erőforrásigény:  `2.5 személynap`
+Erőforrásigény:  2.5 személynap
 
 #### 8.4.2. Javított minőségű prototípus javított funkciókkal
 
-Felelős: `Lev Elek`
+Felelős: Szabó Bence
 
-Tartam:  `5 nap`
+Tartam:  5 nap
 
-Erőforrásigény:  `2 személynap`
+Erőforrásigény:  2 személynap
 
 #### 8.4.3. Javított minőségű prototípus a korábbi hiányzó funkciókkal
 
-Felelős: `Remek Elek`
+Felelős: Kurucz László
 
-Tartam:  `5 nap`
+Tartam:  5 nap
 
-Erőforrásigény:  `1.5 személynap`
+Erőforrásigény:  1.5 személynap
 
 #### 8.4.4. Felhasználói munkamenet tesztelése (TR)
 
-Felelős: `Teszt Elek`
+Felelős: Racskó Ádám
 
-Tartam:  `1 nap`
+Tartam:  1 nap
 
-Erőforrásigény:  `1 személynap`
+Erőforrásigény:  1 személynap
 
 #### 8.4.5. Raktárak kezelésének tesztelése (TR)
 
-Felelős: `Remek Elek`
+Felelős: Papp Bence
 
-Tartam:  `1 nap`
+Tartam:  1 nap
 
-Erőforrásigény:  `0.5 személynap`
+Erőforrásigény:  0.5 személynap
 
 #### 8.4.6. Árukészletek kezelésének tesztelése (TR)
 
-Felelős: `Teszt Elek`
+Felelős: Kovács-Némedi Máté
 
-Tartam:  `1 nap`
+Tartam:  1 nap
 
-Erőforrásigény:  `1 személynap`
-
+Erőforrásigény:  1 személynap
 
 
 #### 8.4.8. Rendelések kezelésének tesztelése (TR)
 
-Felelős: `Lev Elek`
+Felelős: Szántó Mihály
 
-Tartam:  `1 nap`
+Tartam:  1 nap
 
-Erőforrásigény:  `0.5 személynap`
+Erőforrásigény:  0.5 személynap
 
 #### 8.4.9. Email-es funkciók tesztelése (TR)
 
-Felelős: `Remek Elek`
+Felelős: Szabó Bence
 
-Tartam:  `1 nap`
+Tartam:  1 nap
 
-Erőforrásigény:  `0.5 személynap`
+Erőforrásigény:  0.5 személynap
 
 
 
 #### 8.4.11. Biztonsági mentés tesztelése (TR
 
-Felelős: `Lev Elek`
+Felelős: Szegedi Bence
 
-Tartam:  `1 nap`
+Tartam:  1 nap
 
-Erőforrásigény:  `0.5 személynap`
+Erőforrásigény:  0.5 személynap
 
 #### 8.4.12. A prototípus kitelepítésének frissítése
 
@@ -542,13 +603,13 @@ minden módosítható oszlopában legalább 1 pontnak szerepelni kell.
 
 | Név               |   M1  |   M2  |   M3 |   M4  | Összesen |
 |--------------     |-------|-------|------|-------|----------|
-| Szegedi Bence     | `1.5` | `1.5` | `11` | `5`   | `19`     |
-| Szabó Bence       | `1`   | `4`   | `13` | `3`   | `21`     |
-| Kurucz László     | `1`   | `2.5` | `10` | `3.5` | `17`     |
-| Papp Bence        | `1`   | `4`   | `13` | `3`   | `21`     |
-| Kovács-Némedi Máté| `1`   | `2.5` | `10` | `3.5` | `17`     |
-| Szántó Mihály     | `1`   | `4`   | `13` | `3`   | `21`     |
-| Racskó Ádám       | `1`   | `2.5` | `10` | `3.5` | `17`     |
+| Szegedi Bence     |   1   |  1.5  | `11` | `5`   | `19`     |
+| Szabó Bence       |   1   |  1.5  | `13` | `3`   | `21`     |
+| Kurucz László     |  0.5  |  2.5  | `10` | `3.5` | `17`     |
+| Papp Bence        |  0.5  | `4`   | `13` | `3`   | `21`     |
+| Kovács-Némedi Máté|  0.5  | `2.5` | `10` | `3.5` | `17`     |
+| Szántó Mihály     |  0.5  |   1   | `13` | `3`   | `21`     |
+| Racskó Ádám       |  0.5  |   3   | `10` | `3.5` | `17`     |
 
 ### 10.2. Részletes feladatszámok
 

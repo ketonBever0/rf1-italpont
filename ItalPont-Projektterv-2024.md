@@ -71,7 +71,7 @@ A projekt a következő emberekből áll:
 |--------------|------------------|-------------------------------|
 | Szegedi Bence | Projektmenedzser | h269466@stud.u-szeged.hu    |
 | Szabó Bence   | Projekt tag      | `h654321@stud.u-szeged.hu`    |
-| Kurucz László   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
+| Kurucz László   | Projekt tag      | h373677@stud.u-szeged.hu    |
 | Racskó Ádám Ákos | Projekt tag | `h269466@stud.u-szeged.hu`    |
 | Papp Bence | Projekt tag      | `h654321@stud.u-szeged.hu`    |
 | Szántó Mihály József   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
@@ -85,9 +85,10 @@ A projekt a következő emberekből áll:
 
 A projekt a következő munkaállomásokat fogja használni a munka során:
 
- - Munkaállomások: 7 db, Windows 10-es operációs rendszerrel
- - Dell Lattitude 7440 laptop (CPU: i7-1365U, RAM: 16 GB, GPU: Nvidia 920M)
- - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
+ ##### Munkaállomások: 7 db, Windows 10/11-es operációs rendszerrel
+ - **Szegedi Bence:** Dell Lattitude 7440 laptop (CPU: i7-1365U, RAM: 16 GB, GPU: Nvidia 920M)
+ <!-- - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)` -->
+ - **Kurucz László:** Lenovo IdeaPad 3 15ALC6 (CPU: AMD Ryzen 7 5700U, RAM: 16 GB, GPU: 2 GB integrált, OS: Windows 11 Professional)
  - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
  - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
  - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
@@ -142,7 +143,7 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
 3. Megbeszélés:
  - Időpont: 2024.10.08.
  - Hely: Bohém Tanya
- - Résztvevők: Szabó Bence, Papp Bence, Kovács-Némedi Máté, Racskó Ádám, Kurucz Láaszló, Szegedi Bence
+ - Résztvevők: Szabó Bence, Papp Bence, Kovács-Némedi Máté, Racskó Ádám, Kurucz László, Szegedi Bence
  - Érintett témák: Adatbázis megtervezése, projektterv kiegészítése, feladatok szétosztása, feladatok pontosítása
  
  4. Megbeszélés:

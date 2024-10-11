@@ -18,8 +18,8 @@ Alapvető funkció, hogy az italnagyker kínálatában lévő összes terméket 
 
 ### 2.2. Funkcionális követelmények
 
- ###### Felhasználók kezelése (admin, kisker vásárló, üzleti partner) (CRUD)
- -
+ ###### Felhasználók kezelése (admin, szerződött partner, vásárló, vendég) (CRUD)
+ -A felhasználók regisztrálhatnak az oldalra, de lehetőség van vendégként megtekinteni a termékeket. A regisztráció során szükséges megadni a vezeték- és keresztnevet, e-mail címet és telefonszámot, egy felhasználónevet (nickname), számlázási adatokat, egy megfelelő erősségű jelszót és még adni a szerepkört is, hogy adminként, szerződött partnerként vagy sima vásárlóként regisztrál. A felhasználók kapnak egy azonosítót (id) is, ami az adatbázis- és munkamenet kezeléshez fog kelleni. A felhasználók később módosíthatják az adataikat (számlázási cím, e-mail, telefonszám). 
  ###### Felhasználói munkamenet megvalósítása több jogosultsági szinttel. 
 - Felhasználók: admin, szerződött partner, vásárló, vendég. Az adminnak van jogosultsága új italt hozzá adni az adatbázishoz, szerkeszteni azokat, bevételezni új árút vagy épp törölni a kifutó termékeket. Ezek mellett hozzá fér a vásárlók és rendelések adataihoz is, hogy javításokat módosításokat tudjon eszközölni. A raktárak adatait is képes módosítani ( kapacitás, új funkció ).
 - A szerződött partner több akciót lát és olcsóbb a kiszállítás a számára. 10000 Ft felett már ingyenes a kiszállítás, egyébként 2000 Ft. Nyomon tudja követni a rendeléseit és az aktuális hónapban a költéseit. 10 ugyan olyan tétel után 10% kedvezmény jár. A kiszállítás helyét és a saját adatait módosíthatja.
@@ -56,7 +56,7 @@ A rendelkezésünkre áll összesen 7 * 70 = 490 pont.
 A projekt megrendelője Dr. Pflanzner Tamás. A ItalPont projektet a projektcsapat fogja végrehajtani, amely jelenleg hét fejlesztőből áll. A csapatban található tapasztalt és pályakezdő webprogramozó is, A tapasztalt projekttagok között valaki frontend valaki backend területen jártasabb. A tapasztaltabbak mindenképp törekednek a többieket segíteni.
 
  - `Szabó Bence (3 év ipari tapasztalat a Számító Gép Kft.-nél)`
- - `Papp Bence (3 év egyetemi tapasztalat)`
+ - `Papp Bence (3 év egyetemi tapasztalat, Adatbázis alapú rendszereken egy kisebb webshop projekt, fél év munkahelyi tapasztalat ContiTech Rubber Industrial Kft-nél)`
  - `Racskó Ádám (<1 év tapasztalatő)`
  - `Kurucz László (3 év ipari tapasztalat a Számító Gép Kft.-nél)`
  - `Kovács-Némedi Máté (3 év egyetemi tapasztalat)`
@@ -73,7 +73,7 @@ A projekt a következő emberekből áll:
 | Szabó Bence   | Projekt tag      | `h654321@stud.u-szeged.hu`    |
 | Kurucz László   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
 | Racskó Ádám Ákos | Projekt tag | `h269466@stud.u-szeged.hu`    |
-| Papp Bence | Projekt tag      | `h654321@stud.u-szeged.hu`    |
+| Papp Bence | Projekt tag      | `h268313@stud.u-szeged.hu`    |
 | Szántó Mihály József   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
 | Kovács-Némedi Máté   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
 
@@ -90,7 +90,7 @@ A projekt a következő munkaállomásokat fogja használni a munka során:
  - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
  - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
  - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
- - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
+ - `IdeaPad Gaming 3i Gen 7 (CPU: Intel® Core™ i7-12700H, RAM: 16GB, GPU: NVIDIA® GeForce RTX™ 3060)` (Papp Bence)
  - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
  - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
 
@@ -111,7 +111,8 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | Betegség | Súlyosságtól függően hátráltatja vagy bizonyos esetekben teljes mértékben korlátozza a munkavégzőt, így az egész projektre kihatással van. Megoldás: a feladatok átcsoportosítása|nagy| erős |
 | Kommunikációs fennakadás a csapattagokkal | A csapattagok között nem elégséges az információ áramlás, nem pontosan, esetleg késve vagy nem egyértelműen tájékoztatjuk egymást. Megoldás: még gyakoribb és behatóbb megbeszélések és ellenőrzések | kis | erős |
 | Laptop használhatatlanná válik| Laptop nélkül kényelmetlen és egyes esetekben kivitelezhetetlen lehet a kiosztott feladat elvégzése. Megoldás: Laptop kölcsönadása, közösmunka, feladatok átcsoportosítása| közepes | erős |
-| a | b | c | d |
+| Sok, egyszerre összegyűlt tanulnivaló, beadandó más tárgyakból | A túl sok feladat miatt kevesebb idő juthat a projektre, kevésbé lesz precíz
+Megoldás: Rendszeres készülés, jól beosztott idő | nagy | közepes |
 | a | b | c | d |
 | a | b | c | d |
 | a | b | c | d |

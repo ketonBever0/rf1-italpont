@@ -28,7 +28,8 @@ Alapvető funkció, hogy az italnagyker kínálatában lévő összes terméket 
  ###### Raktárak kezelése (CRUD)
 -
  ###### Árukészletek kezelése (CRUD)
- - 
+ - Az erre jogosult felhasználóknak (admin) lehetősége van termékek hozzáadására, törlésére. Ezek mellett lehetőség van termékek adatainak (név, leírás, kategória, alkoholtartalom) módosítására is.
+ - Akciók létrehozása: Akció létrehozásához meg kell adni a nevét (pl.:Nyári leárazás), a kedvezmény %-át és azt, hogy szerződott partnerekre vonatkozik, vagy a vásárlókra. Ezek után meghatározhatjuk, hogy mely termékekre érvényes.
  ###### Rendelések kezelése (CRUD)
  - 
  ###### Email-es visszajelzés új rendelés esetén a megrendelőnek és a raktárnak
@@ -57,7 +58,7 @@ A projekt megrendelője Dr. Pflanzner Tamás. A ItalPont projektet a projektcsap
 
  - `Szabó Bence (3 év ipari tapasztalat a Számító Gép Kft.-nél)`
  - `Papp Bence (3 év egyetemi tapasztalat)`
- - `Racskó Ádám (<1 év tapasztalatő)`
+ - Racskó Ádám Ákos (1 év egyetemi tapasztalat, 1 év webszerkesztő tapasztalat Angular-ban)
  - `Kurucz László (3 év ipari tapasztalat a Számító Gép Kft.-nél)`
  - `Kovács-Némedi Máté (3 év egyetemi tapasztalat)`
  - `Szántó Mihály (<1 év tapasztalatő)`
@@ -72,7 +73,7 @@ A projekt a következő emberekből áll:
 | Szegedi Bence | Projektmenedzser | h269466@stud.u-szeged.hu    |
 | Szabó Bence   | Projekt tag      | `h654321@stud.u-szeged.hu`    |
 | Kurucz László   | Projekt tag      | h373677@stud.u-szeged.hu    |
-| Racskó Ádám Ákos | Projekt tag | `h269466@stud.u-szeged.hu`    |
+| Racskó Ádám Ákos | Projekt tag | h376536@stud.u-szeged.hu    |
 | Papp Bence | Projekt tag      | `h654321@stud.u-szeged.hu`    |
 | Szántó Mihály József   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
 | Kovács-Némedi Máté   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
@@ -89,7 +90,7 @@ A projekt a következő munkaállomásokat fogja használni a munka során:
  - **Szegedi Bence:** Dell Lattitude 7440 laptop (CPU: i7-1365U, RAM: 16 GB, GPU: Nvidia 920M)
  <!-- - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)` -->
  - **Kurucz László:** Lenovo IdeaPad 3 15ALC6 (CPU: AMD Ryzen 7 5700U, RAM: 16 GB, GPU: 2 GB integrált, OS: Windows 11 Professional)
- - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
+ - **Racskó Ádám Ákos**: Asztali számítógép (CPU: AMD Ryzen 5260, RAM: 16GB, GPU: Nvidia GTX1050 Ti)
  - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
  - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
  - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
@@ -112,7 +113,7 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | Betegség | Súlyosságtól függően hátráltatja vagy bizonyos esetekben teljes mértékben korlátozza a munkavégzőt, így az egész projektre kihatással van. Megoldás: a feladatok átcsoportosítása|nagy| erős |
 | Kommunikációs fennakadás a csapattagokkal | A csapattagok között nem elégséges az információ áramlás, nem pontosan, esetleg késve vagy nem egyértelműen tájékoztatjuk egymást. Megoldás: még gyakoribb és behatóbb megbeszélések és ellenőrzések | kis | erős |
 | Laptop használhatatlanná válik| Laptop nélkül kényelmetlen és egyes esetekben kivitelezhetetlen lehet a kiosztott feladat elvégzése. Megoldás: Laptop kölcsönadása, közösmunka, feladatok átcsoportosítása| közepes | erős |
-| a | b | c | d |
+| Egy feladat elkészítése a tervezettnél több időt vesz igénybe | A feladat fontosságától függően további eltolódást okozhat, az egész projek elkészülését hátráltathatja. Megoldás: közös munka, feladat felosztása kissebb részfeladtokra | közepes | közepes |
 | a | b | c | d |
 | a | b | c | d |
 | a | b | c | d |

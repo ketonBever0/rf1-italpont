@@ -30,8 +30,9 @@ Alapvető funkció, hogy az italnagyker kínálatában lévő összes terméket 
  ###### Árukészletek kezelése (CRUD)
  - Az erre jogosult felhasználóknak (admin) lehetősége van termékek hozzáadására, törlésére. Ezek mellett lehetőség van termékek adatainak (név, leírás, kategória, alkoholtartalom) módosítására is.
  - Akciók létrehozása: Akció létrehozásához meg kell adni a nevét (pl.:Nyári leárazás), a kedvezmény %-át és azt, hogy szerződott partnerekre vonatkozik, vagy a vásárlókra. Ezek után meghatározhatjuk, hogy mely termékekre érvényes.
- ###### Rendelések kezelése (CRUD)
- - 
+ ###### Rendelések kezelése (CR)
+ - A felhasználók a kosárba helyezhetik a megvásárolni kívánt termékeket, és onnan haladhatnak tovább a rendelés fülre.
+ - A felhasználóknak a rendelési felületen kell megadniuk, hogy milyen címre küdljük a rendelést és mikor szállítsuk ki.
  ###### Email-es visszajelzés új rendelés esetén a megrendelőnek és a raktárnak
  - 
  ###### Biztonsági mentés automatikus létrehozása
@@ -423,14 +424,6 @@ Felelős: Kovács-Némedi Máté
 Tartam:  3 nap
 
 Erőforrásigény:  2 személynap
-
-Rendelő felület az adminnak
-
-Felelős: Kovács-Némedi Máté
-
-Tartam:  2 nap
-
-Erőforrásigény:  1 személynap
 
 Rendelő felület a vásárlóknak
 

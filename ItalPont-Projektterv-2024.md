@@ -60,7 +60,7 @@ A projekt megrendelője Dr. Pflanzner Tamás. A ItalPont projektet a projektcsap
  - `Papp Bence (3 év egyetemi tapasztalat)`
  - Racskó Ádám Ákos (1 év egyetemi tapasztalat, 1 év webszerkesztő tapasztalat Angular-ban)
  - `Kurucz László (3 év ipari tapasztalat a Számító Gép Kft.-nél)`
- - `Kovács-Némedi Máté (3 év egyetemi tapasztalat)`
+ - `Kovács-Némedi Máté (1 év egyetemi tapasztalat)`
  - `Szántó Mihály (<1 év tapasztalatő)`
  - Szegedi Bence (1 év webszerkesztő tapasztalat React és JS-ben.)
 
@@ -76,7 +76,7 @@ A projekt a következő emberekből áll:
 | Racskó Ádám Ákos | Projekt tag | h376536@stud.u-szeged.hu    |
 | Papp Bence | Projekt tag      | `h654321@stud.u-szeged.hu`    |
 | Szántó Mihály József   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
-| Kovács-Némedi Máté   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
+| Kovács-Némedi Máté   | Projekt tag      | `h372195@stud.u-szeged.hu`    |
 
 
 
@@ -91,6 +91,7 @@ A projekt a következő munkaállomásokat fogja használni a munka során:
  <!-- - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)` -->
  - **Kurucz László:** Lenovo IdeaPad 3 15ALC6 (CPU: AMD Ryzen 7 5700U, RAM: 16 GB, GPU: 2 GB integrált, OS: Windows 11 Professional)
  - **Racskó Ádám Ákos**: Asztali számítógép (CPU: AMD Ryzen 5260, RAM: 16GB, GPU: Nvidia GTX1050 Ti)
+ - **Kovács-Némedi Máté**: Dell DESKTOP-GCETQJE (CPU: Intel(R) Core(TM) i5-7200U CPU, RAM: 8 GB, OS: Windows 10 Pro)
  - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
  - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
  - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
@@ -114,6 +115,7 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | Kommunikációs fennakadás a csapattagokkal | A csapattagok között nem elégséges az információ áramlás, nem pontosan, esetleg késve vagy nem egyértelműen tájékoztatjuk egymást. Megoldás: még gyakoribb és behatóbb megbeszélések és ellenőrzések | kis | erős |
 | Laptop használhatatlanná válik| Laptop nélkül kényelmetlen és egyes esetekben kivitelezhetetlen lehet a kiosztott feladat elvégzése. Megoldás: Laptop kölcsönadása, közösmunka, feladatok átcsoportosítása| közepes | erős |
 | Egy feladat elkészítése a tervezettnél több időt vesz igénybe | A feladat fontosságától függően további eltolódást okozhat, az egész projek elkészülését hátráltathatja. Megoldás: közös munka, feladat felosztása kissebb részfeladtokra | közepes | közepes |
+| Elvesznek az alkalmazás egyes részei| Ha valakinél esetleg gond van a laptoppal akkor törlödhetnek az a feladat amin dolgozott. Megoldás: rendszeresen feltölteni a munkafájlokat| alacsony | erős |
 | a | b | c | d |
 | a | b | c | d |
 | a | b | c | d |
@@ -414,12 +416,30 @@ Tartam:  5 nap
 Erőforrásigény:  2 személynap
 
 #### 8.3.12. Rendelés kezelése (CR)
+Kosár felület
 
 Felelős: Kovács-Némedi Máté
 
-Tartam:  4 nap
+Tartam:  3 nap
 
 Erőforrásigény:  2 személynap
+
+Rendelő felület az adminnak
+
+Felelős: Kovács-Némedi Máté
+
+Tartam:  2 nap
+
+Erőforrásigény:  1 személynap
+
+Rendelő felület a vásárlóknak
+
+Felelős: Kovács-Némedi Máté
+
+Tartam:  3 nap
+
+Erőforrásigény:  2 személynap
+
 
 #### 8.3.13. Rendelés kezelése (UD)
 
@@ -481,7 +501,7 @@ Felelős: Papp Bence
 Tartam:  1 nap
 Erőforrásigény:  0.5 személynap/fő
 ##### Rendelés összeállítás és megrendelés tesztelése (TP, TC)
-Felelős: Szántó Mihány
+Felelős: Szántó Mihály
 Tartam:  2 nap
 Erőforrásigény:  1 személynap/fő
 #### 8.3.19. A prototípus kitelepítése éles környezetbe
@@ -609,7 +629,7 @@ minden módosítható oszlopában legalább 1 pontnak szerepelni kell.
 | Szabó Bence       |   1   |  1.5  | `13` | `3`   | `21`     |
 | Kurucz László     |  0.5  |  2.5  | `10` | `3.5` | `17`     |
 | Papp Bence        |  0.5  | `4`   | `13` | `3`   | `21`     |
-| Kovács-Némedi Máté|  0.5  | `2.5` | `10` | `3.5` | `17`     |
+| Kovács-Némedi Máté|  0.5  |   1   | `10` | `3.5` | `17`     |
 | Szántó Mihály     |  0.5  |   1   | `13` | `3`   | `21`     |
 | Racskó Ádám       |  0.5  |   3   | `10` | `3.5` | `17`     |
 

@@ -385,12 +385,20 @@ Tartam:  4 nap
 Erőforrásigény:  2 személynap
 
 #### 8.3.7. Árukészletek kezelése ( C )
-
+##### Termékek hozzáadása
 Felelős: Racskó Ádám
+Tartam:  2 nap
+Erőforrásigény:  1 személynap
 
-Tartam:  4 nap
+##### Akciók hozzáadása
+Felelős: Racskó Ádám
+Tartam:  2 nap
+Erőforrásigény:  1 személynap
 
-Erőforrásigény:  2 személynap
+##### Termékek hozzáadása az akciókhoz
+Felelős: Racskó Ádám
+Tartam:  1 nap
+Erőforrásigény:  1 személynap
 
 #### 8.3.8. Árukészletek kezelése ( R )
 

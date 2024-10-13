@@ -26,7 +26,7 @@ Alapvető funkció, hogy az italnagyker kínálatában lévő összes terméket 
 - A sima vásárlók abban különböznek a szerződött parnertől, hogy kevesebb akciót kapnak, nincsen mennyiségi kedvezmény, valamint 20000 Ft felett ingyenes csak a szállítás. 
 - A vendég felhasználók csak a termékeket tudják megnézni és kosárba rakni, rendelni csak akkor tudnak, ha regisztrálnak vagy bejelentkeznek.
  ###### Raktárak kezelése (CRUD)
-- A raktárakat külön-külön számontartjuk, hogy lessen tudni az egyes termékekből mennyi van, ezenkívül a raktár tulajdonságait is tároljuk.
+- A raktárakat külön-külön számontartjuk, hogy lehessen tudni az egyes termékekből mennyi van, ezen kívül a raktár tulajdonságait is tároljuk.
 - Lehet raktárat bővíteni és új raktárat is felvenni a rendszerbe.
  ###### Árukészletek kezelése (CRUD)
  - Az erre jogosult felhasználóknak (admin) lehetősége van termékek hozzáadására, törlésére. Ezek mellett lehetőség van termékek adatainak (név, leírás, kategória, alkoholtartalom) módosítására is.
@@ -34,7 +34,7 @@ Alapvető funkció, hogy az italnagyker kínálatában lévő összes terméket 
 
  ###### Rendelések kezelése (CRUD)
  - A rendeléseket elmentjük adatbázisba, hogy később a felhasználók vissza tudják nézni őket, valamint különbőző statisztikákat is összeállítunk belőle. Ilyen lesz a havi kedvezmény összeszámolása és a bizonyos rendelési összeg feletti ajándék.
- - Ha csak akkor tudja a felhasználó leadni a rendelést, ha minden termék raktáron van és a rendeléshez szükséges összes adat ki van töltve.
+ - Csak akkor tudja a felhasználó leadni a rendelést, ha minden termék raktáron van és a rendeléshez szükséges összes adat ki van töltve.
  ###### Email-es visszajelzés új rendelés esetén a megrendelőnek és a raktárnak
  - A sikeres megrendelés után emailben visszajelzést küldünk a megrendelő email címére, valamint a raktárakat is értesítjük a rendelésben szereplő termékek összekészítéséről.
  ###### Biztonsági mentés automatikus létrehozása
@@ -63,7 +63,7 @@ A projekt megrendelője Dr. Pflanzner Tamás. A ItalPont projektet a projektcsap
  - Racskó Ádám Ákos (1 év egyetemi tapasztalat, 1 év webszerkesztő tapasztalat Angular-ban)
  - Kurucz László (3 év ipari tapasztalat a Számító Gép Kft.-nél)
  - Kovács-Némedi Máté (3 év egyetemi tapasztalat)
- - Szántó Mihály (<1 év egyetemi tapasztalat)
+ - Szántó Mihály József (<1 év egyetemi tapasztalat)
  - Szegedi Bence (1 év webszerkesztő tapasztalat React és JS-ben.)
 
 ### 4.1 Projektcsapat
@@ -116,7 +116,7 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | Egy feladat elkészítése a tervezettnél több időt vesz igénybe | A feladat fontosságától függően további eltolódást okozhat, az egész projek elkészülését hátráltathatja. Megoldás: közös munka, feladat felosztása kissebb részfeladtokra | közepes | közepes |
 | Elvesznek az alkalmazás egyes részei| Ha valakinél esetleg gond van a laptoppal akkor törlödhetnek az a feladat amin dolgozott. Megoldás: rendszeresen feltölteni a munkafájlokat| alacsony | erős |
 | Sok, egyszerre összegyűlt tanulnivaló, beadandó más tárgyakból | A túl sok feladat miatt kevesebb idő juthat a projektre, kevésbé lesz precíz. Megoldás: Rendszeres készülés, jól beosztott idő | nagy | közepes |
-
+| Új technológiák ismeretének hiánya | A projekt során olyan technológiák ismeretére lehet szükség, amelyeket a csapattagok nem, vagy csak részben ismernek. Megoldás: közös tanulás, külső segítség kérése, tananyagok használata | közepes | erős |
 
 
 ## 6. Jelentések
@@ -171,16 +171,18 @@ Minden mérföldkő leadásnál a projekten dolgozók jelentést tesznek a mérf
 
 ### 7.1. Tervezett szoftverfolyamat modell és architektúra
 
-`A szoftver fejlesztése során az agilis fejlesztési modellt alkalmazzuk, mivel a fejlesztés során nagy hangsúlyt fektetünk a folyamatos kommunikcióra. A fejlesztés során a szoftver specifikációi rugalmasan vátozhatnak, és ezzel a módszertannal tudunk a leggyorsabban alkalmazkodni az új elvárásokhoz.`
+Az agilis szoftverfejlesztési modellt választottuk a prototípusok előállításához, mivel ez a megközelítés rugalmasan kezeli a folyamatosan változó specifikációkat és elvárásokat. Az agilis modell lehetővé teszi a rendszeres visszajelzést a felhasználóktól és a projekt érintettjeitől, valamint biztosítja, hogy a csapat rövid iterációkban dolgozzon, ami gyors reagálást tesz lehetővé az új igényekre.
+Az agilis módszertan a React projektben jól illeszkedik a dinamikus felhasználói felület és az iteratív fejlesztési igényekhez, különösen a folyamatos frissítéseknél és új funkciók bevezetésénél.
+Az MVC (Model-View-Controller) architektúrát választottuk a projekt megvalósításához. Ez a felépítés jól támogatja a különböző rétegek elválasztását és a kliens-szerver kommunikációt.
 
-`A webalkalmazás az MVC (modell-view-controller) felépítést követi, a szerver és a kliens függetlenek, csupán API végpontok segítségével kommunikálnak.`
+View réteg (GUI): A felhasználói felületért a React felel, amely lehetővé teszi a gyors és interaktív felhasználói felület létrehozását.
 
-Miso átírja
+Controller (logikai réteg): A logikai réteg biztosítja az alkalmazás üzleti szabályainak és működési folyamatainak kezelését. A kliens oldali logika React komponensekben található, míg a szerveroldali logika API-kon keresztül kezelhető, például egy Node.js alapú backenddel, ahogy az nálunk is lesz.
 
-```
-Milyen szoftverfolyamat modellt követve állítja elő a csapat a specifikációnak megfelelő prototípusokat? Miért ezt választja? 
-A csapat milyen architektúrát választ a projekt megvalósításához? Milyen rétegek (logikai, adat, GUI) lesznek?`
-```
+Model (adat réteg): Az adatkezelés az API-kon keresztül történik, amely kapcsolatot teremt a kliensoldali alkalmazás és az adatbázis között. Ez a réteg kezeli az adatok tárolását, lekérdezését és frissítését.
+
+Ez az architektúra biztosítja a rétegek függetlenségét, így a csapat egyszerűbben végezheti a karbantartási és fejlesztési feladatokat.
+
 
 ### 7.2. Átadandók és határidők
 
@@ -304,7 +306,7 @@ Erőforrásigény:  1 személynap
 
 Felelős: Szántó Mihály József
 
-Tartam:  1 nap
+Tartam:  3 nap
 
 Erőforrásigény:  1 személynap
 
@@ -404,17 +406,17 @@ Erőforrásigény:  1 személynap
 
 Felelős: Szántó Mihály József
 
-Tartam:  5 nap
+Tartam:  3 nap
 
-Erőforrásigény:  2 személynap
+Erőforrásigény:  1 személynap
 
 #### 8.3.10. Árukészletek kezeléséhez szükséges adatok létrehozása az adatbázisban
 
 Felelős: Szántó Mihály József
 
-Tartam:  5 nap
+Tartam:  2 nap
 
-Erőforrásigény:  2 személynap
+Erőforrásigény:  1 személynap
 
 #### 8.3.12. Rendelés kezelése (CR)
 ##### Kosár felület
@@ -437,9 +439,9 @@ Erőforrásigény:  2 személynap
 
 Felelős: Szántó Mihály József
 
-Tartam:  5 nap
+Tartam:  3 nap
 
-Erőforrásigény:  2 személynap
+Erőforrásigény:  1 személynap
 
 #### 8.3.14. Vásárlók és rendelések adatainak létrehozása az adatbázisban
 ##### Alap vásárlók
@@ -492,10 +494,6 @@ Erőforrásigény:  1 személynap/fő
 Felelős: Papp Bence
 Tartam:  1 nap
 Erőforrásigény:  0.5 személynap/fő
-##### Rendelés összeállítás és megrendelés tesztelése (TP, TC)
-Felelős: Szántó Mihály József
-Tartam:  2 nap
-Erőforrásigény:  1 személynap/fő
 #### 8.3.19. A prototípus kitelepítése éles környezetbe
 
 Felelős: Szegedi Bence, Kurucz László
@@ -576,7 +574,7 @@ Tartam:  1 nap
 
 Erőforrásigény:  0.5 személynap
 
-#### 8.4.11. Biztonsági mentés tesztelése (TR
+#### 8.4.11. Biztonsági mentés tesztelése (TR)
 
 Felelős: Szegedi Bence
 
@@ -610,7 +608,7 @@ Erőforrásigény:  0.5 személynap
 | Kurucz László     |  0.5  |   2   |  14  |  3.5  |   20   |
 | Papp Bence        |  0.5  |   2   |  15  |   1   |   19   |
 | Kovács-Némedi Máté|  0.5  |   1   |  12  |  5    |  18.5  |
-| Szántó Mihály     |  0.5  |   2   |  14  |  3    |   19.5 |
+| Szántó Mihály József    |  0.5  |   1   |  14  |  3    |   19.5 |
 | Racskó Ádám       |  0.5  |   3   |  12  |  4    |   18.5 |
 
 ### 10.2. Részletes feladatszámok
@@ -622,7 +620,7 @@ Erőforrásigény:  0.5 személynap
 | Kurucz László     |   1   |   3   |  10  |   7   |   21     |
 | Papp Bence        |   1   |   3   |  11  |   5   |   20     |
 | Kovács-Némedi Máté|   1   |   3   |  8   |   7   |   19     |
-| Szántó Mihály     |   1   |   5   |  8   |   5   |   19     |
+| Szántó Mihály József    |   1   |   5   |  8   |   5   |   19     |
 | Racskó Ádám       |   1   |   3   |  8   |   8   |   20     |
 
 ### 10.3. Részletes költségvetés
@@ -635,7 +633,7 @@ Erőforrásigény:  0.5 személynap
 | Kurucz László     |  5  |  18  |  31  |  23   |   70   |
 | Papp Bence        |  4  |  13  |  32  |  22   |   70   | 
 | Kovács-Némedi Máté|  4  |  15  |  28  |  27   |   70   |
-| Szántó Mihály     |  5  |  14  |  32  |  21   |   70   |
+| Szántó Mihály József    |  5  |  14  |  32  |  21   |   70   |
 | Racskó Ádám       |  4  |  16  |  30  |  24   |   70   |
 
 Szeged, 2024.10.13

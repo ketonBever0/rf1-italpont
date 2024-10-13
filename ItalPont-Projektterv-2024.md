@@ -75,9 +75,9 @@ A projekt a következő emberekből áll:
 | Szegedi Bence | Projektmenedzser | h269466@stud.u-szeged.hu    |
 | Szabó Bence   | Projekt tag      | h654321@stud.u-szeged.hu    |
 | Racskó Ádám Ákos | Projekt tag | h376536@stud.u-szeged.hu    |
-| Papp Bence | Projekt tag      | `h654321@stud.u-szeged.hu`    |
+| Papp Bence | Projekt tag      | h654321@stud.u-szeged.hu    |
 | Szántó Mihály József   | Projekt tag      | h378047@stud.u-szeged.hu    |
-| Kovács-Némedi Máté   | Projekt tag      | `h372195@stud.u-szeged.hu`    |
+| Kovács-Némedi Máté   | Projekt tag      | h372195@stud.u-szeged.hu    |
 
 
 
@@ -92,9 +92,9 @@ A projekt a következő munkaállomásokat fogja használni a munka során:
  - **Kurucz László:** Lenovo IdeaPad 3 15ALC6 (CPU: AMD Ryzen 7 5700U, RAM: 16 GB, GPU: 2 GB integrált, OS: Windows 11 Professional)
  - **Kovács-Némedi Máté**: Dell DESKTOP-GCETQJE (CPU: Intel(R) Core(TM) i5-7200U CPU, RAM: 8 GB, OS: Windows 10 Pro)
  - **Szántó Mihály József**: Dell G5 5587 laptop (CPU: i5 8300H, RAM: 16 GB, GPU: Nvidia GTX 1050 Ti)`
- - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
- - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
- - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
+ - **Racskó Ádám Ákos**: Asztali számítógép (CPU: AMD Ryzen 5260, RAM: 16GB, GPU: Nvidia GTX1050 Ti)
+ - **Papp Bence**: IdeaPad Gaming 3i Gen 7 (CPU: Intel® Core™ i7-12700H, RAM: 16 GB, GPU: NVIDIA® GeForce RTX™ 3060)
+ - **Szabó Bence**:Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)
 
 A projekt a következő technológiákat/szoftvereket fogja használni a munka során: 
 
@@ -593,7 +593,7 @@ Erőforrásigény:  0.5 személynap
 
 ## 9. Részletes időbeosztás
 
-![image](./MINTA-gantt-diagram.png)
+gantt diagram
 
 
 

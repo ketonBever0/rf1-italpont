@@ -19,22 +19,25 @@ Alapvető funkció, hogy az italnagyker kínálatában lévő összes terméket 
 ### 2.2. Funkcionális követelmények
 
  ###### Felhasználók kezelése (admin, szerződött partner, vásárló, vendég) (CRUD)
- -A felhasználók regisztrálhatnak az oldalra, de lehetőség van vendégként megtekinteni a termékeket. A regisztráció során szükséges megadni a vezeték- és keresztnevet, e-mail címet és telefonszámot, egy felhasználónevet (nickname), számlázási adatokat, egy megfelelő erősségű jelszót és még adni a szerepkört is, hogy adminként, szerződött partnerként vagy sima vásárlóként regisztrál. A felhasználók kapnak egy azonosítót (id) is, ami az adatbázis- és munkamenet kezeléshez fog kelleni. A felhasználók később módosíthatják az adataikat (számlázási cím, e-mail, telefonszám). 
+ - A felhasználók regisztrálhatnak az oldalra, de lehetőség van vendégként megtekinteni a termékeket. A regisztráció során szükséges megadni a vezeték- és keresztnevet, e-mail címet és telefonszámot, egy felhasználónevet (nickname), számlázási adatokat, egy megfelelő erősségű jelszót és még adni a szerepkört is, hogy adminként, szerződött partnerként vagy sima vásárlóként regisztrál. A felhasználók kapnak egy azonosítót (id) is, ami az adatbázis- és munkamenet kezeléshez fog kelleni. A felhasználók később módosíthatják az adataikat (számlázási cím, e-mail, telefonszám). 
  ###### Felhasználói munkamenet megvalósítása több jogosultsági szinttel. 
 - Felhasználók: admin, szerződött partner, vásárló, vendég. Az adminnak van jogosultsága új italt hozzá adni az adatbázishoz, szerkeszteni azokat, bevételezni új árút vagy épp törölni a kifutó termékeket. Ezek mellett hozzá fér a vásárlók és rendelések adataihoz is, hogy javításokat módosításokat tudjon eszközölni. A raktárak adatait is képes módosítani ( kapacitás, új funkció ).
 - A szerződött partner több akciót lát és olcsóbb a kiszállítás a számára. 10000 Ft felett már ingyenes a kiszállítás, egyébként 2000 Ft. Nyomon tudja követni a rendeléseit és az aktuális hónapban a költéseit. 10 ugyan olyan tétel után 10% kedvezmény jár. A kiszállítás helyét és a saját adatait módosíthatja.
 - A sima vásárlók abban különböznek a szerződött parnertől, hogy kevesebb akciót kapnak, nincsen mennyiségi kedvezmény, valamint 20000 Ft felett ingyenes csak a szállítás. 
 - A vendég felhasználók csak a termékeket tudják megnézni és kosárba rakni, rendelni csak akkor tudnak, ha regisztrálnak vagy bejelentkeznek.
  ###### Raktárak kezelése (CRUD)
--
+- A raktárakat külön-külön számontartjuk, hogy lessen tudni az egyes termékekből mennyi van, ezenkívül a raktár tulajdonságait is tároljuk.
+- Lehet raktárat bővíteni és új raktárat is felvenni a rendszerbe.
  ###### Árukészletek kezelése (CRUD)
- - 
+ - Az erre jogosult felhasználóknak (admin) lehetősége van termékek hozzáadására, törlésére. Ezek mellett lehetőség van termékek adatainak (név, leírás, kategória, alkoholtartalom) módosítására is.
+ - Akciók létrehozása: Akció létrehozásához meg kell adni a nevét (pl.:Nyári leárazás), a kedvezmény %-át és azt, hogy szerződott partnerekre vonatkozik, vagy a vásárlókra. Ezek után meghatározhatjuk, hogy mely termékekre érvényes.
+
  ###### Rendelések kezelése (CRUD)
- - 
+ - A rendeléseket elmentjük adatbázisba, hogy később a felhasználók vissza tudják nézni őket, valamint különbőző statisztikákat is összeállítunk belőle. Ilyen lesz a havi kedvezmény összeszámolása és a bizonyos rendelési összeg feletti ajándék.
+ - Ha csak akkor tudja a felhasználó leadni a rendelést, ha minden termék raktáron van és a rendeléshez szükséges összes adat ki van töltve.
  ###### Email-es visszajelzés új rendelés esetén a megrendelőnek és a raktárnak
- - 
+ - A sikeres megrendelés után emailben visszajelzést küldünk a megrendelő email címére, valamint a raktárakat is értesítjük a rendelésben szereplő termékek összekészítéséről.
  ###### Biztonsági mentés automatikus létrehozása
--
 
 ### 2.3. Nem funkcionális követelmények
 
@@ -55,12 +58,12 @@ A rendelkezésünkre áll összesen 7 * 70 = 490 pont.
 
 A projekt megrendelője Dr. Pflanzner Tamás. A ItalPont projektet a projektcsapat fogja végrehajtani, amely jelenleg hét fejlesztőből áll. A csapatban található tapasztalt és pályakezdő webprogramozó is, A tapasztalt projekttagok között valaki frontend valaki backend területen jártasabb. A tapasztaltabbak mindenképp törekednek a többieket segíteni.
 
- - `Szabó Bence (3 év ipari tapasztalat a Számító Gép Kft.-nél)`
- - `Papp Bence (3 év egyetemi tapasztalat, Adatbázis alapú rendszereken egy kisebb webshop projekt, fél év munkahelyi tapasztalat ContiTech Rubber Industrial Kft-nél)`
- - Papp Bence (3 év egyetemi tapasztalat, fél év munkatapasztalat a Contitech Rubber Industrial Kft.-nél)
- - `Kurucz László (3 év ipari tapasztalat a Számító Gép Kft.-nél)`
- - `Kovács-Némedi Máté (3 év egyetemi tapasztalat)`
- - `Szántó Mihály (<1 év tapasztalatő)`
+ - Szabó Bence (3 év egyetemi tapasztalat)
+ - Papp Bence (3 év egyetemi tapasztalat, Adatbázis alapú rendszereken egy kisebb webshop projekt, fél év munkahelyi tapasztalat ContiTech Rubber Industrial Kft-nél)
+ - Racskó Ádám Ákos (1 év egyetemi tapasztalat, 1 év webszerkesztő tapasztalat Angular-ban)
+ - Kurucz László (3 év ipari tapasztalat a Számító Gép Kft.-nél)
+ - Kovács-Némedi Máté (3 év egyetemi tapasztalat)
+ - Szántó Mihály (<1 év egyetemi tapasztalat)
  - Szegedi Bence (1 év webszerkesztő tapasztalat React és JS-ben.)
 
 ### 4.1 Projektcsapat
@@ -70,11 +73,11 @@ A projekt a következő emberekből áll:
 | Név          | Pozíció          |   E-mail cím (stud-os)        |
 |--------------|------------------|-------------------------------|
 | Szegedi Bence | Projektmenedzser | h269466@stud.u-szeged.hu    |
-| Szabó Bence   | Projekt tag      | `h654321@stud.u-szeged.hu`    |
+| Szabó Bence   | Projekt tag      | h654321@stud.u-szeged.hu    |
 | Racskó Ádám Ákos | Projekt tag | h376536@stud.u-szeged.hu    |
-| Papp Bence | Projekt tag      | `h2683131@stud.u-szeged.hu`    |
-| Szántó Mihály József   | Projekt tag      | `h000000@stud.u-szeged.hu`    |
-| Kovács-Némedi Máté   | Projekt tag      | `h372195@stud.u-szeged.hu`    |
+| Papp Bence | Projekt tag      | h2683131@stud.u-szeged.hu   |
+| Szántó Mihály József   | Projekt tag      | h378047@stud.u-szeged.hu    |
+| Kovács-Némedi Máté   | Projekt tag      |h372195@stud.u-szeged.hu    |
 
 
 
@@ -86,13 +89,13 @@ A projekt a következő munkaállomásokat fogja használni a munka során:
 
  ##### Munkaállomások: 7 db, Windows 10/11-es operációs rendszerrel
  - **Szegedi Bence:** Dell Lattitude 7440 laptop (CPU: i7-1365U, RAM: 16 GB, GPU: Nvidia 920M)
- <!-- - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)` -->
+ - **Kurucz László:** Lenovo IdeaPad 3 15ALC6 (CPU: AMD Ryzen 7 5700U, RAM: 16 GB, GPU: 2 GB integrált, OS: Windows 11 Professional)
  - **Kovács-Némedi Máté**: Dell DESKTOP-GCETQJE (CPU: Intel(R) Core(TM) i5-7200U CPU, RAM: 8 GB, OS: Windows 10 Pro)
- - **Papp Bence:**: `IdeaPad Gaming 3i Gen 7 (CPU: Intel® Core™ i7-12700H, RAM: 16 GB, GPU: NVIDIA® GeForce RTX™ 3060)`
- - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
- - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
- - `IdeaPad Gaming 3i Gen 7 (CPU: Intel® Core™ i7-12700H, RAM: 16GB, GPU: NVIDIA® GeForce RTX™ 3060)` (Papp Bence)
- - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
+ - **Papp Bence**: IdeaPad Gaming 3i Gen 7 (CPU: Intel® Core™ i7-12700H, RAM: 16 GB, GPU: NVIDIA® GeForce RTX™ 3060)
+ - **Racskó Ádám**:Asztali számítógép (CPU: AMD Ryzen 5260, RAM: 16GB, GPU: Nvidia GTX1050 Ti)
+ - **Szabó Bence**:Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)
+ - **Szántó Mihály**:IdeaPad Gaming 3i Gen 7 (CPU: Intel® Core™ i7-12700H, RAM: 16GB, GPU: NVIDIA® GeForce RTX™ 3060)
+ 
 
 A projekt a következő technológiákat/szoftvereket fogja használni a munka során: 
 
@@ -114,10 +117,8 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | Egy feladat elkészítése a tervezettnél több időt vesz igénybe | A feladat fontosságától függően további eltolódást okozhat, az egész projek elkészülését hátráltathatja. Megoldás: közös munka, feladat felosztása kissebb részfeladtokra | közepes | közepes |
 | Elvesznek az alkalmazás egyes részei| Ha valakinél esetleg gond van a laptoppal akkor törlödhetnek az a feladat amin dolgozott. Megoldás: rendszeresen feltölteni a munkafájlokat| alacsony | erős |
 | Sok, egyszerre összegyűlt tanulnivaló, beadandó más tárgyakból | A túl sok feladat miatt kevesebb idő juthat a projektre, kevésbé lesz precíz. Megoldás: Rendszeres készülés, jól beosztott idő | nagy | közepes |
-| a | b | c | d |
-| a | b | c | d |
-| a | b | c | d |
-| a | b | c | d |
+
+
 
 ## 6. Jelentések
 
@@ -144,20 +145,10 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
 3. Megbeszélés:
  - Időpont: 2024.10.08.
  - Hely: Bohém Tanya
- - Résztvevők: Szabó Bence, Papp Bence, Kovács-Némedi Máté, Racskó Ádám, Kurucz László, Szegedi Bence
+ - Résztvevők: Szabó Bence, Papp Bence, Kovács-Némedi Máté, Kurucz László, Szegedi Bence
  - Érintett témák: Adatbázis megtervezése, projektterv kiegészítése, feladatok szétosztása, feladatok pontosítása
  
- 4. Megbeszélés:
- - `Időpont: 2021.09.29.`
- - `Hely: TIK – Szeged, Ady tér 10.`
- - `Résztvevők: Teszt Elek, Remek Elek`
- - `Érintett témák: Egyeztetés az UML diagramokról, illetve az adatbázis táblák és kapcsolatok meghatározása`
  
- 5. Megbeszélés:
- - `Időpont: 2021.09.29.`
- - `Hely: TIK – Szeged, Ady tér 10.`
- - `Résztvevők: Teszt Elek, Remek Elek`
- - `Érintett témák: Egyeztetés az UML diagramokról, illetve az adatbázis táblák és kapcsolatok meghatározása`
 
 ### 6.3. Minőségbiztosítás
 
@@ -397,9 +388,6 @@ Felelős: Racskó Ádám
 Tartam:  2 nap
 Erőforrásigény:  1 személynap
 
-Tartam:  2 nap
-Erőforrásigény:  1 személynap
-
 ##### Termékek hozzáadása az akciókhoz
 Felelős: Racskó Ádám
 Tartam:  1 nap
@@ -430,7 +418,7 @@ Tartam:  5 nap
 Erőforrásigény:  2 személynap
 
 #### 8.3.12. Rendelés kezelése (CR)
-Kosár felület
+##### Kosár felület
 
 Felelős: Kovács-Némedi Máté
 
@@ -438,14 +426,13 @@ Tartam:  3 nap
 
 Erőforrásigény:  2 személynap
 
-Rendelő felület a vásárlóknak
+##### Rendelő felület a vásárlóknak
 
 Felelős: Kovács-Némedi Máté
 
 Tartam:  3 nap
 
 Erőforrásigény:  2 személynap
-
 
 #### 8.3.13. Rendelés kezelése (UD)
 
@@ -590,8 +577,6 @@ Tartam:  1 nap
 
 Erőforrásigény:  0.5 személynap
 
-
-
 #### 8.4.11. Biztonsági mentés tesztelése (TR
 
 Felelős: Szegedi Bence
@@ -613,55 +598,45 @@ Erőforrásigény:  0.5 személynap
 
 ![image](./MINTA-gantt-diagram.png)
 
-```
-Ide kell berakni a Gantt diagramot, amely a 9. fejezetben található részfeladatokat tartalmazza felelős/tartam bontásban.
-```
+
 
 ## 10. Projekt költségvetés
 
-```
-Az egyes leadások alkalmával rögzített erőforrásigényt, az elvállalt feladatok számát 
-és az adott mérföldkőben végzett munkáért szerezhető pontszámot kell beírni minden emberre külön-külön.
-Figyeljünk arra, hogy mivel mindenkinek minden mérföldkövön dolgoznia kell, ezért a 10.3-as táblázat
-minden módosítható oszlopában legalább 1 pontnak szerepelni kell.
-```
-
 ### 10.1. Részletes erőforrásigény (személynap)
 
-
 | Név               |   M1  |   M2  |   M3 |   M4  | Összesen |
-|--------------     |-------|-------|------|-------|----------|
-| Szegedi Bence     |   1   |  1.5  | `11` | `5`   | `19`     |
-| Szabó Bence       |   1   |  1.5  | `13` | `3`   | `21`     |
-| Kurucz László     |  0.5  |  2.5  | `10` | `3.5` | `17`     |
-| Papp Bence        |  0.5  |  2   | 15    |    1  | 19     |
-| Kovács-Némedi Máté|  0.5  |   1   | `10` | `3.5` | `17`     |
-| Szántó Mihály     |  0.5  |   1   | `13` | `3`   | `21`     |
-| Racskó Ádám       |  0.5  |   3   | `10` | `3.5` | `17`     |
+|--------------     |-------|-------|------|-------|--------|
+| Szegedi Bence     |   1   |  1.5  |  13  |   5   |  20.5  |
+| Szabó Bence       |   1   |  1.5  |  12  |   5   |  19.5  |
+| Kurucz László     |  0.5  |   2   |  14  |  3.5  |   20   |
+| Papp Bence        |  0.5  |   2   |  15  |   1   |   19   |
+| Kovács-Némedi Máté|  0.5  |   1   |  12  |  5    |  18.5  |
+| Szántó Mihály     |  0.5  |   2   |  14  |  3    |   19.5 |
+| Racskó Ádám       |  0.5  |   3   |  12  |  4    |   18.5 |
 
 ### 10.2. Részletes feladatszámok
 
 | Név               |   M1  |   M2  |   M3 |   M4  | Összesen |
-|--------------     |-------|-------|------|-------|----------|
-| Szegedi Bence     | `1.5` | `1.5` | `11` | `5`   | `19`     |
-| Szabó Bence       | `1`   | `4`   | `13` | `3`   | `21`     |
-| Kurucz László     | `1`   | `2.5` | `10` | `3.5` | `17`     |
-| Papp Bence        | 1     | 15    | 32   | 22    | 70       |
-| Kovács-Némedi Máté| `1`   | `2.5` | `10` | `3.5` | `17`     |
-| Szántó Mihály     | `1`   | `4`   | `13` | `3`   | `21`     |
-| Racskó Ádám       | `1`   | `2.5` | `10` | `3.5` | `17`     |
+|-------------------|-------|-------|------|-------|----------|
+| Szegedi Bence     |   2   |   3   |  11  |   8   |   21     |
+| Szabó Bence       |   2   |   4   |  9   |   6   |   21     |
+| Kurucz László     |   1   |   3   |  10  |   7   |   21     |
+| Papp Bence        |   1   |   3   |  11  |   5   |   20     |
+| Kovács-Némedi Máté|   1   |   3   |  8   |   7   |   19     |
+| Szántó Mihály     |   1   |   5   |  8   |   5   |   19     |
+| Racskó Ádám       |   1   |   3   |  8   |   8   |   20     |
 
 ### 10.3. Részletes költségvetés
 
-| Név              | M1     | M2    | M3    | M4    | Összesen|
-|------------------|--------|-------|-------|-------|---------|
+| Név              | M1   | M2   |  M3  |   M4  | Összesen|
+|------------------|------|------|------|-------|---------|
 | Maximálisan megszerezhető pontszám  |(7)|(20)|(35)|(28)|100% (70) |
-| Szegedi Bence     | `1.5` | `1.5` | `11` | `5`   | `19`     |
-| Szabó Bence       | `1`   | `4`   | `13` | `3`   | `21`     |
-| Kurucz László     | `1`   | `2.5` | `10` | `3.5` | `17`     |
-| Papp Bence        | 1     | 2     | 5    | 2     | 10       | 
-| Kovács-Némedi Máté| `1`   | `2.5` | `10` | `3.5` | `17`     |
-| Szántó Mihály     | `1`   | `4`   | `13` | `3`   | `21`     |
-| Racskó Ádám       | `1`   | `2.5` | `10` | `3.5` | `17`     |
+| Szegedi Bence     |  7  |  15  |  32  |  24   |   70   |
+| Szabó Bence       |  7  |  16  |  30  |  22   |   70   |
+| Kurucz László     |  5  |  18  |  31  |  23   |   70   |
+| Papp Bence        |  4  |  13  |  32  |  22   |   70   | 
+| Kovács-Némedi Máté|  4  |  15  |  28  |  27   |   70   |
+| Szántó Mihály     |  5  |  14  |  32  |  21   |   70   |
+| Racskó Ádám       |  4  |  16  |  30  |  24   |   70   |
 
-Szeged, ` utolsó módosítás: 2024-10-07 19:00 `
+Szeged, 2024.10.13

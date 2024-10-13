@@ -593,7 +593,7 @@ Erőforrásigény:  0.5 személynap
 
 ## 9. Részletes időbeosztás
 
-gantt diagram
+![image](.Gantt/gantt.png)
 
 
 

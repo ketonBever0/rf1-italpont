@@ -593,7 +593,7 @@ Erőforrásigény:  0.5 személynap
 
 ## 9. Részletes időbeosztás
 
-![image](.Gantt/gantt.png)
+![image](./Gantt/gantt.png)
 
 
 
@@ -608,7 +608,7 @@ Erőforrásigény:  0.5 személynap
 | Kurucz László     |  0.5  |   2   |  14  |  3.5  |   20   |
 | Papp Bence        |  0.5  |   2   |  15  |   1   |   19   |
 | Kovács-Némedi Máté|  0.5  |   1   |  12  |  5    |  18.5  |
-| Szántó Mihály József    |  0.5  |   1   |  14  |  3    |   19.5 |
+| Szántó Mihály József  |  0.5  |   1   |  14  |  3    |   19.5 |
 | Racskó Ádám       |  0.5  |   3   |  12  |  4    |   18.5 |
 
 ### 10.2. Részletes feladatszámok

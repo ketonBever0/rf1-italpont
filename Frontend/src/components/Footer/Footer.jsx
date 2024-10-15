@@ -1,10 +1,10 @@
 import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
-import footer_logo from 'Frontend/src/assets/logo_big.png'
-import instagram_icon from 'Frontend/src/assets/instagram_icon.png'
-import pinterest_icon from 'Frontend/src/assets/pinterest_icon.png'
-import whatsapp_icon from 'Frontend/src/assets/whatsapp_icon.png'
+import footer_logo from '../../assets/logo_big.png'
+import instagram_icon from '../../assets/instagram_icon.png'
+import pinterest_icon from '../../assets/pinterest_icon.png'
+import whatsapp_icon from '../../assets/whatsapp_icon.png'
 
 const Footer = () => {
   return (

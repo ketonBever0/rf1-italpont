@@ -6,9 +6,7 @@ import Item from "../Components/Items/Item";
 
 const ShopCategory = (props) => {
   const { all_product } = useContext(ShopContext);
-  if (all_product === null) {
-    all_product = [];
-  }
+ 
   //FIXME: all_products is null
   return (
     <div className="shop-category">

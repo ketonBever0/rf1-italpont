@@ -8,12 +8,12 @@ const ProductDisplay = (props) => {
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
-        <div className="productdisplay-img-list">
+        {/*<div className="productdisplay-img-list">
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
-        </div>
+        </div>*/}
         <div className="productdisplay-img">
           <img className="productdisplay-main-img" src={product.image} alt="" />
         </div>
@@ -29,18 +29,27 @@ const ProductDisplay = (props) => {
           <p>(122)</p>
         </div>
         <div className="productdisplay-right-prices">
-          <div className="productdisplay-right-price-old">
-            ${product.old_price}
-          </div>
           <div className="productdisplay-right-price-new">
-            ${product.new_price}
+            Bruttó ár: ${product.price} Ft
+          </div>
+        </div>
+        <div className="productdisplay-right-prices">
+          <div className="productdisplay-right-price-new">
+            Márka: ${product.brand}
+          </div>
+        </div>
+        <div className="productdisplay-right-prices">
+          <div className="productdisplay-right-price-new">
+            Ürtartalom: ${product.volume}
+          </div>
+        </div>
+        <div className="productdisplay-right-prices">
+          <div className="productdisplay-right-price-new">
+            Alkoholtartalom: ${product.alcoholPercentage}
           </div>
         </div>
         <div className="productdisplay-right-description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo ullam
-          voluptatem tempora aut ipsam unde, iste debitis nesciunt odit
-          praesentium cupiditate aspernatur pariatur quas ratione! Possimus
-          adipisci enim ipsum id!
+          ${product.description}
         </div>
         <div className="productdisplay-right-size">
           <h1>Select Size</h1>
@@ -52,9 +61,10 @@ const ProductDisplay = (props) => {
             <div>XXL</div>
           </div>
         </div>
-        <button>ADD TO CART</button>
+        <button>Kosárba</button>
         <p className="productdisplay-right-category">
-          <span>Category :</span> Women , T-Shirt, Crop Top
+          <span>Kategória :</span> ${product.category} , ${product.subcategory},
+          ${product.subsubcategory}
         </p>
         <p className="productdisplay-right-category">
           <span>Tags :</span> Modern , Latest

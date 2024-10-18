@@ -8,12 +8,12 @@ const ProductDisplay = (props) => {
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
-        <div className="productdisplay-img-list">
+        {/*<div className="productdisplay-img-list">
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
-        </div>
+        </div>*/}
         <div className="productdisplay-img">
           <img className="productdisplay-main-img" src={product.image} alt="" />
         </div>
@@ -28,33 +28,28 @@ const ProductDisplay = (props) => {
           <img src={star_dull_icon} alt="" />
           <p>(122)</p>
         </div>
-        <div className="productdisplay-right-prices">
-          <div className="productdisplay-right-price-old">
-            ${product.old_price}
+        <div className="productdisplay-right-parameters">
+          <div className="productdisplay-right-parameters-param">
+            <p>Márka:</p> <p>{product.brand}</p>
           </div>
-          <div className="productdisplay-right-price-new">
-            ${product.new_price}
+          <div className="productdisplay-right-parameters-param">
+            <p>Űrtartalom:</p> <p>{product.volume}</p>
+          </div>
+          <div className="productdisplay-right-parameters-param">
+            <p>Alkoholtartalom:</p> <p>{product.alcoholPercentage}</p>
+          </div>
+          <div className="productdisplay-right-parameters-param">
+            <p>Bruttó ár:</p> <p>{product.price} Ft</p>
           </div>
         </div>
+        
         <div className="productdisplay-right-description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo ullam
-          voluptatem tempora aut ipsam unde, iste debitis nesciunt odit
-          praesentium cupiditate aspernatur pariatur quas ratione! Possimus
-          adipisci enim ipsum id!
+          {product.description}
         </div>
-        <div className="productdisplay-right-size">
-          <h1>Select Size</h1>
-          <div className="productdisplay-right-sizes">
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
-          </div>
-        </div>
-        <button>ADD TO CART</button>
+        
+        <button>Kosárba teszem</button>
         <p className="productdisplay-right-category">
-          <span>Category :</span> Women , T-Shirt, Crop Top
+          <span>Kategória :</span> {product.subsubcategory}
         </p>
         <p className="productdisplay-right-category">
           <span>Tags :</span> Modern , Latest

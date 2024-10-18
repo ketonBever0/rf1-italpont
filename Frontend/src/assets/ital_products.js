@@ -1,4 +1,5 @@
-import img from "./Bolyki_sauvignon_blanc.png";
+import categories from "./categories";
+import img from "./Diplomatico.png";
 import BacardiBlanca from "./product_1.png";
 import BacardiSpiced from "./product_2.png";
 

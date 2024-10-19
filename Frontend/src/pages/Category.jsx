@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import "./CSS/ShopCategory.css";
-import { ShopContext } from "../context/ShopContext";
 import dropdown_icon from "../assets/dropdown_icon.png";
-import Item from "../Components/Items/Item";
+import Categories from "../components/Categories/Categories";
+import { CategoryContext } from "../context/CategoryContext";
 
-const ShopCategory = (props) => {
-  const { ital_product } = useContext(ShopContext);
+const Category = (props) => {
+  const { categories } = useContext(CategoryContext);
   return (
     <div className="shop-category">
       {/*<img className="shopcategory-banner" src={props.banner} alt="" />*/}
@@ -18,16 +18,13 @@ const ShopCategory = (props) => {
         </div>
       </div>
       <div className="shopcategory-products">
-        {ital_product.map((item, i) => {
+        {categories.map((item) => {
           if (props.category === item.category) {
             return (
-              <Item
-                key={i}
-                id={item.id}
-                name={item.name}
+              <Categories
+                category={item.category}
+                subcategory={item.subcategory}
                 image={item.image}
-                price={item.price}
-                volume={item.volume}
               />
             );
           } else {
@@ -40,4 +37,4 @@ const ShopCategory = (props) => {
   );
 };
 
-export default ShopCategory;
+export default Category;

@@ -20,11 +20,12 @@ enum Role {
 }
 
 model User {
-  id        Int     @id @default(autoincrement())
-  email     String  @unique
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
   password  String
   lastName  String
   firstName String
+  birthDate DateTime
   nick      String?
   postcode  String
   city      String
@@ -35,58 +36,57 @@ model User {
 }
 
 model Order {
-  id        Int      @id @default(autoincrement())
-  orderDate DateTime @default(now())
-  postcode  String
-  city      String
-  address   String
-  price     Int
-  user      User     @relation(fields: [userId], references: [id])
-  userId    Int
+  id            Int            @id @default(autoincrement())
+  orderDate     DateTime       @default(now())
+  postcode      String
+  city          String
+  address       String
+  price         Int
+  user          User           @relation(fields: [userId], references: [id])
+  userId        Int
   productOrders ProductOrder[]
-  
 }
 
 model ProductOrder {
-  id Int @id @default(autoincrement())
-  order   Order @relation(fields: [orderId], references: [id])
-  orderId Int
+  id        Int     @id @default(autoincrement())
+  order     Order   @relation(fields: [orderId], references: [id])
+  orderId   Int
   product   Product @relation(fields: [productId], references: [id])
   productId Int
-  discount Int?
+  discount  Int?
 }
 
 model Product {
-  id Int @id @default(autoincrement())
-  name String
-  category String
-  subCategory String
-  brand String
-  discount String
-  volume Int
+  id                Int            @id @default(autoincrement())
+  name              String
+  category          String
+  subCategory       String
+  brand             String
+  discount          String
+  volume            Int
   alcoholPercentage Int
-  description String
-  images String
-  price Int
-  productOrders ProductOrder[]
-  productWares ProductWare[]
+  description       String
+  images            String
+  price             Int
+  productOrders     ProductOrder[]
+  productWares      ProductWare[]
 }
 
 model ProductWare {
-  id Int @id @default(autoincrement())
-  product   Product @relation(fields: [productId], references: [id])
-  productId Int
+  id          Int       @id @default(autoincrement())
+  product     Product   @relation(fields: [productId], references: [id])
+  productId   Int
   warehouse   Warehouse @relation(fields: [warehouseId], references: [id])
   warehouseId Int
-  quantity Int
+  quantity    Int
 }
 
 model Warehouse {
-  id Int @id @default(autoincrement())
-  name String
-  postcode String
-  city      String
-  address   String
-  capacity Int
+  id           Int           @id @default(autoincrement())
+  name         String
+  postcode     String
+  city         String
+  address      String
+  capacity     Int
   productWares ProductWare[]
 }

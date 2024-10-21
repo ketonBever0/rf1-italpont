@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import ital_product from "../assets/ital_products";
+import ital_product from "../scripts/ital_products";
 
 export const ShopContext = createContext(null);
 

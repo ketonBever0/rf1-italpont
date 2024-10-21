@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import categories from "../assets/categories";
+import categories from "../scripts/categories";
 
 export const CategoryContext = createContext(null);
 

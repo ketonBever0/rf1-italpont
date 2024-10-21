@@ -1,42 +1,81 @@
-import Diplomatico from "./Diplomatico.png";
-import Mount_gay_xo from "./Mount_gay_xo.png";
-import Zacapa_23 from "./Zacapa_23.png";
-import Plantation_xo from "./Plantation_xo.png";
-import El_dorado_15 from "./El_dorado_15.png";
-import BacardiBlanca from "./product_1.png";
-import BacardiSpiced from "./product_2.png";
+import Diplomatico from "../assets/Diplomatico.png";
+import Mount_gay_xo from "../assets/Mount_gay_xo.png";
+import Zacapa_23 from "../assets/Zacapa_23.png";
+import Plantation_xo from "../assets/Plantation_xo.png";
+import El_dorado_15 from "../assets/El_dorado_15.png";
+import Bacardi_carta_blanca from "../assets/Bacardi_carta_blanca.png";
+import Bacardi_spiced from "../assets/Bacardi_spiced.png";
+import Bacardi_carta_negra from "../assets/Bacardi_negra.png";
+import Captain_morgan from "../assets/Captain_morgen.png";
 
-import Monkey_47 from "./Monkey_47.png";
-import Hendricks from "./Hendricks.png";
-import Malfy_rosa from "./Malfy_rosa.png";
-import Botanist from "./Botanist.png";
-import Sipssmith from "./Sipssmith.png";
-import Gin_mare from "./Gin_mare.png";
+import Absolut from "../assets/Absolut.png";
+import Grey_goose from "../assets/Grey_goose.png";
+import Ciroc from "../assets/Ciroc.png";
+import Beluga from "../assets/Beluga.png";
 
-import Macallan_sherry_oak from "./Macallan_sherry_oak_18.png";
-import Jameson from "./Jameson.png";
-import Glenfiddich_21 from "./Glenfiddich_21_reserva.png";
-import Lagavulin_16 from "./Lagavulin_16.png";
-import Redbreast_12 from "./Redbreast_12.png";
+import Gordons from "../assets/Gordons.png";
+import Monkey_47 from "../assets/Monkey_47.png";
+import Hendricks from "../assets/Hendricks.png";
+import Malfy_rosa from "../assets/Malfy_rosa.png";
+import Botanist from "../assets/Botanist.png";
+import Sipssmith from "../assets/Sipssmith.png";
+import Gin_mare from "../assets/Gin_mare.png";
+import Bombay_sapphire from "../assets/Bombay_sapphire.png";
 
-import Don_julio from "./Don_julio.png";
+import Johnnie_walker from "../assets/Johnnie_walker.png";
+import Macallan_sherry_oak from "../assets/Macallan_sherry_oak_18.png";
+import Jameson from "../assets/Jameson.png";
+import Glenfiddich_21 from "../assets/Glenfiddich_21_reserva.png";
+import Lagavulin_16 from "../assets/Lagavulin_16.png";
+import Redbreast_12 from "../assets/Redbreast_12.png";
+import Jack_daniels from "../assets/Jack_daniels.png";
+import Yamazaki_12 from "../assets/Yamazaki_12.png";
 
-import Krug_grande from "./Krug_grande.png";
-import Tokai_aszu_6 from "./Tokaji_aszu_6.png";
-import Bolyki_egri_bikavér from "./Bolyki_egri_bikaver.png";
-import Gere_kopar from "./Gere_kopar1.png";
-import Bolyki_sauvignon_blanc from "./Bolyki_sauvignon_blanc.png";
-import Sauska_rose from "./Sauska_rose.png";
+import Don_julio from "../assets/Don_julio.png";
+import Patron_silver from "../assets/Patron_silver.png";
+import Tequila_anejo from "../assets/Tequila_anejo.png";
+import Jose_silver from "../assets/Jose_silver.png";
+import Patron_anejo from "../assets/Patron_anejo.png";
+import Olmeca_reposado from "../assets/Olmeca_reposado.png";
 
-import Bacardi_carta_negra from "./Bacardi_negra.png";
+import Baileys from "../assets/Baileys.png";
+import Martini_rosso from "../assets/Martini_rosso.png";
+import Campari from "../assets/Campari.png";
+import Hennessy_vs_cognac from "../assets/Hennessy_vs_cognac.png";
 
-import Guiness from "./Guiness.png";
-import Pilsner_urquell from "./Pilsner_urquell.png";
-import Weihenstephaner_hefe from "./Heihenstephaner_hefe.png";
-import Heineken from "./Heineken.png";
-import Paulaner_oktoberfest from "./Paulaner_oktoberfest.png";
-import Dreher_gold from "./Dreher_gold.png";
-import Dreher_hk from "./Dreher_hk.png";
+import Torley_brut from "../assets/Torley_brut.png";
+import Krug_grande from "../assets/Krug_grande.png";
+import Tokai_aszu_6 from "../assets/Tokaji_aszu_6.png";
+import Bolyki_egri_bikavér from "../assets/Bolyki_egri_bikaver.png";
+import Gere_kopar from "../assets/Gere_kopar1.png";
+import Bolyki_sauvignon_blanc from "../assets/Bolyki_sauvignon_blanc.png";
+import Sauska_rose from "../assets/Sauska_rose.png";
+import Château_lafite from "../assets/Château_lafite.png";
+import Moet_imperial from "../assets/Moet_imperial.png";
+import Château_margaux_2018 from "../assets/Château_margaux_2018.png";
+import Laposa_friss from "../assets/Laposa_friss.png";
+import Disznoko_furmint from "../assets/Disznoko_furmint.png";
+import Szepsy_furmint from "../assets/Szepsy_furmint.png";
+import Bock_cabernet_franc from "../assets/Bock_cabernet_franc.png";
+import Tiffan_elysium from "../assets/Tiffan_elysium.png";
+
+import Guiness from "../assets/Guiness.png";
+import Pilsner_urquell from "../assets/Pilsner_urquell.png";
+import Blanc from "../assets/Blanc.png";
+import Heineken from "../assets/Heineken.png";
+import Paulaner_oktoberfest from "../assets/Paulaner_oktoberfest.png";
+import Dreher_gold from "../assets/Dreher_gold.png";
+import Dreher_hk from "../assets/Dreher_hk.png";
+import Peroni from "../assets/Peroni.png";
+import Floris from "../assets/Floris.png";
+import Hofbrau_munchen_hefe from "../assets/Hofbrau_munchener_hefe.png";
+import Birodalmi_bagoly from "../assets/Birodalmi_bagoly.png";
+import Liquid_cocaine from "../assets/Liquid_cocaine.jpg";
+import Flying_rabbit from "../assets/Flying_rabbit.png";
+import Gentle_bastard from "../assets/Gentle_bastard.png";
+import Flower_power from "../assets/Flower_power.png";
+
+import hordo from "../assets/hordo.png";
 
 let ital_product = [
   {
@@ -67,7 +106,7 @@ let ital_product = [
     alcoholPercentage: "5%",
     description:
       "Egy klasszikus világos sör, 5% alkoholtartalommal, frissítő ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Heineken,
     rating: 4.7,
     price: 300.0,
   },
@@ -83,7 +122,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "A klasszikus Tennessee whiskey, 40%-os alkoholtartalommal, édeskés és tölgyfás ízjegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Jack_daniels,
     rating: 4.8,
     price: 11000.0,
   },
@@ -99,7 +138,7 @@ let ital_product = [
     alcoholPercentage: "17%",
     description:
       "Egy lágy, tejszínes likőr, 17%-os alkoholtartalommal, tökéletes desszertek mellé vagy önmagában.",
-    image: Bacardi_carta_negra,
+    image: Baileys,
     rating: 4.6,
     price: 5500.0,
   },
@@ -115,7 +154,7 @@ let ital_product = [
     alcoholPercentage: "15%",
     description:
       "Az ikonikus Martini Rosso, 15%-os alkoholtartalommal, fűszeres és édeskés ízjegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Martini_rosso,
     rating: 4.3,
     price: 4000.0,
   },
@@ -131,7 +170,7 @@ let ital_product = [
     alcoholPercentage: "12%",
     description:
       "Egy prémium francia pezsgő, 12%-os alkoholtartalommal, citrusos és virágos jegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Moet_imperial,
     rating: 4.9,
     price: 18000.0,
   },
@@ -147,7 +186,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy prémium francia vodka, 40%-os alkoholtartalommal, lágy, tiszta ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Grey_goose,
     rating: 4.8,
     price: 12000.0,
   },
@@ -163,7 +202,7 @@ let ital_product = [
     alcoholPercentage: "12.5%",
     description:
       "Törley Excellence Brut, 12.5%-os alkoholtartalommal, frissítő és száraz pezsgő.",
-    image: Bacardi_carta_negra,
+    image: Torley_brut,
     rating: 4.4,
     price: 3500.0,
   },
@@ -179,7 +218,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "A híres Black Label, 40%-os alkoholtartalommal, komplex és füstös ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Johnnie_walker,
     rating: 4.7,
     price: 9500.0,
   },
@@ -195,7 +234,7 @@ let ital_product = [
     alcoholPercentage: "13.5%",
     description:
       "Egy prémium vörösbor Bordeaux-ból, 13.5%-os alkoholtartalommal, mély, gazdag ízekkel.",
-    image: Bacardi_carta_negra,
+    image: Château_margaux_2018,
     rating: 4.9,
     price: 220000.0,
   },
@@ -211,7 +250,7 @@ let ital_product = [
     alcoholPercentage: "25%",
     description:
       "Egy klasszikus olasz keserű likőr, 25%-os alkoholtartalommal, citrusos és fűszeres jegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Campari,
     rating: 4.5,
     price: 7000.0,
   },
@@ -227,7 +266,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "A híres svéd vodka, 40%-os alkoholtartalommal, tiszta és semleges ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Absolut,
     rating: 4.6,
     price: 5000.0,
   },
@@ -239,11 +278,11 @@ let ital_product = [
     subsubcategory: "Prémium tequila",
     brand: "Patrón",
     discount: "20%",
-    volume: "750 ml",
+    volume: "700 ml",
     alcoholPercentage: "40%",
     description:
       "Egy prémium mexikói tequila, 40%-os alkoholtartalommal, friss és citrusos ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Patron_silver,
     rating: 4.8,
     price: 16000.0,
   },
@@ -259,7 +298,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy klasszikus prémium gin, 40%-os alkoholtartalommal, borókás és citrusos ízekkel.",
-    image: Bacardi_carta_negra,
+    image: Bombay_sapphire,
     rating: 4.7,
     price: 7000.0,
   },
@@ -275,7 +314,7 @@ let ital_product = [
     alcoholPercentage: "37.5%",
     description:
       "Egy gyümölcsös ízesített gin, 37.5%-os alkoholtartalommal, eper és málna jegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Gordons,
     rating: 4.4,
     price: 6500.0,
   },
@@ -291,7 +330,7 @@ let ital_product = [
     alcoholPercentage: "35%",
     description:
       "Egy fűszeres karibi rum, 35%-os alkoholtartalommal, vaníliás és fahéjas ízekkel.",
-    image: Bacardi_carta_negra,
+    image: Captain_morgan,
     rating: 4.6,
     price: 6500.0,
   },
@@ -307,7 +346,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy prémium francia cognac, 40%-os alkoholtartalommal, gazdag és fás ízjegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Hennessy_vs_cognac,
     rating: 4.8,
     price: 15000.0,
   },
@@ -409,19 +448,19 @@ let ital_product = [
   },
   {
     id: 24,
-    name: "Villa Sandahl Riesling 2020",
+    name: "Laposa Friss 2023",
     category: "alkoholos_italok",
     subcategory: "Bor",
     subsubcategory: "Fehérbor",
-    brand: "Villa Sandahl",
+    brand: "Laposa",
     discount: "8%",
     volume: "750 ml",
-    alcoholPercentage: "12%",
+    alcoholPercentage: "11.5%",
     description:
       "Egy friss és savas fehérbor, 12%-os alkoholtartalommal, citrusos és ásványos ízjegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Laposa_friss,
     rating: 4.5,
-    price: 4800.0,
+    price: 2700.0,
   },
   {
     id: 25,
@@ -435,7 +474,7 @@ let ital_product = [
     alcoholPercentage: "12.5%",
     description:
       "Egy tokaji száraz furmint, 12.5%-os alkoholtartalommal, friss, gyümölcsös és ásványos ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Disznoko_furmint,
     rating: 4.6,
     price: 3200.0,
   },
@@ -451,7 +490,7 @@ let ital_product = [
     alcoholPercentage: "13.5%",
     description:
       "Egy világhírű bordeaux-i vörösbor, 13.5%-os alkoholtartalommal, komplex, gazdag ízjegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Château_lafite,
     rating: 4.9,
     price: 250000.0,
   },
@@ -483,7 +522,7 @@ let ital_product = [
     alcoholPercentage: "13%",
     description:
       "Egy kiváló tokaji furmint, 13%-os alkoholtartalommal, ásványos és gyümölcsös jegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Szepsy_furmint,
     rating: 4.9,
     price: 9000.0,
   },
@@ -499,7 +538,7 @@ let ital_product = [
     alcoholPercentage: "14%",
     description:
       "Egy gazdag és mély cabernet franc Villányból, 14%-os alkoholtartalommal, fűszeres és gyümölcsös ízekkel.",
-    image: Bacardi_carta_negra,
+    image: Bock_cabernet_franc,
     rating: 4.7,
     price: 6000.0,
   },
@@ -531,7 +570,7 @@ let ital_product = [
     alcoholPercentage: "14.5%",
     description:
       "Egy prémium cuvée Villányból, 14.5%-os alkoholtartalommal, gazdag és bársonyos ízekkel.",
-    image: Bacardi_carta_negra,
+    image: Tiffan_elysium,
     rating: 4.8,
     price: 11000.0,
   },
@@ -547,7 +586,7 @@ let ital_product = [
     alcoholPercentage: "43%",
     description:
       "Egy prémium japán single malt whiskey, 43%-os alkoholtartalommal, gazdag gyümölcsös és tölgyes ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Yamazaki_12,
     rating: 4.9,
     price: 45000.0,
   },
@@ -565,7 +604,7 @@ let ital_product = [
       "Egy skót single malt whiskey, 43%-os alkoholtartalommal, sherrys jegyekkel, gazdag és komplex ízvilággal.",
     image: Macallan_sherry_oak,
     rating: 4.9,
-    price: 100000.0,
+    price: 200000.0,
   },
   {
     id: 34,
@@ -777,7 +816,7 @@ let ital_product = [
   },
   {
     id: 47,
-    name: "Guinness Draught",
+    name: "Guinness Draught KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Stout",
@@ -793,7 +832,7 @@ let ital_product = [
   },
   {
     id: 48,
-    name: "Pilsner Urquell",
+    name: "Pilsner Urquell KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Lager",
@@ -809,23 +848,23 @@ let ital_product = [
   },
   {
     id: 49,
-    name: "Weihenstephaner Hefeweissbier",
+    name: "Kronenbourg Blanc búzasör KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Búzasör",
-    brand: "Weihenstephaner",
+    brand: "Kronenbourg",
     discount: "7%",
     volume: "30l",
-    alcoholPercentage: "5.4%",
+    alcoholPercentage: "5%",
     description:
-      "Egy klasszikus német búzasör, 5.4%-os alkoholtartalommal, banános és szegfűszeges jegyekkel.",
-    image: Weihenstephaner_hefe,
+      "Egy klasszikus német búzasör, 5%-os alkoholtartalommal, banános és szegfűszeges jegyekkel.",
+    image: Blanc,
     rating: 4.9,
     price: 42000,
   },
   {
     id: 50,
-    name: "Heineken",
+    name: "Heineken KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Lager",
@@ -835,13 +874,13 @@ let ital_product = [
     alcoholPercentage: "5%",
     description:
       "A népszerű világos lager hordós változata, 5%-os alkoholtartalommal, könnyed és frissítő ízvilággal.",
-    image: Heineken,
+    image: hordo,
     rating: 4.5,
     price: 35000,
   },
   {
     id: 51,
-    name: "Paulaner Oktoberfestbier",
+    name: "Paulaner Oktoberfestbier KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Märzen",
@@ -857,7 +896,7 @@ let ital_product = [
   },
   {
     id: 52,
-    name: "Dreher Gold",
+    name: "Dreher Gold KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Lager",
@@ -873,7 +912,7 @@ let ital_product = [
   },
   {
     id: 53,
-    name: "Dreher Hidegkomlós",
+    name: "Dreher Hidegkomlós KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Lager",
@@ -889,7 +928,7 @@ let ital_product = [
   },
   {
     id: 54,
-    name: "Peroni Nastro Azzurro",
+    name: "Peroni Nastro Azzurro KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Lager",
@@ -899,13 +938,13 @@ let ital_product = [
     alcoholPercentage: "5.1%",
     description:
       "Az olasz Peroni Nastro Azzurro sör hordós változata, 5.1%-os alkoholtartalommal, könnyed, friss és citrusos ízjegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Peroni,
     rating: 4.8,
     price: 39000,
   },
   {
     id: 55,
-    name: "Floris Kriek",
+    name: "Floris Kriek KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Gyümölcsös sör",
@@ -915,29 +954,29 @@ let ital_product = [
     alcoholPercentage: "3.6%",
     description:
       "Egy belga meggyes sör, 3.6%-os alkoholtartalommal, frissítő gyümölcsös és enyhén savanykás ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Floris,
     rating: 4.9,
     price: 43000,
   },
   {
     id: 56,
-    name: "Hofbräu München Hefe Weizen",
+    name: "Hofbräu München Hefe Weizen KEG 20L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "Búzasör",
     brand: "Hofbräu",
     discount: "8%",
-    volume: "30l",
+    volume: "20l",
     alcoholPercentage: "5.1%",
     description:
       "A népszerű német búzasör hordós változata, 5.1%-os alkoholtartalommal, klasszikus banános és szegfűszeges jegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Hofbrau_munchen_hefe,
     rating: 4.7,
     price: 40000,
   },
   {
     id: 57,
-    name: "Mad Scientist Liquid Cocaine",
+    name: "Mad Scientist Liquid Cocaine KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "IPA",
@@ -947,13 +986,13 @@ let ital_product = [
     alcoholPercentage: "8%",
     description:
       "Egy erőteljes, magyar kézműves dupla IPA, 8%-os alkoholtartalommal, intenzív komlós és citrusos ízjegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Liquid_cocaine,
     rating: 4.8,
     price: 48000,
   },
   {
     id: 58,
-    name: "MONYO Flying Rabbit",
+    name: "MONYO Flying Rabbit KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "IPA",
@@ -963,13 +1002,13 @@ let ital_product = [
     alcoholPercentage: "6.5%",
     description:
       "A MONYO Brewing egyik legismertebb IPA-ja, 6.5%-os alkoholtartalommal, frissítő trópusi gyümölcsös és fenyős ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Flying_rabbit,
     rating: 4.7,
     price: 45000,
   },
   {
     id: 59,
-    name: "Horizont Gentle Bastard",
+    name: "Horizont Gentle Bastard KEG 30L",
     category: "alkoholos_italok",
     subcategory: "Sör",
     subsubcategory: "APA",
@@ -979,41 +1018,41 @@ let ital_product = [
     alcoholPercentage: "5.6%",
     description:
       "Egy könnyed, friss magyar kézműves American Pale Ale, 5.6%-os alkoholtartalommal, citrusos és fenyős jegyekkel.",
-    image: Bacardi_carta_negra,
+    image: Gentle_bastard,
     rating: 4.6,
-    price: 42000,
+    price: 62000,
   },
   {
     id: 60,
-    name: "First Craft Beer Kölsch",
+    name: "First Flower Power KEG 20L",
     category: "alkoholos_italok",
     subcategory: "Sör",
-    subsubcategory: "Kölsch",
+    subsubcategory: "Neipa",
     brand: "First Craft Beer",
     discount: "8%",
-    volume: "30l",
-    alcoholPercentage: "4.8%",
+    volume: "20l",
+    alcoholPercentage: "6.3%",
     description:
       "Egy magyar kézműves Kölsch stílusú sör, 4.8%-os alkoholtartalommal, könnyed, malátás és gyümölcsös ízvilággal.",
-    image: Bacardi_carta_negra,
+    image: Flower_power,
     rating: 4.7,
     price: 40000,
   },
   {
     id: 61,
-    name: "Balkezes Kicsi Mókus",
+    name: "Balkezes Birodalmi Bagoly KEG 20L",
     category: "alkoholos_italok",
     subcategory: "Sör",
-    subsubcategory: "Stout",
+    subsubcategory: "Porter",
     brand: "Balkezes",
     discount: "9%",
-    volume: "30l",
-    alcoholPercentage: "5.5%",
+    volume: "20l",
+    alcoholPercentage: "12%",
     description:
-      "Egy magyar kézműves mogyorós stout, 5.5%-os alkoholtartalommal, pörkölt malátás és mogyorós ízjegyekkel.",
-    image: Bacardi_carta_negra,
+      "Egy magyar kézműves mogyorós porter, 12%-os alkoholtartalommal, pörkölt malátás és mogyorós ízjegyekkel.",
+    image: Birodalmi_bagoly,
     rating: 4.8,
-    price: 47000,
+    price: 55000,
   },
   {
     id: 62,
@@ -1027,7 +1066,7 @@ let ital_product = [
     alcoholPercentage: "37.5%",
     description:
       "A Bacardi Carta Blanca egy klasszikus fehér rum, 37.5%-os alkoholtartalommal, tiszta és friss ízjegyekkel, ideális koktélokhoz.",
-    image: BacardiBlanca,
+    image: Bacardi_carta_blanca,
     rating: 4.6,
     price: 8000,
   },
@@ -1043,9 +1082,121 @@ let ital_product = [
     alcoholPercentage: "35%",
     description:
       "A Bacardi Spiced egy fűszeres rum, 35%-os alkoholtartalommal, gazdag vaníliás és fahéjas ízjegyekkel, remekül alkalmas koktélokhoz vagy önállóan fogyasztva.",
-    image: BacardiSpiced,
+    image: Bacardi_spiced,
     rating: 4.7,
     price: 8500,
+  },
+  {
+    id: 64,
+    name: "Bacardi Carta Negra",
+    category: "alkoholos_italok",
+    subcategory: "Rum",
+    subsubcategory: "Barna rum",
+    brand: "Bacardi",
+    discount: "6%",
+    volume: "700ml",
+    alcoholPercentage: "35%",
+    description:
+      "A Bacardi Spiced egy fűszeres rum, 35%-os alkoholtartalommal, gazdag vaníliás és fahéjas ízjegyekkel, remekül alkalmas koktélokhoz vagy önállóan fogyasztva.",
+    image: Bacardi_carta_negra,
+    rating: 4.7,
+    price: 9000,
+  },
+  {
+    id: 65,
+    name: "Jose Cuervo Especial Silver",
+    category: "alkoholos_italok",
+    subcategory: "Tequila",
+    subsubcategory: "Fehér tequila",
+    brand: "Jose Cuervo",
+    discount: "5%",
+    volume: "700ml",
+    alcoholPercentage: "38%",
+    description:
+      "A Jose Cuervo Especial Silver egy tiszta, friss fehér tequila, 38%-os alkoholtartalommal, enyhén citrusos és borsos ízjegyekkel, ideális koktélokhoz.",
+    image: Jose_silver,
+    rating: 4.6,
+    price: 8500,
+  },
+  {
+    id: 66,
+    name: "Patrón Añejo",
+    category: "alkoholos_italok",
+    subcategory: "Tequila",
+    subsubcategory: "Añejo tequila",
+    brand: "Patrón",
+    discount: "7%",
+    volume: "700ml",
+    alcoholPercentage: "40%",
+    description:
+      "A Patrón Añejo egy prémium érlelt tequila, 40%-os alkoholtartalommal, gazdag tölgyfás, vaníliás és karamellás jegyekkel, amely önmagában vagy koktélokban is kiváló.",
+    image: Patron_anejo,
+    rating: 4.9,
+    price: 18000,
+  },
+  {
+    id: 67,
+    name: "Olmeca Altos Reposado",
+    category: "alkoholos_italok",
+    subcategory: "Tequila",
+    subsubcategory: "Reposado tequila",
+    brand: "Olmeca",
+    discount: "6%",
+    volume: "700ml",
+    alcoholPercentage: "38%",
+    description:
+      "Az Olmeca Altos Reposado egy kiváló minőségű, érlelt tequila, 38%-os alkoholtartalommal, kiegyensúlyozott tölgyes és agávés ízekkel.",
+    image: Olmeca_reposado,
+    rating: 4.7,
+    price: 12000,
+  },
+  {
+    id: 68,
+    name: "1800 Añejo",
+    category: "alkoholos_italok",
+    subcategory: "Tequila",
+    subsubcategory: "Añejo tequila",
+    brand: "1800 Tequila",
+    discount: "6%",
+    volume: "700ml",
+    alcoholPercentage: "40%",
+    description:
+      "A 1800 Añejo egy érlelt tequila, 40%-os alkoholtartalommal, mély karamellás és fás jegyekkel, elegáns választás önálló fogyasztásra.",
+    image: Tequila_anejo,
+    rating: 4.9,
+    price: 19000,
+  },
+  {
+    id: 70,
+    name: "Beluga Noble Vodka",
+    category: "alkoholos_italok",
+    subcategory: "Vodka",
+    subsubcategory: "Tiszta vodka",
+    brand: "Beluga",
+    discount: "7%",
+    volume: "700ml",
+    alcoholPercentage: "40%",
+    description:
+      "A Beluga Noble Vodka egy prémium orosz vodka, 40%-os alkoholtartalommal, lágy és gazdag ízvilággal, amely önmagában vagy koktélokban is tökéletesen megállja a helyét.",
+    image: Beluga,
+    rating: 4.9,
+    price: 17000,
+  },
+  {
+    id: 71,
+    name: "Ciroc Vodka",
+    category: "alkoholos_italok",
+    subcategory: "Vodka",
+    subsubcategory: "Tiszta vodka",
+    brand: "Ciroc",
+    discount: "6%",
+    volume: "700ml",
+    alcoholPercentage: "40%",
+    description:
+      "A Ciroc Vodka egy francia prémium vodka, amely szőlőből készül, 40%-os alkoholtartalommal, sima és gyümölcsös ízjegyekkel.",
+    image: Ciroc,
+    rating: 4.8,
+    price: 16000,
   },
 ];
 

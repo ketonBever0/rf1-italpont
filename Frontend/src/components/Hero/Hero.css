@@ -3,6 +3,9 @@
   background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
   display: flex;
 }
+.hero a {
+  text-decoration: none;
+}
 .hero-left {
   flex: 1;
   display: flex;
@@ -42,8 +45,10 @@
   margin-top: 30px;
   background: #ff4141;
   font-size: 22px;
+  color: white;
   font-weight: 500;
 }
+
 .hero-right {
   flex: 1;
   display: flex;

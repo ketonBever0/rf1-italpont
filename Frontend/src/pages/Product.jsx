@@ -7,15 +7,15 @@ import DescriptionBox from "../Components/DescriptionBox/DescriptionBox";
 
 const Product = () => {
   const { ital_product } = useContext(ShopContext);
-  const { productId } = useParams();
-
-  const product = ital_product.find((e) => e.id === Number(productId));
+  const { productName } = useParams();
+  console.log(productName);
+  const product = ital_product.find((e) => e.name === productName);
 
   return (
     <div>
       <Breadcrum product={product} />
       <ProductDisplay product={product} />
-      <DescriptionBox />
+      {/*<DescriptionBox product={product}/>*/}
     </div>
   );
 };

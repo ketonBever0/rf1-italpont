@@ -8,13 +8,11 @@ import { useParams } from "react-router-dom";
 const SubCategory = () => {
   const { ital_product } = useContext(ShopContext);
   const url_category = useParams();
-  console.log(url_category.subcategory);
   return (
     <div className="shop-category">
-      {/*<img className="shopcategory-banner" src={props.banner} alt="" />*/}
       <div className="shopcategory-indexSort">
         <p>
-          <span>Showing 1-12</span> out of 36 products
+          <span>Showing 1-12</span> out of {ital_product.length} products
         </p>
         <div className="shopcategory-sort">
           Sort by <img src={dropdown_icon} alt="" />
@@ -28,6 +26,8 @@ const SubCategory = () => {
                 key={i}
                 id={item.id}
                 name={item.name}
+                category={item.category}
+                subcategory={item.subcategory}
                 image={item.image}
                 price={item.price}
                 volume={item.volume}
@@ -38,7 +38,6 @@ const SubCategory = () => {
           }
         })}
       </div>
-      <div className="shopcategory-loadmore">Explore more</div>
     </div>
   );
 };

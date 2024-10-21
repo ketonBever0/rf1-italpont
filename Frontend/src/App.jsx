@@ -11,7 +11,6 @@ import LoginSignup from "./pages/LoginSignup";
 import SubCategory from "./pages/SubCategory";
 import Category from "./pages/Category";
 import Main from "./pages/Main";
-import men_banner from "./assets/banner_mens.png";
 
 function App() {
   return (
@@ -20,30 +19,13 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/:category" element={<Category />} />
+          <Route path="/:category/:subcategory" element={<SubCategory />} />
           <Route
-            path="/alkoholos_italok"
-            element={<Category category="alkoholos_italok" />}
-          />
-          <Route
-            path="/alkoholos_italok/:subcategory"
-            element={<SubCategory />}
+            path="/:category/:subcategory/:productName"
+            element={<Product />}
           />
 
-          <Route path="/uditok" element={<Category category="uditok" />}>
-            <Route path=":subcategoryId" element={<SubCategory />} />
-            <Route path=":subcategoryId/:productId" element={<Product />} />
-          </Route>
-          <Route
-            path="/kiegeszitok"
-            element={<Category category="kiegeszitok" />}
-          >
-            <Route path=":subcategoryId" element={<SubCategory />} />
-            <Route path=":subcategoryId/:productId" element={<Product />} />
-          </Route>
-
-          <Route path="/product" element={<Product />}>
-            <Route path=":productId" element={<Product />} />
-          </Route>
           <Route path="/regisztracio" element={<Signup />} />
           <Route path="/bejelentkezes" element={<LoginSignup />} />
           <Route path="/kosar" element={<Cart />} />

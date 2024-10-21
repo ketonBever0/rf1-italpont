@@ -13,9 +13,9 @@ import {
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
 import { PrismaService } from "src/prisma/prisma.service";
-import { LoginDto, RegistrationDto } from "./dto";
+import { LoginDto, RegistrationDto, UpdateMeDto, UpdatePasswordDto } from "./dto";
 import * as argon from "argon2";
-import { Role } from "@prisma/client";
+import { Role, User } from "@prisma/client";
 
 @Injectable()
 export class AuthService {
@@ -25,17 +25,37 @@ export class AuthService {
     private config: ConfigService,
   ) {}
 
-  async findByOne(id: number, email: string) {
-    const user = await this.prisma.user.findUnique({
-      where: { id: id, email: email },
+  async signToken(user: User) {
+    const payload = {
+      sub: user.id,
+      email: user.email,
+      role: user.role,
+    };
+
+    return this.jwt.signAsync(payload, {
+      expiresIn: "30m",
+      secret: this.config.get("JWT_SECRET"),
     });
-    if (!user) throw new NotFoundException("User not found!");
-    delete user.password;
-    return user;
   }
 
-  async findAll() {
-    return await this.prisma.user.findMany();
+  async login(dto: LoginDto) {
+    try {
+      const user = await this.prisma.user.findUnique({
+        where: { email: dto.email },
+      });
+
+      if (user) {
+        if (await argon.verify(user.password, dto.password)) {
+          const token = await this.signToken(user);
+          delete user.password;
+          return { token, user };
+        } else {
+          throw new ForbiddenException("Incorrect password!");
+        }
+      }
+    } catch (error) {
+      throw new BadRequestException(error.message);
+    }
   }
 
   async registration(dto: RegistrationDto) {
@@ -59,35 +79,44 @@ export class AuthService {
     }
   }
 
-  async login(dto: LoginDto) {
-    try {
-      const user = await this.prisma.user.findUnique({
-        where: { email: dto.email },
-      });
-
-      if (user) {
-        if (await argon.verify(user.password, dto.password)) {
-          const token = await this.signToken(user.id, user.email);
-          delete user.password;
-          return { token, user };
-        } else {
-          throw new ForbiddenException("Incorrect password!");
-        }
-      }
-    } catch (error) {
-      throw new BadRequestException(error.message);
-    }
+  async findByOne(id: number, email: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: id, email: email },
+    });
+    if (!user) throw new NotFoundException("User not found!");
+    delete user.password;
+    return user;
   }
 
-  signToken(userId: number, email: string): Promise<string> {
-    const payload = {
-      sub: userId,
-      email,
-    };
+  async updateMe(id: number, email: string, dto: UpdateMeDto) {
+    const user = await this.prisma.user.update({
+      where: { id: id, email: email },
+      data: dto,
+    });
+    delete user.password;
+    return { message: "User updated!", user };
+  }
 
-    return this.jwt.signAsync(payload, {
-      expiresIn: "30m",
-      secret: this.config.get("JWT_SECRET"),
+  // TODO: Create updatePassword function
+  // async updatePassword(id: number, email: string, dto: UpdatePasswordDto) {
+  //   const user = await 
+  // }
+
+  async findAll() {
+    return await this.prisma.user.findMany({
+      select: {
+        id: true,
+        email: true,
+        lastName: true,
+        firstName: true,
+        birthDate: true,
+        password: false,
+        nick: true,
+        postcode: true,
+        city: true,
+        address: true,
+        mobile: true,
+      },
     });
   }
 }

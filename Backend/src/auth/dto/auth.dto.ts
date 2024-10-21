@@ -5,7 +5,7 @@ import {
   IsNotEmpty,
   IsString,
   IsStrongPassword,
-} from 'class-validator';
+} from "class-validator";
 
 export class RegistrationDto {
   @IsNotEmpty()
@@ -53,4 +53,46 @@ export class LoginDto {
 
   @IsString()
   password: string;
+}
+
+export class UpdateMeDto {
+  @IsNotEmpty()
+  @IsString()
+  lastName: string;
+
+  @IsNotEmpty()
+  @IsString()
+  firstName: string;
+
+  @IsDateString()
+  birthDate: Date;
+
+  nick: string;
+
+  @IsNotEmpty()
+  @IsString()
+  postcode: string;
+
+  @IsNotEmpty()
+  @IsString()
+  city: string;
+
+  @IsNotEmpty()
+  @IsString()
+  address: string;
+
+  @IsNotEmpty()
+  @IsString()
+  mobile: string;
+}
+
+export class UpdatePasswordDto {
+  @IsNotEmpty()
+  @IsString()
+  oldPassword: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @IsStrongPassword()
+  newPassword: string;
 }

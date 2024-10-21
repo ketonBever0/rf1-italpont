@@ -8,15 +8,18 @@ import {
   Get,
   HttpStatus,
   NotFoundException,
+  Patch,
   Post,
   Res,
   UseGuards,
 } from "@nestjs/common";
 import { AuthService } from "./auth.service";
-import { LoginDto, RegistrationDto } from "./dto";
+import { LoginDto, RegistrationDto, UpdateMeDto } from "./dto";
 import { Response } from "express";
-import { User } from "./auth.decorator";
-import { AuthGuard } from "./auth.guard";
+import { Roles, User } from "./auth.decorator";
+import { AuthGuard } from "./guard/auth.guard";
+import { RoleGuard } from "./guard/role.guard";
+import { User as UserModel } from "@prisma/client";
 
 @Controller("/auth")
 export class AuthController {
@@ -45,16 +48,23 @@ export class AuthController {
     }
   }
 
-  @UseGuards(AuthGuard)
+  @Get("/all")
+  @UseGuards(AuthGuard, RoleGuard)
+  @Roles("ADMIN", "MODERATOR")
+  async getAll() {
+    return this.authService.findAll();
+  }
+
   @Get("/me")
-  async getMe(@User("id") user: any) {
+  @UseGuards(AuthGuard)
+  async getMe(@User() user: UserModel) {
     // console.log(user);
     return await this.authService.findByOne(user.id, user.email);
   }
 
+  @Patch("/me")
   @UseGuards(AuthGuard)
-  @Get("/all")
-  async getAll() {
-    return this.authService.findAll();
+  async updateMe(@User("id") user: any, @Body() dto: UpdateMeDto) {
+    return await this.authService.updateMe(user.id, user.email, dto);
   }
 }

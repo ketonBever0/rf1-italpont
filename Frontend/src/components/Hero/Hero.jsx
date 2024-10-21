@@ -1,8 +1,7 @@
 import React from "react";
 import "./Hero.css";
-import hand_icon from "../../Assets/hand_icon.png";
 import arrow_icon from "../../Assets/arrow.png";
-import hero_img from "../../Assets/Havana_club_1519.png";
+import hero_img from "../../Assets/Redbreast_12.png";
 
 const Hero = () => {
   return (

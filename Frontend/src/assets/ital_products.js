@@ -1,7 +1,42 @@
-import categories from "./categories";
-import img from "./Diplomatico.png";
+import Diplomatico from "./Diplomatico.png";
+import Mount_gay_xo from "./Mount_gay_xo.png";
+import Zacapa_23 from "./Zacapa_23.png";
+import Plantation_xo from "./Plantation_xo.png";
+import El_dorado_15 from "./El_dorado_15.png";
 import BacardiBlanca from "./product_1.png";
 import BacardiSpiced from "./product_2.png";
+
+import Monkey_47 from "./Monkey_47.png";
+import Hendricks from "./Hendricks.png";
+import Malfy_rosa from "./Malfy_rosa.png";
+import Botanist from "./Botanist.png";
+import Sipssmith from "./Sipssmith.png";
+import Gin_mare from "./Gin_mare.png";
+
+import Macallan_sherry_oak from "./Macallan_sherry_oak_18.png";
+import Jameson from "./Jameson.png";
+import Glenfiddich_21 from "./Glenfiddich_21_reserva.png";
+import Lagavulin_16 from "./Lagavulin_16.png";
+import Redbreast_12 from "./Redbreast_12.png";
+
+import Don_julio from "./Don_julio.png";
+
+import Krug_grande from "./Krug_grande.png";
+import Tokai_aszu_6 from "./Tokaji_aszu_6.png";
+import Bolyki_egri_bikavér from "./Bolyki_egri_bikaver.png";
+import Gere_kopar from "./Gere_kopar1.png";
+import Bolyki_sauvignon_blanc from "./Bolyki_sauvignon_blanc.png";
+import Sauska_rose from "./Sauska_rose.png";
+
+import Bacardi_carta_negra from "./Bacardi_negra.png";
+
+import Guiness from "./Guiness.png";
+import Pilsner_urquell from "./Pilsner_urquell.png";
+import Weihenstephaner_hefe from "./Heihenstephaner_hefe.png";
+import Heineken from "./Heineken.png";
+import Paulaner_oktoberfest from "./Paulaner_oktoberfest.png";
+import Dreher_gold from "./Dreher_gold.png";
+import Dreher_hk from "./Dreher_hk.png";
 
 let ital_product = [
   {
@@ -16,7 +51,7 @@ let ital_product = [
     alcoholPercentage: "12%",
     description:
       "A 12% alcohol-contented Sauvignon Blanc garnished with rosemary, thyme, and herbs.",
-    image: img,
+    image: Bolyki_sauvignon_blanc,
     rating: 4.5,
     price: 2100,
   },
@@ -32,7 +67,7 @@ let ital_product = [
     alcoholPercentage: "5%",
     description:
       "Egy klasszikus világos sör, 5% alkoholtartalommal, frissítő ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.7,
     price: 300.0,
   },
@@ -48,7 +83,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "A klasszikus Tennessee whiskey, 40%-os alkoholtartalommal, édeskés és tölgyfás ízjegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.8,
     price: 11000.0,
   },
@@ -64,7 +99,7 @@ let ital_product = [
     alcoholPercentage: "17%",
     description:
       "Egy lágy, tejszínes likőr, 17%-os alkoholtartalommal, tökéletes desszertek mellé vagy önmagában.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.6,
     price: 5500.0,
   },
@@ -80,7 +115,7 @@ let ital_product = [
     alcoholPercentage: "15%",
     description:
       "Az ikonikus Martini Rosso, 15%-os alkoholtartalommal, fűszeres és édeskés ízjegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.3,
     price: 4000.0,
   },
@@ -96,7 +131,7 @@ let ital_product = [
     alcoholPercentage: "12%",
     description:
       "Egy prémium francia pezsgő, 12%-os alkoholtartalommal, citrusos és virágos jegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.9,
     price: 18000.0,
   },
@@ -112,7 +147,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy prémium francia vodka, 40%-os alkoholtartalommal, lágy, tiszta ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.8,
     price: 12000.0,
   },
@@ -128,7 +163,7 @@ let ital_product = [
     alcoholPercentage: "12.5%",
     description:
       "Törley Excellence Brut, 12.5%-os alkoholtartalommal, frissítő és száraz pezsgő.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.4,
     price: 3500.0,
   },
@@ -144,7 +179,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "A híres Black Label, 40%-os alkoholtartalommal, komplex és füstös ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.7,
     price: 9500.0,
   },
@@ -160,7 +195,7 @@ let ital_product = [
     alcoholPercentage: "13.5%",
     description:
       "Egy prémium vörösbor Bordeaux-ból, 13.5%-os alkoholtartalommal, mély, gazdag ízekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.9,
     price: 220000.0,
   },
@@ -176,7 +211,7 @@ let ital_product = [
     alcoholPercentage: "25%",
     description:
       "Egy klasszikus olasz keserű likőr, 25%-os alkoholtartalommal, citrusos és fűszeres jegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.5,
     price: 7000.0,
   },
@@ -192,7 +227,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "A híres svéd vodka, 40%-os alkoholtartalommal, tiszta és semleges ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.6,
     price: 5000.0,
   },
@@ -208,7 +243,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy prémium mexikói tequila, 40%-os alkoholtartalommal, friss és citrusos ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.8,
     price: 16000.0,
   },
@@ -224,7 +259,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy klasszikus prémium gin, 40%-os alkoholtartalommal, borókás és citrusos ízekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.7,
     price: 7000.0,
   },
@@ -240,7 +275,7 @@ let ital_product = [
     alcoholPercentage: "37.5%",
     description:
       "Egy gyümölcsös ízesített gin, 37.5%-os alkoholtartalommal, eper és málna jegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.4,
     price: 6500.0,
   },
@@ -256,7 +291,7 @@ let ital_product = [
     alcoholPercentage: "35%",
     description:
       "Egy fűszeres karibi rum, 35%-os alkoholtartalommal, vaníliás és fahéjas ízekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.6,
     price: 6500.0,
   },
@@ -272,7 +307,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy prémium francia cognac, 40%-os alkoholtartalommal, gazdag és fás ízjegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.8,
     price: 15000.0,
   },
@@ -288,7 +323,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy klasszikus ír whiskey, 40%-os alkoholtartalommal, sima és édes ízvilággal.",
-    image: img,
+    image: Jameson,
     rating: 4.7,
     price: 8000.0,
   },
@@ -304,7 +339,7 @@ let ital_product = [
     alcoholPercentage: "41%",
     description:
       "Egy olasz ízesített gin, 41%-os alkoholtartalommal, grapefruit és rebarbara ízekkel.",
-    image: img,
+    image: Malfy_rosa,
     rating: 4.6,
     price: 8500.0,
   },
@@ -320,7 +355,7 @@ let ital_product = [
     alcoholPercentage: "38%",
     description:
       "Egy prémium añejo tequila, 38%-os alkoholtartalommal, mély karamellás és fás ízjegyekkel.",
-    image: img,
+    image: Don_julio,
     rating: 4.9,
     price: 18000.0,
   },
@@ -336,7 +371,7 @@ let ital_product = [
     alcoholPercentage: "12%",
     description:
       "Egy prémium francia pezsgő, 12%-os alkoholtartalommal, komplex és gazdag ízvilággal.",
-    image: img,
+    image: Krug_grande,
     rating: 4.9,
     price: 50000.0,
   },
@@ -352,23 +387,23 @@ let ital_product = [
     alcoholPercentage: "11%",
     description:
       "A híres 6 puttonyos Tokaji Aszú, 11%-os alkoholtartalommal, mély, édes és gazdag ízvilággal.",
-    image: img,
+    image: Tokai_aszu_6,
     rating: 4.9,
     price: 18000.0,
   },
   {
     id: 23,
-    name: "Egri Bikavér 2019",
+    name: "Bolyki Egri Bikavér 2019",
     category: "alkoholos_italok",
     subcategory: "Bor",
     subsubcategory: "Vörösbor",
-    brand: "Egri",
+    brand: "Bolyki",
     discount: "12%",
     volume: "750 ml",
     alcoholPercentage: "13%",
     description:
       "Egy klasszikus magyar vörösbor, 13%-os alkoholtartalommal, erős, fűszeres és gyümölcsös jegyekkel.",
-    image: img,
+    image: Bolyki_egri_bikavér,
     rating: 4.7,
     price: 3500.0,
   },
@@ -384,7 +419,7 @@ let ital_product = [
     alcoholPercentage: "12%",
     description:
       "Egy friss és savas fehérbor, 12%-os alkoholtartalommal, citrusos és ásványos ízjegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.5,
     price: 4800.0,
   },
@@ -400,7 +435,7 @@ let ital_product = [
     alcoholPercentage: "12.5%",
     description:
       "Egy tokaji száraz furmint, 12.5%-os alkoholtartalommal, friss, gyümölcsös és ásványos ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.6,
     price: 3200.0,
   },
@@ -416,7 +451,7 @@ let ital_product = [
     alcoholPercentage: "13.5%",
     description:
       "Egy világhírű bordeaux-i vörösbor, 13.5%-os alkoholtartalommal, komplex, gazdag ízjegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.9,
     price: 250000.0,
   },
@@ -432,7 +467,7 @@ let ital_product = [
     alcoholPercentage: "14.5%",
     description:
       "Egy ikonikus villányi cuvée, 14.5%-os alkoholtartalommal, erőteljes, fás és fűszeres ízvilággal.",
-    image: img,
+    image: Gere_kopar,
     rating: 4.8,
     price: 13000.0,
   },
@@ -448,7 +483,7 @@ let ital_product = [
     alcoholPercentage: "13%",
     description:
       "Egy kiváló tokaji furmint, 13%-os alkoholtartalommal, ásványos és gyümölcsös jegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.9,
     price: 9000.0,
   },
@@ -464,7 +499,7 @@ let ital_product = [
     alcoholPercentage: "14%",
     description:
       "Egy gazdag és mély cabernet franc Villányból, 14%-os alkoholtartalommal, fűszeres és gyümölcsös ízekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.7,
     price: 6000.0,
   },
@@ -480,7 +515,7 @@ let ital_product = [
     alcoholPercentage: "12.5%",
     description:
       "Egy könnyed és friss rozé, 12.5%-os alkoholtartalommal, piros bogyós gyümölcsök ízével.",
-    image: img,
+    image: Sauska_rose,
     rating: 4.5,
     price: 3500.0,
   },
@@ -496,7 +531,7 @@ let ital_product = [
     alcoholPercentage: "14.5%",
     description:
       "Egy prémium cuvée Villányból, 14.5%-os alkoholtartalommal, gazdag és bársonyos ízekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.8,
     price: 11000.0,
   },
@@ -512,7 +547,7 @@ let ital_product = [
     alcoholPercentage: "43%",
     description:
       "Egy prémium japán single malt whiskey, 43%-os alkoholtartalommal, gazdag gyümölcsös és tölgyes ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.9,
     price: 45000.0,
   },
@@ -528,7 +563,7 @@ let ital_product = [
     alcoholPercentage: "43%",
     description:
       "Egy skót single malt whiskey, 43%-os alkoholtartalommal, sherrys jegyekkel, gazdag és komplex ízvilággal.",
-    image: img,
+    image: Macallan_sherry_oak,
     rating: 4.9,
     price: 100000.0,
   },
@@ -544,9 +579,9 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy 21 éves single malt whiskey, rum hordós érleléssel, 40%-os alkoholtartalommal, édes, gyümölcsös jegyekkel.",
-    image: img,
+    image: Glenfiddich_21,
     rating: 4.8,
-    price: 75000.0,
+    price: 91000.0,
   },
   {
     id: 35,
@@ -560,7 +595,7 @@ let ital_product = [
     alcoholPercentage: "43%",
     description:
       "Egy erőteljes, füstös skót whiskey, 43%-os alkoholtartalommal, gazdag és intenzív ízvilággal.",
-    image: img,
+    image: Lagavulin_16,
     rating: 4.7,
     price: 45000.0,
   },
@@ -576,7 +611,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy klasszikus ír single pot still whiskey, 40%-os alkoholtartalommal, gyümölcsös és fűszeres jegyekkel.",
-    image: img,
+    image: Redbreast_12,
     rating: 4.8,
     price: 22000.0,
   },
@@ -592,7 +627,7 @@ let ital_product = [
     alcoholPercentage: "47%",
     description:
       "Egy német prémium gin 47%-os alkoholtartalommal, 47 különböző növénnyel és fűszerrel.",
-    image: img,
+    image: Monkey_47,
     rating: 4.9,
     price: 15000.0,
   },
@@ -608,7 +643,7 @@ let ital_product = [
     alcoholPercentage: "41.4%",
     description:
       "Egy különleges skót gin, 41.4%-os alkoholtartalommal, rózsa és uborka egyedi jegyeivel.",
-    image: img,
+    image: Hendricks,
     rating: 4.8,
     price: 12000.0,
   },
@@ -624,7 +659,7 @@ let ital_product = [
     alcoholPercentage: "46%",
     description:
       "Egy prémium gin Islay szigetéről, 46%-os alkoholtartalommal, 22 helyi gyógynövénnyel.",
-    image: img,
+    image: Botanist,
     rating: 4.7,
     price: 13500.0,
   },
@@ -640,7 +675,7 @@ let ital_product = [
     alcoholPercentage: "41.6%",
     description:
       "Egy klasszikus londoni száraz gin, 41.6%-os alkoholtartalommal, borókás és citrusos ízjegyekkel.",
-    image: img,
+    image: Sipssmith,
     rating: 4.6,
     price: 10000.0,
   },
@@ -656,7 +691,7 @@ let ital_product = [
     alcoholPercentage: "42.7%",
     description:
       "Egy mediterrán ihletésű gin, 42.7%-os alkoholtartalommal, rozmaring, olíva és bazsalikom jegyekkel.",
-    image: img,
+    image: Gin_mare,
     rating: 4.7,
     price: 13500.0,
   },
@@ -672,7 +707,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy venezuelai prémium rum, 40%-os alkoholtartalommal, édes, karamelles és fás jegyekkel.",
-    image: img,
+    image: Diplomatico,
     rating: 4.9,
     price: 15000.0,
   },
@@ -688,7 +723,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy guatemalai prémium rum, 23 éves érleléssel, 40%-os alkoholtartalommal, mély és gazdag ízekkel.",
-    image: img,
+    image: Zacapa_23,
     rating: 4.8,
     price: 18000.0,
   },
@@ -704,7 +739,7 @@ let ital_product = [
     alcoholPercentage: "43%",
     description:
       "Egy barbadosi prémium rum, 43%-os alkoholtartalommal, komplex és fűszeres ízjegyekkel.",
-    image: img,
+    image: Mount_gay_xo,
     rating: 4.7,
     price: 20000.0,
   },
@@ -720,7 +755,7 @@ let ital_product = [
     alcoholPercentage: "43%",
     description:
       "Egy guyanai prémium rum, 15 éves érleléssel, 43%-os alkoholtartalommal, gazdag, fás és mézes ízjegyekkel.",
-    image: img,
+    image: El_dorado_15,
     rating: 4.8,
     price: 17000.0,
   },
@@ -736,7 +771,7 @@ let ital_product = [
     alcoholPercentage: "40%",
     description:
       "Egy barbadosi rum, 40%-os alkoholtartalommal, gazdag és komplex ízvilággal, trópusi gyümölcsök és vanília jegyekkel.",
-    image: img,
+    image: Plantation_xo,
     rating: 4.9,
     price: 16000.0,
   },
@@ -752,7 +787,7 @@ let ital_product = [
     alcoholPercentage: "4.2%",
     description:
       "Az ikonikus ír stout hordós változata, 4.2%-os alkoholtartalommal, gazdag, pörkölt maláta ízjegyekkel.",
-    image: img,
+    image: Guiness,
     rating: 4.8,
     price: 40000,
   },
@@ -768,7 +803,7 @@ let ital_product = [
     alcoholPercentage: "4.4%",
     description:
       "A cseh pilseni stílusú sör hordós változata, 4.4%-os alkoholtartalommal, könnyed, friss és kesernyés ízzel.",
-    image: img,
+    image: Pilsner_urquell,
     rating: 4.7,
     price: 38000,
   },
@@ -784,7 +819,7 @@ let ital_product = [
     alcoholPercentage: "5.4%",
     description:
       "Egy klasszikus német búzasör, 5.4%-os alkoholtartalommal, banános és szegfűszeges jegyekkel.",
-    image: img,
+    image: Weihenstephaner_hefe,
     rating: 4.9,
     price: 42000,
   },
@@ -800,7 +835,7 @@ let ital_product = [
     alcoholPercentage: "5%",
     description:
       "A népszerű világos lager hordós változata, 5%-os alkoholtartalommal, könnyed és frissítő ízvilággal.",
-    image: img,
+    image: Heineken,
     rating: 4.5,
     price: 35000,
   },
@@ -816,7 +851,7 @@ let ital_product = [
     alcoholPercentage: "6%",
     description:
       "A híres német Oktoberfest sör, 6%-os alkoholtartalommal, gazdag malátás ízvilággal.",
-    image: img,
+    image: Paulaner_oktoberfest,
     rating: 4.7,
     price: 45000,
   },
@@ -832,7 +867,7 @@ let ital_product = [
     alcoholPercentage: "5.2%",
     description:
       "A Dreher Gold hordós változata, 5.2%-os alkoholtartalommal, gazdag malátás és frissítő ízvilággal.",
-    image: img,
+    image: Dreher_gold,
     rating: 4.6,
     price: 37000,
   },
@@ -848,7 +883,7 @@ let ital_product = [
     alcoholPercentage: "4.8%",
     description:
       "A Dreher Hidegkomlós hordós változata, 4.8%-os alkoholtartalommal, különleges hidegkomlós technológiával készült, friss és komlós ízvilággal.",
-    image: img,
+    image: Dreher_hk,
     rating: 4.7,
     price: 36000,
   },
@@ -864,7 +899,7 @@ let ital_product = [
     alcoholPercentage: "5.1%",
     description:
       "Az olasz Peroni Nastro Azzurro sör hordós változata, 5.1%-os alkoholtartalommal, könnyed, friss és citrusos ízjegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.8,
     price: 39000,
   },
@@ -880,7 +915,7 @@ let ital_product = [
     alcoholPercentage: "3.6%",
     description:
       "Egy belga meggyes sör, 3.6%-os alkoholtartalommal, frissítő gyümölcsös és enyhén savanykás ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.9,
     price: 43000,
   },
@@ -896,7 +931,7 @@ let ital_product = [
     alcoholPercentage: "5.1%",
     description:
       "A népszerű német búzasör hordós változata, 5.1%-os alkoholtartalommal, klasszikus banános és szegfűszeges jegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.7,
     price: 40000,
   },
@@ -912,7 +947,7 @@ let ital_product = [
     alcoholPercentage: "8%",
     description:
       "Egy erőteljes, magyar kézműves dupla IPA, 8%-os alkoholtartalommal, intenzív komlós és citrusos ízjegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.8,
     price: 48000,
   },
@@ -928,7 +963,7 @@ let ital_product = [
     alcoholPercentage: "6.5%",
     description:
       "A MONYO Brewing egyik legismertebb IPA-ja, 6.5%-os alkoholtartalommal, frissítő trópusi gyümölcsös és fenyős ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.7,
     price: 45000,
   },
@@ -944,7 +979,7 @@ let ital_product = [
     alcoholPercentage: "5.6%",
     description:
       "Egy könnyed, friss magyar kézműves American Pale Ale, 5.6%-os alkoholtartalommal, citrusos és fenyős jegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.6,
     price: 42000,
   },
@@ -960,7 +995,7 @@ let ital_product = [
     alcoholPercentage: "4.8%",
     description:
       "Egy magyar kézműves Kölsch stílusú sör, 4.8%-os alkoholtartalommal, könnyed, malátás és gyümölcsös ízvilággal.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.7,
     price: 40000,
   },
@@ -976,7 +1011,7 @@ let ital_product = [
     alcoholPercentage: "5.5%",
     description:
       "Egy magyar kézműves mogyorós stout, 5.5%-os alkoholtartalommal, pörkölt malátás és mogyorós ízjegyekkel.",
-    image: img,
+    image: Bacardi_carta_negra,
     rating: 4.8,
     price: 47000,
   },

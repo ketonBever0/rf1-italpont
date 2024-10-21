@@ -9,8 +9,8 @@ const Main = () => {
   return (
     <div>
       <Hero />
-      {/*<Popular />
-      <Offers />*/}
+      <Popular />
+      <Offers />
       <Newsletter />
     </div>
   )

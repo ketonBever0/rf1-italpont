@@ -1,66 +1,68 @@
-import BacardiBlanca from "./product_1.png";
+import Diplomatico from "./diplomatico.png";
+import Bolyki_egri_bikaver from "./Bolyki_egri_bikaver.png";
 
 let categories = [
-  { category: "alkoholos_italok", subcategory: "Sör", image: BacardiBlanca },
+  { category: "alkoholos_italok", subcategory: "Sör", image: Diplomatico },
+  { category: "alkoholos_italok", subcategory: "Bor", image: Bolyki_egri_bikaver },
   {
     category: "alkoholos_italok",
     subcategory: "Tequila",
-    image: BacardiBlanca,
+    image: Diplomatico,
   },
   {
-    id: 1,
     category: "alkoholos_italok",
     subcategory: "Gin",
-    image: BacardiBlanca,
+    image: Diplomatico,
   },
   {
-    id: 2,
     category: "alkoholos_italok",
     subcategory: "Rum",
-    image: BacardiBlanca,
+    image: Diplomatico,
   },
   {
-    id: 3,
     category: "alkoholos_italok",
-    subcategory: "Whisky",
-    image: BacardiBlanca,
+    subcategory: "Whiskey",
+    image: Diplomatico,
   },
   {
-    id: 4,
     category: "alkoholos_italok",
     subcategory: "Cognac",
-    image: BacardiBlanca,
+    image: Diplomatico,
   },
   {
-    id: 5,
     category: "alkoholos_italok",
     subcategory: "Likőr",
-    image: BacardiBlanca,
+    image: Diplomatico,
   },
   {
-    id: 6,
     category: "alkoholos_italok",
     subcategory: "Vodka",
-    image: BacardiBlanca,
+    image: Diplomatico,
   },
   {
-    id: 7,
     category: "alkoholos_italok",
     subcategory: "Pezsgő",
-    image: BacardiBlanca,
+    image: Diplomatico,
   },
   {
-    id: 8,
     category: "alkoholos_italok",
     subcategory: "Vermut",
-    image: BacardiBlanca,
+    image: Diplomatico,
   },
-  { id: 9, category: "uditok", subcategory: "Szénsavas", image: BacardiBlanca },
   {
-    id: 10,
+    category: "uditok",
+    subcategory: "Szénsavas",
+    image: Diplomatico,
+  },
+  {
     category: "kiegeszitok",
     subcategory: "Eszközök",
-    image: BacardiBlanca,
+    image: Diplomatico,
+  },
+  {
+    category: "alkoholos_italok",
+    subcategory: "Bor",
+    image: Diplomatico,
   },
 ];
 

@@ -18,10 +18,12 @@ const Category = (props) => {
         </div>
       </div>
       <div className="shopcategory-products">
-        {categories.map((item) => {
+        {categories.map((item, i) => {
           if (props.category === item.category) {
             return (
               <Categories
+                key={i}
+                id={item.id}
                 category={item.category}
                 subcategory={item.subcategory}
                 image={item.image}

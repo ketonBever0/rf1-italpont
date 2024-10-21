@@ -7,7 +7,8 @@ import { useParams } from "react-router-dom";
 
 const SubCategory = () => {
   const { ital_product } = useContext(ShopContext);
-  const { url_category }= useParams();
+  const url_category = useParams();
+  console.log(url_category.subcategory);
   return (
     <div className="shop-category">
       {/*<img className="shopcategory-banner" src={props.banner} alt="" />*/}
@@ -21,7 +22,7 @@ const SubCategory = () => {
       </div>
       <div className="shopcategory-products">
         {ital_product.map((item, i) => {
-          if (url_category.subcategoryId === item.category) {
+          if (url_category.subcategory === item.subcategory) {
             return (
               <Item
                 key={i}

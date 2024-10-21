@@ -20,11 +20,15 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/alkoholos_italok"element={<Category category="alkoholos_italok" />}>
-            <Route path="/alkoholos_italok/:subcategoryId" element={<SubCategory />} >
-              <Route path=":productId" element={<Product />} />
-            </Route>
-          </Route>
+          <Route
+            path="/alkoholos_italok"
+            element={<Category category="alkoholos_italok" />}
+          />
+          <Route
+            path="/alkoholos_italok/:subcategory"
+            element={<SubCategory />}
+          />
+
           <Route path="/uditok" element={<Category category="uditok" />}>
             <Route path=":subcategoryId" element={<SubCategory />} />
             <Route path=":subcategoryId/:productId" element={<Product />} />
@@ -36,7 +40,7 @@ function App() {
             <Route path=":subcategoryId" element={<SubCategory />} />
             <Route path=":subcategoryId/:productId" element={<Product />} />
           </Route>
-          
+
           <Route path="/product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>

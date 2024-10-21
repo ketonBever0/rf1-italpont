@@ -10,7 +10,6 @@ const Categories = (props) => {
       </Link>
       <div className="item-prices">
         <div className="item-price">{props.subcategory}</div>
-        
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import {
   ForbiddenException,
   HttpStatus,
   Injectable,
+  NotFoundException,
 } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
@@ -23,6 +24,19 @@ export class AuthService {
     private jwt: JwtService,
     private config: ConfigService,
   ) {}
+
+  async findByOne(id: number, email: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: id, email: email },
+    });
+    if (!user) throw new NotFoundException("User not found!");
+    delete user.password;
+    return user;
+  }
+
+  async findAll() {
+    return await this.prisma.user.findMany();
+  }
 
   async registration(dto: RegistrationDto) {
     const hash = await argon.hash(dto.password);

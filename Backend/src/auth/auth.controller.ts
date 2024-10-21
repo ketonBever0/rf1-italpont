@@ -5,14 +5,18 @@ https://docs.nestjs.com/controllers#controllers
 import {
   Body,
   Controller,
+  Get,
   HttpStatus,
   NotFoundException,
   Post,
   Res,
+  UseGuards,
 } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { LoginDto, RegistrationDto } from "./dto";
 import { Response } from "express";
+import { User } from "./auth.decorator";
+import { AuthGuard } from "./auth.guard";
 
 @Controller("/auth")
 export class AuthController {
@@ -39,5 +43,18 @@ export class AuthController {
     } else {
       throw new NotFoundException({ message: "User not found!" });
     }
+  }
+
+  @UseGuards(AuthGuard)
+  @Get("/me")
+  async getMe(@User("id") user: any) {
+    // console.log(user);
+    return await this.authService.findByOne(user.id, user.email);
+  }
+
+  @UseGuards(AuthGuard)
+  @Get("/all")
+  async getAll() {
+    return this.authService.findAll();
   }
 }

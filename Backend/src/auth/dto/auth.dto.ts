@@ -2,9 +2,12 @@ import {
   IsDate,
   IsDateString,
   IsEmail,
+  IsEmpty,
   IsNotEmpty,
+  IsOptional,
   IsString,
   IsStrongPassword,
+  ValidateIf,
 } from "class-validator";
 
 export class RegistrationDto {
@@ -27,7 +30,13 @@ export class RegistrationDto {
   @IsStrongPassword()
   password: string;
 
-  nick: string;
+  @IsOptional()
+  // @ValidateIf(
+  //   (o, value: string) => value !== null && value !== undefined && value !== "",
+  // )
+  // @IsNotEmpty()
+  @IsString()
+  nick?: string;
 
   @IsNotEmpty()
   @IsString()

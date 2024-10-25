@@ -2,7 +2,7 @@ import React from "react";
 import "./Hero.css";
 import { Link } from "react-router-dom";
 import arrow_icon from "../../Assets/arrow.png";
-import hero_img from "../../Assets/Redbreast_12.png";
+import hero_img from "../../Assets/El_dorado_15.png";
 
 const Hero = () => {
   return (

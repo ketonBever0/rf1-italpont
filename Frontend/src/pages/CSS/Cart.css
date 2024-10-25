@@ -1,0 +1,45 @@
+.cart{
+    width: 100%;
+    background: #fce3fe;
+    padding-top: 50px;
+    padding-bottom: 100px ;
+}
+
+.cartContainer{
+    display: flex;
+    justify-content: center;
+    background: white;
+    margin: auto;
+    padding: 40px 60px;
+    width: fit-content;
+}
+
+.cart button{
+    width: 100%;
+    height: 72px;
+    color: white;
+    background: #ff4141;
+    margin-top: 30px;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cart img{
+    height: 100px;
+}
+
+.cartOverview{
+    text-align: end;
+}
+
+.cart input{
+    width: 50px;
+}
+
+.cart th{
+    padding: 10px;
+}
+
+ 

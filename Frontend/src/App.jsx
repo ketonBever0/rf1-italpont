@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import Login from "./components/Login/Login";
 import Signup from "./pages/SignUp";
 import Footer from "./components/Footer/Footer";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import LoginSignup from "./pages/LoginSignup";
+import Login from "./pages/Login";
 import SubCategory from "./pages/SubCategory";
 import Category from "./pages/Category";
 import Main from "./pages/Main";
@@ -27,7 +26,7 @@ function App() {
           />
 
           <Route path="/regisztracio" element={<Signup />} />
-          <Route path="/bejelentkezes" element={<LoginSignup />} />
+          <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/kosar" element={<Cart />} />
         </Routes>
         <Footer />

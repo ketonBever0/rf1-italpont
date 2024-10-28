@@ -13,7 +13,12 @@ import {
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
 import { PrismaService } from "src/prisma/prisma.service";
-import { LoginDto, RegistrationDto, UpdateMeDto, UpdatePasswordDto } from "./dto";
+import {
+  LoginDto,
+  RegistrationDto,
+  UpdateMeDto,
+  UpdatePasswordDto,
+} from "./dto";
 import * as argon from "argon2";
 import { Role, User } from "@prisma/client";
 
@@ -50,11 +55,11 @@ export class AuthService {
           delete user.password;
           return { token, user };
         } else {
-          throw new ForbiddenException("Incorrect password!");
+          throw ForbiddenException;
         }
       }
     } catch (error) {
-      throw new BadRequestException(error.message);
+      throw new ForbiddenException("Incorrect password!");
     }
   }
 
@@ -75,7 +80,7 @@ export class AuthService {
         return user;
       }
     } catch (error) {
-      throw new BadRequestException(error);
+      throw new ForbiddenException(error);
     }
   }
 
@@ -99,7 +104,7 @@ export class AuthService {
 
   // TODO: Create updatePassword function
   // async updatePassword(id: number, email: string, dto: UpdatePasswordDto) {
-  //   const user = await 
+  //   const user = await
   // }
 
   async findAll() {

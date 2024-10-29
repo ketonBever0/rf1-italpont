@@ -54,6 +54,7 @@ model ProductOrder {
   product   Product @relation(fields: [productId], references: [id])
   productId Int
   discount  Int?
+  quantity  Int
 }
 
 model Product {

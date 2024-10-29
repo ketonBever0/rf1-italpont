@@ -7,6 +7,7 @@ import {
   IsOptional,
   IsString,
   IsStrongPassword,
+  NotEquals,
   ValidateIf,
 } from "class-validator";
 
@@ -64,32 +65,41 @@ export class LoginDto {
   password: string;
 }
 
-export class UpdateMeDto {
+export class UpdateUserDto {
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   lastName: string;
 
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   firstName: string;
 
+  @IsOptional()
   @IsDateString()
   birthDate: Date;
 
+  @IsOptional()
+  @IsString()
   nick: string;
 
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   postcode: string;
 
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   city: string;
 
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   address: string;
 
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   mobile: string;
@@ -98,7 +108,7 @@ export class UpdateMeDto {
 export class UpdatePasswordDto {
   @IsNotEmpty()
   @IsString()
-  oldPassword: string;
+  password: string;
 
   @IsNotEmpty()
   @IsString()

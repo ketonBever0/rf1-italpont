@@ -14,7 +14,12 @@ import {
   UseGuards,
 } from "@nestjs/common";
 import { AuthService } from "./auth.service";
-import { LoginDto, RegistrationDto, UpdateMeDto } from "./dto";
+import {
+  LoginDto,
+  RegistrationDto,
+  UpdateUserDto,
+  UpdatePasswordDto,
+} from "./dto";
 import { Response } from "express";
 import { Roles, User } from "./auth.decorator";
 import { AuthGuard } from "./guard/auth.guard";
@@ -64,7 +69,13 @@ export class AuthController {
 
   @Patch("/me")
   @UseGuards(AuthGuard)
-  async updateMe(@User("id") user: any, @Body() dto: UpdateMeDto) {
-    return await this.authService.updateMe(user.id, user.email, dto);
+  async updateMe(@User("id") user: any, @Body() dto: UpdateUserDto) {
+    return await this.authService.updateUser(user.id, user.email, dto);
+  }
+
+  @Patch("/password")
+  @UseGuards(AuthGuard)
+  async updatePassword(@User("id") user: any, @Body() dto: UpdatePasswordDto) {
+    return await this.authService.updatePassword(user, dto);
   }
 }

@@ -16,7 +16,7 @@ import { PrismaService } from "src/prisma/prisma.service";
 import {
   LoginDto,
   RegistrationDto,
-  UpdateMeDto,
+  UpdateUserDto,
   UpdatePasswordDto,
 } from "./dto";
 import * as argon from "argon2";
@@ -93,7 +93,7 @@ export class AuthService {
     return user;
   }
 
-  async updateMe(id: number, email: string, dto: UpdateMeDto) {
+  async updateUser(id: number, email: string, dto: UpdateUserDto) {
     const user = await this.prisma.user.update({
       where: { id: id, email: email },
       data: dto,
@@ -102,10 +102,32 @@ export class AuthService {
     return { message: "User updated!", user };
   }
 
-  // TODO: Create updatePassword function
-  // async updatePassword(id: number, email: string, dto: UpdatePasswordDto) {
-  //   const user = await
-  // }
+  async updatePassword(user: User, dto: UpdatePasswordDto) {
+    const authUser = await this.prisma.user.findUnique({
+      where: {
+        id: user.id,
+        email: user.email,
+      },
+      select: { password: true },
+    });
+    if (await argon.verify(authUser.password, dto.password)) {
+      if (dto.password == dto.newPassword)
+        throw new BadRequestException("New password cannot be same as old!");
+      const hash = await argon.hash(dto.newPassword);
+      await this.prisma.user.update({
+        where: {
+          id: user.id,
+          email: user.email,
+        },
+        data: {
+          password: hash,
+        },
+      });
+      return { message: "Password updated!" };
+    } else {
+      throw new ForbiddenException("Old password is incorrect!");
+    }
+  }
 
   async findAll() {
     return await this.prisma.user.findMany({

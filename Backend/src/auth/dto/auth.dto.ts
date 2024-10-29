@@ -1,3 +1,4 @@
+import { Exclude, Expose } from "class-transformer";
 import {
   IsDate,
   IsDateString,
@@ -11,26 +12,33 @@ import {
   ValidateIf,
 } from "class-validator";
 
+@Exclude()
 export class RegistrationDto {
+  @Expose()
   @IsNotEmpty()
   @IsEmail()
   email: string;
 
+  @Expose()
   @IsNotEmpty()
   @IsString()
   lastName: string;
 
+  @Expose()
   @IsNotEmpty()
   @IsString()
   firstName: string;
 
+  @Expose()
   @IsDateString()
   birthDate: Date;
 
+  @Expose()
   @IsNotEmpty()
   @IsStrongPassword()
   password: string;
 
+  @Expose()
   @IsOptional()
   // @ValidateIf(
   //   (o, value: string) => value !== null && value !== undefined && value !== "",
@@ -39,18 +47,22 @@ export class RegistrationDto {
   @IsString()
   nick?: string;
 
+  @Expose()
   @IsNotEmpty()
   @IsString()
   postcode: string;
 
+  @Expose()
   @IsNotEmpty()
   @IsString()
   city: string;
 
+  @Expose()
   @IsNotEmpty()
   @IsString()
   address: string;
 
+  @Expose()
   @IsNotEmpty()
   @IsString()
   mobile: string;

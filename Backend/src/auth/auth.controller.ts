@@ -25,6 +25,7 @@ import { Roles, User } from "./auth.decorator";
 import { AuthGuard } from "./guard/auth.guard";
 import { RoleGuard } from "./guard/role.guard";
 import { User as UserModel } from "@prisma/client";
+import { plainToInstance } from "class-transformer";
 
 @Controller("/auth")
 export class AuthController {
@@ -32,7 +33,7 @@ export class AuthController {
 
   @Post("/registration")
   async registration(@Body() dto: RegistrationDto, @Res() res: Response) {
-    const user = await this.authService.registration(dto);
+    const user = await this.authService.registration(plainToInstance(RegistrationDto, dto, {excludeExtraneousValues: true}));
 
     if (user) {
       return res.status(HttpStatus.CREATED).json({

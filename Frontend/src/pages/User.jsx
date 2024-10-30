@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const User = () => {
   const isLoggedIn = window.localStorage.getItem("isLoggedIn");
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
-  function signOut() {
+  function logOut() {
     window.localStorage.removeItem("isLoggedIn");
     window.localStorage.removeItem("token");
     window.location.href = "/";
@@ -28,7 +28,7 @@ const User = () => {
             <></>
           )}
 
-          <button onClick={() => signOut()}>Sign out</button>
+          <button onClick={() => logOut()}>Kijelentkezés</button>
         </div>
       ) : (
         <div>

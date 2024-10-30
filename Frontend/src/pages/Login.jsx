@@ -1,18 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CSS/Login.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  function onChange(e) {
+    setData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  }
+  async function login() {
+    axios
+      .post("http://localhost:3000/auth/login", data)
+      .catch((error) => {
+        console.error(error);
+        alert("Bejelentkezés sikertelen!");
+      });
+  }
   return (
     <div className="login">
       <div className="login-container">
         <h1>Bejelentkezés</h1>
         <div className="login-fields">
-          <input type="email" placeholder="E-mail cím" />
-          <input type="password" placeholder="Jelszó" />
+          <input
+            type="email"
+            value={data.email}
+            onChange={(e) => onChange(e)}
+            name="email"
+            placeholder="E-mail cím"
+            required
+          />
+          <input
+            type="password"
+            value={data.password}
+            onChange={(e) => onChange(e)}
+            name="password"
+            placeholder="Jelszó"
+            required
+          />
         </div>
 
-        <button>Continue</button>
+        <button onClick={() => login()}>Bejelentkezés</button>
         <p className="login-login">
           Nincs még fiókod? Regisztrálj{" "}
           <Link to="/regisztracio">

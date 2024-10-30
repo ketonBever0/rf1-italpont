@@ -1,6 +1,6 @@
 .signup {
   width: 100%;
-  height: 150vh;
+  /*height: 150vh;*/
   background: #fce3fe;
   padding-top: 40px;
   padding-bottom: 100px;
@@ -9,8 +9,8 @@
   text-decoration: none;
 }
 .signup-container {
-  width: 600px;
-  height: 130vh;
+  width: 45vw;
+  /*height: 130vh;*/
   background: white;
   margin: auto;
   padding: 40px 60px;
@@ -83,4 +83,10 @@
 
 #inputZip {
   width: 30%;
+}
+@media only screen and (max-width: 800px) {
+  .signup-container {
+    width: 70vw;
+    padding: 20px 50px;
+  }
 }

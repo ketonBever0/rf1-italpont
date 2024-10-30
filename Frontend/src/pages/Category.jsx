@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 
 const Category = () => {
   const { categories } = useContext(CategoryContext);
-  console.log(categories);
   const props = useParams();
   return (
     <div className="shop-category">

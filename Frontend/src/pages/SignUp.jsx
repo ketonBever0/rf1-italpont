@@ -25,12 +25,18 @@ const SignUp = () => {
       alert("A jelszó nem egyezik a megerősítéssel!");
       return;
     }
-    
+
     axios
       .post("http://localhost:3000/auth/registration", data)
       .catch((error) => {
         console.error(error);
         alert("Sikertelen regisztráció!");
+      })
+      .then(() => {
+        alert(
+          "Sikeres regisztráció! Kérlek jelentkezz be a felhasználói fiókodhoz!"
+        );
+        window.location.href = "/bejelentkezes";
       });
   }
   return (
@@ -143,7 +149,7 @@ const SignUp = () => {
           <input type="checkbox" name="" id="" />
           <p>Kijelentem hogy, elfogadom a felhasználási feltételeket. </p>
         </div>
-        <button onClick={() => registration()}>Continue</button>
+        <button onClick={() => registration()}>Regisztráció</button>
         <p className="signup-login">
           Van már fiókod? Jelentkezz be{" "}
           <Link to="/bejelentkezes">

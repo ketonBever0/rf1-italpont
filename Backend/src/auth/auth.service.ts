@@ -8,6 +8,7 @@ import {
   ForbiddenException,
   HttpStatus,
   Injectable,
+  InternalServerErrorException,
   NotFoundException,
 } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
@@ -55,11 +56,11 @@ export class AuthService {
           delete user.password;
           return { token, user };
         } else {
-          throw ForbiddenException;
+          throw new ForbiddenException("Incorrect password!");
         }
       }
     } catch (error) {
-      throw new ForbiddenException("Incorrect password!");
+      throw new InternalServerErrorException();
     }
   }
 

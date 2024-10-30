@@ -15,7 +15,6 @@ import Admin from "./pages/Admin";
 
 function App() {
   const isLoggedIn = window.localStorage.getItem('isLoggedIn');
-  console.log(isLoggedIn);
   return (
     <div>
       <BrowserRouter>

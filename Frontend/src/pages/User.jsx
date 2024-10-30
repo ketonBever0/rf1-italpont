@@ -20,6 +20,14 @@ const User = () => {
 
           <div>Logged in with {currentUser.email}</div>
 
+          {currentUser.role === "ADMIN" ? (
+            <div>
+              <Link to="/admin">Adminfelület</Link>
+            </div>
+          ) : (
+            <></>
+          )}
+
           <button onClick={() => signOut()}>Sign out</button>
         </div>
       ) : (

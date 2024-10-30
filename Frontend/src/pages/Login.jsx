@@ -20,6 +20,16 @@ const Login = () => {
       .catch((error) => {
         console.error(error);
         alert("Bejelentkezés sikertelen!");
+      })
+      .then((response) => {
+        window.localStorage.setItem("token", response.data.token);
+        window.localStorage.setItem(
+          "currentUser",
+          JSON.stringify(response.data.user)
+        );
+        window.localStorage.setItem("isLoggedIn", true);
+        alert("Sikeres bejelentkezés!");
+        window.location.href = "/felhasznalo";
       });
   }
   return (

@@ -6,7 +6,11 @@ import cart_icon from "../../assets/cart_icon.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const isLoggedIn = window.localStorage.getItem('isLoggedIn');
   const [menu, setMenu] = useState("italpont");
+  const [loggedin, setLoggedin] = useState(isLoggedIn ? true : false);
+  
+  
   return (
     <div className="navbar">
       <Link to="/">
@@ -65,9 +69,15 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="nav-login-cart">
-        <Link to="/bejelentkezes">
-          <button>Belépés</button>
-        </Link>
+        {loggedin ? (
+          <Link to="/felhasznalo">
+            <button>Home</button>
+          </Link>
+        ) : (
+          <Link to="/bejelentkezes">
+            <button>Belépés</button>
+          </Link>
+        )}
         <Link to="/kosar">
           <img src={cart_icon} alt="" />
         </Link>

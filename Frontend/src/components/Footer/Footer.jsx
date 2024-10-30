@@ -18,9 +18,7 @@ const Footer = () => {
         <Link to="/">Kiszállítás</Link>
         <Link to="/">Rólunk</Link>
         <Link to="/">Kapcsolat</Link>
-        <Link to="/kosar">
-          <img src={instagram_icon} alt="" />
-        </Link>
+        <Link to="/kosar">Kosár</Link>
       </ul>
       <div className="footer-social-icons">
         <div className="footer-icons-container">

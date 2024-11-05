@@ -1,3 +1,4 @@
+import { DemoModule } from "./demo/demo.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { AuthModule } from "./auth/auth.module";
 import { Module } from "@nestjs/common";
@@ -7,11 +8,12 @@ import { ConfigModule } from "@nestjs/config";
 
 @Module({
   imports: [
+    DemoModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
     PrismaModule,
     AuthModule,
-  ]
+  ],
 })
 export class AppModule {}

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
 const Admin = () => {
-  return (
-    <div>Admin</div>
-  )
-}
+  const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
+  if (currentUser.role !== "ADMIN") {
+    window.location.href = "/felhasznalo";
+    return null;
+  }
+  return <div>Admin</div>;
+};
 
-export default Admin
+export default Admin;

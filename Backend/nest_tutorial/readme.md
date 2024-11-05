@@ -77,3 +77,5 @@ Ezen menüpontok használatával generálhatunk komponenst, amiket azonnal beimp
         - Itt készítettem GET, POST, PATCH és DELETE végpontokat
         - Mint látható, ugyanazon végpont létezhet különféle HTTP kérésmetódusokra
         - itt teljesen mindegy, milyen függvényneveket adunk meg
+
+#### [Prisma lekérdezések használata](https://www.prisma.io/docs/orm/prisma-client/queries)

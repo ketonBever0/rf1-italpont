@@ -33,7 +33,9 @@ export class AuthController {
 
   @Post("/registration")
   async registration(@Body() dto: RegistrationDto, @Res() res: Response) {
-    const user = await this.authService.registration(plainToInstance(RegistrationDto, dto, {excludeExtraneousValues: true}));
+    const user = await this.authService.registration(
+      plainToInstance(RegistrationDto, dto, { excludeExtraneousValues: true }),
+    );
 
     if (user) {
       return res.status(HttpStatus.CREATED).json({

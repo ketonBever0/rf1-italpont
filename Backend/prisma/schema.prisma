@@ -63,7 +63,7 @@ model Product {
   category          String
   subCategory       String
   brand             String
-  discount          String
+  discount          Int
   volume            Int
   alcoholPercentage Int
   description       String

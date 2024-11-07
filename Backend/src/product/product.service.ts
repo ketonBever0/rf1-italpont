@@ -18,14 +18,14 @@ export class ProductService {
 
     async addProduct(dto: AddProductDTO){
         try{
-            
+            //TODO: hiányzik a subsubcategory és a rating
             const product = await this.prisma.product.create({
                 data: {
                     name: dto.name,
                     category: dto.category,
                     subCategory: dto.subCategory,
                     brand: dto.brand,
-                    discount: dto.discount,
+                    discount: dto.discount.toString(), //TODO: nem string =>> int, adat
                     volume: dto.volume,
                     alcoholPercentage: dto.alcoholPercentage,
                     description: dto.description,

@@ -27,8 +27,6 @@ const Login = () => {
           "currentUser",
           JSON.stringify(response.data.user)
         );
-        window.localStorage.setItem("isLoggedIn", true);
-        alert("Sikeres bejelentkezés!");
         window.location.href = "/felhasznalo";
       });
   }

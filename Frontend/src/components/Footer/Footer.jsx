@@ -14,10 +14,10 @@ const Footer = () => {
         <p>ItalPont</p>
       </div>
       <ul className="footer-links">
-        <Link to="/">Termékek</Link>
-        <Link to="/">Kiszállítás</Link>
-        <Link to="/">Rólunk</Link>
-        <Link to="/">Kapcsolat</Link>
+        <Link to="/alkoholos_italok">Alkoholok</Link>
+        <Link to="/uditok">Üdítők</Link>
+        <Link to="/kiegeszitok">Kiegészítők</Link>
+        <Link to="/regisztracio">Regisztráció</Link>
         <Link to="/kosar">Kosár</Link>
       </ul>
       <div className="footer-social-icons">

@@ -2,8 +2,10 @@ import React from "react";
 
 const Admin = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
-  if (currentUser.role !== "ADMIN") {
-    window.location.href = "/felhasznalo";
+  const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
+  
+  if (!isAdmin) {
+    window.location.href = "/";
     return null;
   }
   return <div>Admin</div>;

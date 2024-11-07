@@ -14,13 +14,12 @@ import User from "./pages/User";
 import Admin from "./pages/Admin";
 
 function App() {
-  const isLoggedIn = window.localStorage.getItem('isLoggedIn');
   return (
     <div>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={isLoggedIn ? <User/> : <Main />} />
+          <Route path="/" element={<Main />} />
           <Route path="/:category" element={<Category />} />
           <Route path="/:category/:subcategory" element={<SubCategory />} />
           <Route

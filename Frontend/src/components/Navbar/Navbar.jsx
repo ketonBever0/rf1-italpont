@@ -6,9 +6,10 @@ import cart_icon from "../../assets/cart_icon.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const isLoggedIn = window.localStorage.getItem("isLoggedIn");
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
-  const isAdmin = currentUser.role === "ADMIN" ? true : false;
+  const isLoggedIn = currentUser != null ? true : false;
+  const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
+
   const [menu, setMenu] = useState("italpont");
   return (
     <div className="navbar">
@@ -66,20 +67,24 @@ const Navbar = () => {
           </Link>
           {menu === "kiegeszitok" ? <hr /> : <></>}
         </li>
-        <li
-          onClick={() => {
-            setMenu("felhasznalo");
-          }}
-        >
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/felhasznalo"
+        {isLoggedIn ? (
+          <li
+            onClick={() => {
+              setMenu("felhasznalo");
+            }}
           >
-            Fiók
-          </Link>
-          {menu === "felhasznalo" ? <hr /> : <></>}
-        </li>
-        {true ? (
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/felhasznalo"
+            >
+              Fiók
+            </Link>
+            {menu === "felhasznalo" ? <hr /> : <></>}
+          </li>
+        ) : (
+          <></>
+        )}
+        {isLoggedIn && isAdmin ? (
           <li
             onClick={() => {
               setMenu("admin");

@@ -44,3 +44,16 @@ export class AddProductDTO{
     price: number;
 
 }
+
+export class UpdateProductDTO {
+    name?: string;
+    category?: string;
+    subCategory?: string;
+    brand?: string;
+    discount?: number;
+    volume?: number;
+    alcoholPercentage?: number;
+    description?: string;
+    images?: string;
+    price?: number;
+}

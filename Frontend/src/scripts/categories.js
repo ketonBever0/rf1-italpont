@@ -10,10 +10,23 @@ import Martini_rosso from "../assets/Martini_rosso.png";
 import Baileys from "../assets/Baileys.png";
 import Krug_grande from "../assets/Krug_grande.png";
 import Ciroc from "../assets/Ciroc.png";
+import Shaker from "../assets/Shaker.png";
+import Felszolgalas from "../assets/Felszolgalas.png";
+import Martini_pohar from "../assets/Martini_pohar.png";
+import Hohes_c_narancs from "../assets/Hohes_c_narancs.png";
+import Coca_coca from "../assets/Coca_cola.png";
+import Theodora from "../assets/Theodora.png";
+import Redbull from "../assets/Redbull.png";
+import Monin_eper from "../assets/Monin_eper.png";
+import Lipton_barack from "../assets/Lipton_barack.png";
 
 let categories = [
   { category: "alkoholos_italok", subcategory: "Sör", image: Pilsner },
-  { category: "alkoholos_italok", subcategory: "Bor", image: Bolyki_egri_bikaver },
+  {
+    category: "alkoholos_italok",
+    subcategory: "Bor",
+    image: Bolyki_egri_bikaver,
+  },
   {
     category: "alkoholos_italok",
     subcategory: "Tequila",
@@ -62,12 +75,47 @@ let categories = [
   {
     category: "uditok",
     subcategory: "Szénsavas",
-    image: Diplomatico,
+    image: Coca_coca,
+  },
+  {
+    category: "uditok",
+    subcategory: "Ásványvíz",
+    image: Theodora,
+  },
+  {
+    category: "uditok",
+    subcategory: "Gyümölcslé",
+    image: Hohes_c_narancs,
+  },
+  {
+    category: "uditok",
+    subcategory: "Energiaital",
+    image: Redbull,
+  },
+  {
+    category: "uditok",
+    subcategory: "Szirup",
+    image: Monin_eper,
+  },
+  {
+    category: "uditok",
+    subcategory: "Jeges tea",
+    image: Lipton_barack,
   },
   {
     category: "kiegeszitok",
-    subcategory: "Eszközök",
-    image: Diplomatico,
+    subcategory: "Bárfelszerelés",
+    image: Shaker,
+  },
+  {
+    category: "kiegeszitok",
+    subcategory: "Pohár",
+    image: Martini_pohar,
+  },
+  {
+    category: "kiegeszitok",
+    subcategory: "Felszolgálás",
+    image: Felszolgalas,
   },
 ];
 

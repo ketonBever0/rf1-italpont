@@ -1,6 +1,8 @@
 import axios from "axios";
 
+
 let products = [];
+
 
 async function fetchProducts() {
   axios
@@ -10,11 +12,9 @@ async function fetchProducts() {
       console.log("Termékeket nem sikerült elérni");
     })
     .then((response) => {
-      products = response.data;
+      
     });
 }
 
-products = fetchProducts();
-console.log(products);
 
 export default products;

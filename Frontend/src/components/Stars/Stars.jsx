@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const DEFAULT_COUNT = 5;
 const DEFAULT_ICON = "★";
-const DEFAULT_UNSELECTED_COLOR = "grey";
+const DEFAULT_UNSELECTED_COLOR = "yellow";
 const DEFAULT_COLOR = "yellow";
 
 export default function Stars({ count, defaultRating, icon, color, iconSize }) {
@@ -12,10 +12,12 @@ export default function Stars({ count, defaultRating, icon, color, iconSize }) {
 
   let stars = Array(count || DEFAULT_COUNT).fill(icon || DEFAULT_ICON);
 
-  {/*const handleClick = (rating) => {
+  {
+    /*const handleClick = (rating) => {
     setRating(rating);
     localStorage.setItem("starRating", rating);
-  };*/}
+  };*/
+  }
 
   return (
     <div className="starsContainer">

@@ -1,15 +1,23 @@
 import React from "react";
 import "./ProductDisplay.css";
 import Stars from "../Stars/Stars";
+import defaultImage from "../../assets/Diplomatico.png";
 
 const ProductDisplay = (props) => {
+  function toCart() {
+    //TODO: toCart fuggveny megirasa
+  }
+
   const { product } = props;
+  const volume =
+    product.volume > 30 ? product.volume + " ml" : product.volume + " l";
   const defaultRating = Math.round(product.rating);
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
         <div className="productdisplay-img">
-          <img className="productdisplay-main-img" src={product.image} alt="" />
+          {/*TODO: rendes imaget berakni*/}
+          <img className="productdisplay-main-img" src={defaultImage} alt="" />
         </div>
       </div>
       <div className="productdisplay-right">
@@ -22,12 +30,22 @@ const ProductDisplay = (props) => {
           <div className="productdisplay-right-parameters-param">
             <p>Márka:</p> <p>{product.brand}</p>
           </div>
-          <div className="productdisplay-right-parameters-param">
-            <p>Űrtartalom:</p> <p>{product.volume}</p>
-          </div>
-          <div className="productdisplay-right-parameters-param">
-            <p>Alkoholtartalom:</p> <p>{product.alcoholPercentage}</p>
-          </div>
+          {product.volume != 0 ? (
+            <div className="productdisplay-right-parameters-param">
+              <p>Űrtartalom:</p> <p>{volume}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          {product.alcoholPercentage != 0 ? (
+            <div className="productdisplay-right-parameters-param">
+              <p>Alkoholtartalom:</p> <p>{product.alcoholPercentage}%</p>
+            </div>
+          ) : (
+            <></>
+          )}
+
           <div className="productdisplay-right-parameters-param">
             <p>Bruttó ár:</p> <p>{product.price} Ft</p>
           </div>
@@ -37,13 +55,7 @@ const ProductDisplay = (props) => {
           {product.description}
         </div>
 
-        <button>Kosárba teszem</button>
-        <p className="productdisplay-right-category">
-          <span>Kategória :</span> {product.subsubcategory}
-        </p>
-        <p className="productdisplay-right-category">
-          <span>Tags :</span> Modern , Latest
-        </p>
+        <button onClick={() => toCart()}>Kosárba teszem</button>
       </div>
     </div>
   );

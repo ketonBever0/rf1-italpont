@@ -16,7 +16,6 @@ export class ProductService {
 
   async getProducts() {
     const products = await this.prisma.product.findMany();
-
     return products;
   }
 
@@ -26,18 +25,17 @@ export class ProductService {
 
   async addProduct(dto: AddProductDTO) {
     try {
-      //TODO: hiányzik a subsubcategory és a rating
       const product = await this.prisma.product.create({
         data: {
           name: dto.name,
           category: dto.category,
           subCategory: dto.subCategory,
           brand: dto.brand,
-          discount: dto.discount, //TODO: nem string =>> int, adat
+          discount: dto.discount,
           volume: dto.volume,
           alcoholPercentage: dto.alcoholPercentage,
           description: dto.description,
-          images: dto.images,
+          images: "",
           price: dto.price,
         },
       });
@@ -45,6 +43,31 @@ export class ProductService {
     } catch (e) {
       throw new BadRequestException(e);
     }
+  }
+
+  async addImages(id: number, files: Array<Express.Multer.File>) {
+    let filenames = [];
+    files.forEach((file) => {
+      filenames.push(file.filename);
+    });
+    return await this.prisma.product.update({
+      where: { id: id },
+      data: {
+        images: JSON.stringify(filenames),
+      },
+    });
+  }
+
+  async deleteImage(id: number, filename: string) {
+    const filenames: Array<string> = JSON.parse((await this.prisma.product.findUnique({where: {id: id}, select: {images: true}})).images);
+    console.log(filenames);
+    filenames.splice(filenames.indexOf(filename, 1));
+    return await this.prisma.product.update({
+      where: { id: id },
+      data: {
+        images: JSON.stringify(filenames),
+      },
+    });
   }
 
   async updateProduct(id: number, dto: UpdateProductDTO) {

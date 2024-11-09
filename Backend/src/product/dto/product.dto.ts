@@ -45,6 +45,12 @@ export class AddProductDTO{
 
 }
 
+export class DeleteImageDTO {
+    @IsNotEmpty()
+    @IsString()
+    filename: string;
+}
+
 export class UpdateProductDTO {
 
 

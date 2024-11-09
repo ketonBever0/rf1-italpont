@@ -1,4 +1,4 @@
-import { IsInt, IsNotEmpty, IsString } from "class-validator";
+import { IsInt, IsNotEmpty, IsOptional, IsString } from "class-validator";
 
 export class AddProductDTO{
     
@@ -19,9 +19,9 @@ export class AddProductDTO{
     @IsString()
     brand: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsInt()
-    discount: number;
+    discount?: number;
 
     @IsNotEmpty()
     @IsInt()
@@ -35,9 +35,9 @@ export class AddProductDTO{
     @IsString()
     description: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsString()
-    images: string;
+    images?: string;
 
     @IsNotEmpty()
     @IsInt()
@@ -46,14 +46,46 @@ export class AddProductDTO{
 }
 
 export class UpdateProductDTO {
-    name?: string;
-    category?: string;
-    subCategory?: string;
-    brand?: string;
+
+
+    @IsNotEmpty()
+    @IsString()
+    name: string;
+
+
+    @IsNotEmpty()
+    @IsString()
+    category: string;
+
+    @IsNotEmpty()
+    @IsString()
+    subCategory: string;
+
+    @IsNotEmpty()
+    @IsString()
+    brand: string;
+
+    @IsOptional()
+    @IsInt()
     discount?: number;
-    volume?: number;
-    alcoholPercentage?: number;
-    description?: string;
-    images?: string;
-    price?: number;
+
+    @IsNotEmpty()
+    @IsInt()
+    volume: number;
+
+    @IsNotEmpty()
+    @IsInt()
+    alcoholPercentage: number;
+
+    @IsNotEmpty()
+    @IsString()
+    description: string;
+
+    @IsOptional()
+    @IsString()
+    images: string;
+
+    @IsNotEmpty()
+    @IsInt()
+    price: number;
 }

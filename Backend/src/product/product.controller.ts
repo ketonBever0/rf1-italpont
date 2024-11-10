@@ -62,7 +62,7 @@ export class ProductController {
       storage: diskStorage({
         destination: (req, file, cb) => {
           const dir = `files/products/${req.params.id}`;
-          if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
           cb(null, dir);
         },
         filename: async (req, file, cb) => {
@@ -91,14 +91,18 @@ export class ProductController {
   @UseGuards(AuthGuard, RoleGuard)
   @Roles("ADMIN", "MODERATOR")
   @Delete("/image/:id")
-  async deleteImage(@Param("id") id: string, @Body() dto: DeleteImageDTO, @Res() res: Response) {
+  async deleteImage(
+    @Param("id") id: string,
+    @Body() dto: DeleteImageDTO,
+    @Res() res: Response,
+  ) {
     const deleted = await this.productService.deleteImage(
       parseInt(id),
       dto.filename,
     );
     if (deleted) {
       fs.unlinkSync(`files/products/${id}/${dto.filename}`);
-      res.status(200).json({message: "Kép törölve."});
+      res.status(200).json({ message: "Kép törölve." });
     }
   }
 

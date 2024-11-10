@@ -60,7 +60,7 @@ export class ProductService {
 
   async deleteImage(id: number, filename: string) {
     const filenames: Array<string> = JSON.parse((await this.prisma.product.findUnique({where: {id: id}, select: {images: true}})).images);
-    console.log(filenames);
+    // console.log(filenames);
     filenames.splice(filenames.indexOf(filename, 1));
     return await this.prisma.product.update({
       where: { id: id },

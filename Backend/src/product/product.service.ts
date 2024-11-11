@@ -47,6 +47,18 @@ export class ProductService {
 
   async addImages(id: number, files: Array<Express.Multer.File>) {
     let filenames = [];
+    const current = (
+      await this.prisma.product.findUnique({
+        where: { id: id },
+        select: { images: true },
+      })
+    ).images;
+    try {
+      filenames = JSON.parse(current);
+    } catch {
+      filenames = [];
+    }
+    // console.log(filenames);
     files.forEach((file) => {
       filenames.push(file.filename);
     });
@@ -59,7 +71,14 @@ export class ProductService {
   }
 
   async deleteImage(id: number, filename: string) {
-    const filenames: Array<string> = JSON.parse((await this.prisma.product.findUnique({where: {id: id}, select: {images: true}})).images);
+    const filenames: Array<string> = JSON.parse(
+      (
+        await this.prisma.product.findUnique({
+          where: { id: id },
+          select: { images: true },
+        })
+      ).images,
+    );
     // console.log(filenames);
     filenames.splice(filenames.indexOf(filename, 1));
     return await this.prisma.product.update({

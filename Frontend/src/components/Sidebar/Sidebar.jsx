@@ -1,5 +1,6 @@
 import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react";
 import { useContext, createContext, useState } from "react";
+import userImage from "../../assets/general_user_icon.png";
 
 const SidebarContext = createContext();
 
@@ -11,7 +12,7 @@ export default function Sidebar({ children }) {
       <nav className="h-full flex flex-col bg-white border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
           <img
-            src="Frontend/src/assets/general_user_icon.png"
+            src={userImage}
             className={`overflow-hidden transition-all ${
               expanded ? "w-32" : "w-0"
             }`}

@@ -6,7 +6,6 @@ import ProductDisplay from "../Components/ProductDisplay/ProductDisplay";
 import DescriptionBox from "../Components/DescriptionBox/DescriptionBox";
 
 const Product = () => {
-  const { ital_product } = useContext(ShopContext);
   const products = JSON.parse(window.localStorage.getItem("product"));
 
   const { productName } = useParams();

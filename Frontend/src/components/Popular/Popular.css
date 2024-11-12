@@ -17,8 +17,11 @@
     background: #252525;
 }
 .popular-item{
-    margin-top: 50px;
-    display: flex;
+    margin: 20px 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 80px;
     gap: 30px;
+    justify-content: center;
     
 }

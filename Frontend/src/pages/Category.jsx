@@ -8,12 +8,19 @@ import { useParams } from "react-router-dom";
 const Category = () => {
   const { categories } = useContext(CategoryContext);
   const props = useParams();
+  let categoryNum = 0;
+  categories.map((item, i) => {
+    if (props.category === item.category) {
+      categoryNum += 1;
+    }
+  });
   return (
     <div className="shop-category">
       {/*<img className="shopcategory-banner" src={props.banner} alt="" />*/}
       <div className="shopcategory-indexSort">
         <p>
-          <span>Showing 1-12</span> out of {categories.length} products
+          <span>{categoryNum} </span> kategória megjelenítve {" "}
+          <span>{categories.length} </span> kategóriából
         </p>
         <div className="shopcategory-sort">
           Sort by <img src={dropdown_icon} alt="" />

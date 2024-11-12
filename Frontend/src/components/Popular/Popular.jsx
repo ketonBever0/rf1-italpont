@@ -1,20 +1,23 @@
 import React from "react";
 import "./Popular.css";
-import data_product from "../../scripts/ital_products";
 import Item from "../Items/Item";
+import diplomatico from "../../assets/Diplomatico.png";
 
 const Popular = () => {
+  const products = JSON.parse(window.localStorage.getItem("product"));
   return (
     <div className="popular">
       <h1>Italkedvelőknek ajánljuk</h1>
       <hr />
       <div className="popular-item">
-        {data_product.map((item, i) => {
-          if (item.price > 80000 && item.volume != "30l") {
+        {products.map((item, i) => {
+          if (item.price > 100000 && item.volume != "30l") {
             return (
               <Item
                 key={i}
                 id={item.id}
+                category={item.category}
+                subcategory={item.subCategory}
                 name={item.name}
                 image={item.image}
                 price={item.price}

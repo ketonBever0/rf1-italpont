@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const req = context.switchToHttp().getRequest();
     const token = this.extractTokenFromHeader(req);
-    if (!token) throw new UnauthorizedException("You need to Log In first!");
+    if (!token) throw new UnauthorizedException("You need to Log in first!");
     try {
       const payload = await this.jwtService.verifyAsync(token, {
         secret: this.config.get("JWT_SECRET"),

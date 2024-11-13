@@ -7,7 +7,6 @@ import defaultImage from "../../assets/Diplomatico.png";
 const Items = (props) => {
   const volume = props.volume > 30 ? props.volume + " ml" : props.volume + " l";
   const url = "/" + props.category + "/" + props.subcategory + "/" + props.name;
-  console.log(props.images);
   return (
     <div className="item">
       <Link to={url}>

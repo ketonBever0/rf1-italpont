@@ -12,6 +12,7 @@ import Category from "./pages/Category";
 import Main from "./pages/Main";
 import User from "./pages/User";
 import Admin from "./pages/Admin";
+import UpdateUser from "./components/UpdateUser/UpdateUser";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route path="/regisztracio" element={<Signup />} />
           <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/kosar" element={<Cart />} />
+          <Route path="/updateUser" element={<UpdateUser />} />
+
         </Routes>
         <Footer />
       </BrowserRouter>

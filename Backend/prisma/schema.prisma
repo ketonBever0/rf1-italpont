@@ -90,4 +90,6 @@ model Warehouse {
   address      String
   capacity     Int
   productWares ProductWare[]
+
+  @@map("raktarak")
 }

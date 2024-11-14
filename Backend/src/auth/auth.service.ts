@@ -98,7 +98,7 @@ export class AuthService {
     const user = await this.prisma.user.update({
       where: { id: id, email: email },
       data: {
-        email: dto.email,
+        // email: dto.email,
         lastName: dto.lastName,
         firstName: dto.firstName,
         birthDate: dto.birthDate,

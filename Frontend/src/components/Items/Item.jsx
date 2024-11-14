@@ -1,17 +1,17 @@
 import React from "react";
 import "./Item.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Stars from "../Stars/Stars";
 import defaultImage from "../../assets/Diplomatico.png";
 
 const Items = (props) => {
-  const image = "../assets" + props.images + ".png";
   const volume = props.volume > 30 ? props.volume + " ml" : props.volume + " l";
+  const url = "/" + props.category + "/" + props.subcategory + "/" + props.name;
   return (
     <div className="item">
-      <Link to={`${props.name}`}>
+      <Link to={url}>
         {/*TODO: rendes imaget berakni*/}
-        <img src={defaultImage} alt="" />
+        <img src={props.images} alt="" />
       </Link>
       <p>{props.name}</p>
       <div className="item-prices">

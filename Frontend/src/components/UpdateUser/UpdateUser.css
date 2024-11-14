@@ -1,0 +1,100 @@
+.updateUser {
+  width: 100%;
+  /*height: 150vh;*/
+  background: #fce3fe;
+  padding-top: 35px;
+  padding-bottom: 100px;
+}
+.updateUser a {
+  text-decoration: none;
+}
+.updateUser-container {
+  width: 45vw;
+  /*height: 130vh;*/
+  background: white;
+  margin: auto;
+  padding: 40px 60px;
+}
+.updateUser-container h1 {
+  margin: 15px 0px;
+}
+.updateUser-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+.updateUser-fields input {
+  height: 24px;
+  padding: 20px;
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  outline: none;
+  color: #5c5c5c;
+  font-size: 18px;
+}
+.updateUser-container button {
+  width: 100%;
+  height: 72px;
+  color: white;
+  background: #ff4141;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border: none;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.updateUser-login {
+  margin-top: 30px;
+  color: #5c5c5c;
+  font-size: 18px;
+  font-weight: 500;
+}
+.updateUser-login span {
+  color: #ff4141;
+  font-weight: 600;
+}
+
+.form-group {
+  gap: 5px;
+}
+.form-control {
+  float: left;
+}
+
+#autocomplete {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#inputCity {
+  width: 67%;
+  margin-right: 12px;
+}
+
+#inputZip {
+  width: 31%;
+}
+#inputLastName {
+  width: 49%;
+  margin-right: 12px;
+}
+
+#inputFirstName {
+  width: 49%;
+}
+#mobile {
+  width: 49%;
+  margin-right: 12px;
+}
+
+#nick {
+  width: 49%;
+}
+@media only screen and (max-width: 800px) {
+  .updateUser-container {
+    width: 70vw;
+    padding: 20px 50px;
+  }
+}

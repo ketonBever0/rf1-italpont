@@ -29,6 +29,8 @@ const User = () => {
           Logged in with {currentUser != null ? currentUser.email : <></>}
         </div>
 
+        <Link to="/updateUser">Felhasználói adatok módosítása</Link>
+
         {isAdmin ? (
           <div>
             <Link to="/admin">Adminfelület</Link>

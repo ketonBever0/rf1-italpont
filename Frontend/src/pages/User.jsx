@@ -1,6 +1,7 @@
 import React from "react";
 import "./CSS/User.css";
 import { Link } from "react-router-dom";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 const User = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
@@ -28,16 +29,9 @@ const User = () => {
         <div>
           Logged in with {currentUser != null ? currentUser.email : <></>}
         </div>
-
-        <Link to="/updateUser">Felhasználói adatok módosítása</Link>
-
-        {isAdmin ? (
-          <div>
-            <Link to="/admin">Adminfelület</Link>
-          </div>
-        ) : (
-          <></>
-        )}
+        <div>
+          <Sidebar />
+        </div>
 
         <button onClick={() => logOut()}>Kijelentkezés</button>
       </div>

@@ -17,8 +17,6 @@ const UpdateUser = () => {
     mobile: currentUser.mobile,
   });
 
-  let dataJSON = JSON.stringify(userData);
-
   function onChange(e) {
     setUserData((prev) => ({
       ...prev,
@@ -30,7 +28,7 @@ const UpdateUser = () => {
     axios
       .patch(
         "http://localhost:3000/auth/me",
-        { body: dataJSON},
+        dataJSON,
         {
           headers: {
             Authorization: `Bearer ${BEARER_TOKEN}`,

@@ -1,12 +1,12 @@
 import React from "react";
+import { useContext, useEffect, useState } from 'react'
 import "./ProductDisplay.css";
 import Stars from "../Stars/Stars";
 import defaultImage from "../../assets/Diplomatico.png";
+import { CartContext } from '../../context/CartContext'
 
 const ProductDisplay = (props) => {
-  function toCart() {
-    //TODO: toCart fuggveny megirasa
-  }
+  const { cartItems, addToCart } = useContext(CartContext)
 
   const { product } = props;
   const volume =
@@ -55,7 +55,7 @@ const ProductDisplay = (props) => {
           {product.description}
         </div>
 
-        <button onClick={() => toCart()}>Kosárba teszem</button>
+        <button onClick={() => addToCart(product)}>Kosárba teszem</button>
       </div>
     </div>
   );

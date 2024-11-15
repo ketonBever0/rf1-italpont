@@ -74,3 +74,8 @@
   width: 500px;
   color: red;
 }
+
+.cartTotal{
+  font-weight: bold;
+  font-size: 20px;
+}

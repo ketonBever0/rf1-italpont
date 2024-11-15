@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import "./CSS/Cart.css";
-import { ShopContext } from "../context/ShopContext";
 import icon_delete from "../assets/icon_delete.png";
+import { CartContext } from '../context/CartContext'
 
 const Cart = () => {
-  const { ital_product } = useContext(ShopContext);
-  let sum = 0;
+  const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } = useContext(CartContext)
   return (
     <div className="cart">
       <div className="cartContainer">
@@ -21,8 +20,7 @@ const Cart = () => {
               </tr>
             </thead>
             <tbody>
-              {ital_product.slice(0, 3).map((item, i) => {
-                sum += item.price;
+              {cartItems.map((item, i) => {
                 return (
                   <tr>
                     <td>
@@ -38,13 +36,16 @@ const Cart = () => {
                       <input
                         type="number"
                         name="quantity"
-                        placeholder="1"
+                        value={item.quantity}
                         min="1"
                       />
                     </td>
                     <td>{item.price} Ft</td>
                     <td>
-                      <button className="btn">
+                      <button className="btn"             
+                      onClick={() => {
+                        removeFromCart(item)
+                      }}>
                         <i className="fa fa-trash"></i>
                       </button>
                     </td>
@@ -56,7 +57,9 @@ const Cart = () => {
         </div>
         <div className="cartOverview">
           <h2>Végösszeg</h2>
-          {sum} Ft
+          <div className="cartTotal">
+          {getCartTotal()} Ft
+          </div>
           <button className="to-cart">Tovább a fizetéshez</button>
         </div>
       </div>

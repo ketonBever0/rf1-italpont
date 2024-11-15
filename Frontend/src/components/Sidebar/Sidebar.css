@@ -10,6 +10,10 @@ body {
   background-color: #f1f1f1;
   height: 100%;
   overflow: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  /* border-top-right-radius: 10px; */
+  border-bottom-right-radius: 10px;
 }
 
 .sidebar a {
@@ -17,11 +21,15 @@ body {
   color: black;
   padding: 16px;
   text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar a.active {
   background-color: #ff4141;
   color: white;
+  font-weight: bold;
 }
 
 .sidebar a:hover:not(.active) {
@@ -31,13 +39,14 @@ body {
 
 div.content {
   margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+  padding: 20px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
 }
 
 @media screen and (max-width: 700px) {
   .sidebar {
-    width: 100%;
+    width: 150px;
     height: auto;
     position: relative;
   }
@@ -45,7 +54,7 @@ div.content {
     float: left;
   }
   div.content {
-    margin-left: 0;
+    margin-left: 150px;
   }
 }
 

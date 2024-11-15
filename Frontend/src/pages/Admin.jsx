@@ -4,7 +4,6 @@ import Sidebar from "../components/Sidebar/Sidebar";
 const Admin = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
-
   if (!isAdmin) {
     window.location.href = "/";
     return null;
@@ -18,7 +17,6 @@ const Admin = () => {
   return (
     <div>
       <Sidebar />
-      <div>Admin</div>
       <div>
         <button onClick={logOut}>Kijelentkezés</button>
       </div>

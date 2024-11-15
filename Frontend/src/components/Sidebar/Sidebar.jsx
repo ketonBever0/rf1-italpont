@@ -7,15 +7,20 @@ const Sidebar = () => {
   const isLoggedIn = currentUser != null ? true : false;
   const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
 
-  const [items, setItems] = useState([
-    //itt adhatod meg a lista elem parametereit
-    { name: "Foldal", isActive: true, linkTo: "/" },
-    { name: "Rendelesek", isActive: false, linkTo: "/rendeleseim" },
-    { name: "Adatok", isActive: false, linkTo: "/updateUser" },
-  ]);
-  //TODO: admin csak akkor jelenjen meg ha muszáj
-  if (isAdmin) {
-  }
+  const [items, setItems] = useState(
+    //admin csak akkor jelenjen meg ha muszáj
+    isAdmin
+      ? [
+          //itt adhatod meg a lista elem parametereit
+          { name: "Adatok", isActive: true, linkTo: "/updateUser" },
+          { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
+        ]
+      : [
+          { name: "Adatok", isActive: true, linkTo: "/updateUser" },
+          { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
+          { name: "Admin", isActive: false, linkTo: "/admin" },
+        ]
+  );
 
   const handleClick = (index) => {
     setItems((prevItems) =>
@@ -41,6 +46,7 @@ const Sidebar = () => {
       <div className="sidebar">
         {list}
         {isAdmin ? <a href="/admin">Admin</a> : <></>}
+        {/* TODO ide lehetne tenni a kijelentkezesta kulon gomb helyett (jobban nezne ki) */}
       </div>
     </div>
   );

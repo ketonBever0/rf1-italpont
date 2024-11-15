@@ -10,7 +10,6 @@ const Sidebar = () => {
   const [items, setItems] = useState([
     //itt adhatod meg a lista elem parametereit
     { name: "Foldal", isActive: true, linkTo: "/" },
-    { name: "Admin", isActive: false, linkTo: "/admin" },
     { name: "Rendelesek", isActive: false, linkTo: "/rendeleseim" },
     { name: "Adatok", isActive: false, linkTo: "/updateUser" },
   ]);
@@ -39,7 +38,10 @@ const Sidebar = () => {
 
   return (
     <div>
-      <div className="sidebar">{list}</div>
+      <div className="sidebar">
+        {list}
+        {isAdmin ? <a href="/admin">Admin</a> : <></>}
+      </div>
     </div>
   );
 };

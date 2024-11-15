@@ -17,7 +17,7 @@ const ProductDisplay = (props) => {
       <div className="productdisplay-left">
         <div className="productdisplay-img">
           {/*TODO: rendes imaget berakni*/}
-          <img className="productdisplay-main-img" src={defaultImage} alt="" />
+          <img className="productdisplay-main-img" src={`http://localhost:3000/product/image/${product.id}/${product.images.split('"')[1]}`} alt="" />
         </div>
       </div>
       <div className="productdisplay-right">

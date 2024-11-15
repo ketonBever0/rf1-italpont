@@ -17,7 +17,6 @@ const SubCategory = () => {
 
   const products = JSON.parse(window.localStorage.getItem("product"));
 
-  //console.log(products);
   const url_category = useParams();
   let categoryNum = 0;
   products.map((item, i) => {
@@ -43,7 +42,7 @@ const SubCategory = () => {
                 name={item.name}
                 category={item.category}
                 subcategory={item.subCategory}
-                images={item.images}
+                images={item.images.split('"')[1]}
                 price={item.price}
                 volume={item.volume}
               />

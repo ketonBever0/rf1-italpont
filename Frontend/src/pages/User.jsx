@@ -16,7 +16,6 @@ const User = () => {
   function logOut() {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("currentUser");
-
     window.location.href = "/";
   }
   return (

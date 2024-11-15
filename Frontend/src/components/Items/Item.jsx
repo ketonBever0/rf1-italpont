@@ -11,7 +11,10 @@ const Items = (props) => {
     <div className="item">
       <Link to={url}>
         {/*TODO: rendes imaget berakni*/}
-        <img src={props.images} alt="" />
+        <img
+          src={`http://localhost:3000/product/image/${props.id}/${props.images}`}
+          alt=""
+        />
       </Link>
       <p>{props.name}</p>
       <div className="item-prices">

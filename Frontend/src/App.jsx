@@ -14,6 +14,7 @@ import User from "./pages/User";
 import Admin from "./pages/Admin";
 import Orders from "./components/Orders/Orders";
 import UpdateUser from "./components/UpdateUser/UpdateUser";
+import PlaceOrder from "./pages/placeOrder";
 
 function App() {
   return (
@@ -42,6 +43,8 @@ function App() {
           <Route path="/termekek" element={<UpdateUser />} />
           <Route path="/arubevetel" element={<UpdateUser />} />
           <Route path="/vasarlok" element={<UpdateUser />} />
+
+          <Route path="/szallitas" element={<PlaceOrder />} />
         </Routes>
         <Footer />
       </BrowserRouter>

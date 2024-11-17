@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
+  const isAdminPage = props.page;
 
-  console.log(isAdmin);
   const [items, setItems] = useState(
     isAdmin
-      ? [
-          { name: "Adatok", isActive: false, linkTo: "/adataim" },
-          { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
-          { name: "Admin", isActive: false, linkTo: "/admin" },
-        ]
+      ? isAdminPage == "admin"
+        ? [
+            { name: "Árúbevételezés", isActive: false, linkTo: "/arubevetel" },
+            { name: "Termékek", isActive: false, linkTo: "/termekek" },
+            { name: "Vásárlók", isActive: false, linkTo: "/vasarlok" },
+            { name: "Raktárak", isActive: false, linkTo: "/raktarak" },
+            { name: "Rendelések", isActive: false, linkTo: "/rendelesek" },
+          ]
+        : [
+            { name: "Adatok", isActive: false, linkTo: "/adataim" },
+            { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
+            { name: "Admin", isActive: false, linkTo: "/admin" },
+          ]
       : [
           { name: "Adatok", isActive: false, linkTo: "/adataim" },
           { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
@@ -47,7 +55,6 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       {list}
-      {isAdmin ? <a href="/admin">Admin</a> : <></>}
       <a className="logout" onClick={() => logOut()}>
         Kijelentkezés
       </a>

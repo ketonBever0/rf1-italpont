@@ -13,7 +13,7 @@ const User = () => {
 
   return (
     <div>
-      <Sidebar />
+      <Sidebar page="user" />
     </div>
   );
 };

@@ -48,7 +48,7 @@ CREATE TABLE `Product` (
     `category` VARCHAR(191) NOT NULL,
     `subCategory` VARCHAR(191) NOT NULL,
     `brand` VARCHAR(191) NOT NULL,
-    `discount` INTEGER NOT NULL,
+    `discount` INTEGER NULL,
     `volume` INTEGER NOT NULL,
     `alcoholPercentage` INTEGER NOT NULL,
     `description` VARCHAR(191) NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `ProductWare` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Warehouse` (
+CREATE TABLE `raktarak` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(191) NOT NULL,
     `postcode` VARCHAR(191) NOT NULL,
@@ -93,4 +93,4 @@ ALTER TABLE `ProductOrder` ADD CONSTRAINT `ProductOrder_productId_fkey` FOREIGN 
 ALTER TABLE `ProductWare` ADD CONSTRAINT `ProductWare_productId_fkey` FOREIGN KEY (`productId`) REFERENCES `Product`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `ProductWare` ADD CONSTRAINT `ProductWare_warehouseId_fkey` FOREIGN KEY (`warehouseId`) REFERENCES `Warehouse`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `ProductWare` ADD CONSTRAINT `ProductWare_warehouseId_fkey` FOREIGN KEY (`warehouseId`) REFERENCES `raktarak`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

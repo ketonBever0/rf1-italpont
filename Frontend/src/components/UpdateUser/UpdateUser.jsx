@@ -7,6 +7,7 @@ const UpdateUser = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const [isEditing, setIsEditing] = useState(false);
   const [userData, setUserData] = useState({
+    id: currentUser.id,
     email: currentUser.email,
     lastName: currentUser.lastName,
     firstName: currentUser.firstName,
@@ -18,17 +19,6 @@ const UpdateUser = () => {
     mobile: currentUser.mobile,
   });
 
-  // const [userData, setUserData] = useState({
-  //   email: "miso@gmail.com",
-  //   lastName: "Teszt",
-  //   firstName: "Elek",
-  //   birthDate: "2123-10-28",
-  //   nick: "NemMiso",
-  //   postcode: "1234",
-  //   city: "Varos",
-  //   address: "Utca u.",
-  //   mobile: "kamuteloszam",
-  // });
   function onChange(e) {
     setUserData((prev) => ({
       ...prev,
@@ -36,15 +26,19 @@ const UpdateUser = () => {
     }));
   }
 
+  console.log(userData);
+
   async function updateUser() {
     axios
-      .patch("http://localhost:3000/auth/me", dataJSON, {
+      .patch("http://localhost:3000/auth/me", userData, {
         headers: {
           Authorization: `Bearer ${BEARER_TOKEN}`,
         },
       })
       .then((response) => {
         console.log(JSON.stringify(response.data));
+        console.log(response);
+        console.log("adatok elkuldve");
       })
       .catch((error) => {
         console.log(error);

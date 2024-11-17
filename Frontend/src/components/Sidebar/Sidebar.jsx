@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 
-//TODO: CSS még fontos!
 const Sidebar = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const isLoggedIn = currentUser != null ? true : false;
@@ -14,13 +13,20 @@ const Sidebar = () => {
           //itt adhatod meg a lista elem parametereit
           { name: "Adatok", isActive: true, linkTo: "/updateUser" },
           { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
+          { name: "Admin", isActive: false, linkTo: "/admin" },
         ]
       : [
           { name: "Adatok", isActive: true, linkTo: "/updateUser" },
           { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
-          { name: "Admin", isActive: false, linkTo: "/admin" },
+          
         ]
   );
+
+  function logOut() {
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("currentUser");
+    window.location.href = "/";
+  }
 
   const handleClick = (index) => {
     setItems((prevItems) =>
@@ -46,7 +52,9 @@ const Sidebar = () => {
       <div className="sidebar">
         {list}
         {isAdmin ? <a href="/admin">Admin</a> : <></>}
-        {/* TODO ide lehetne tenni a kijelentkezesta kulon gomb helyett (jobban nezne ki) */}
+        <a className="logout" onClick={() => logOut()}>
+          Kijelentkezés
+        </a>
       </div>
     </div>
   );

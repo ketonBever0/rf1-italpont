@@ -4,15 +4,15 @@ import logo from "../../assets/logo.png";
 import logo2 from "../../assets/italpont_logo.png";
 import cart_icon from "../../assets/cart_icon.png";
 import { Link } from "react-router-dom";
-import { CartContext } from '../../context/CartContext'
+import { CartContext } from "../../context/CartContext";
 
 const Navbar = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const isLoggedIn = currentUser != null ? true : false;
   const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
 
-  const [menu, setMenu] = useState("italpont");
-  const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } = useContext(CartContext)
+  const [menu, setMenu] = useState();
+  const { getItemsQuantity, getCartTotal } = useContext(CartContext);
   return (
     <div className="navbar">
       <Link to="/">
@@ -111,7 +111,7 @@ const Navbar = () => {
         <Link to="/kosar">
           <img src={cart_icon} alt="" />
         </Link>
-        <div className="nav-cart-count">{cartItems.length}</div>
+        <div className="nav-cart-count">{getItemsQuantity()}</div>
       </div>
     </div>
   );

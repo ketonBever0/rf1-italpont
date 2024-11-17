@@ -44,6 +44,10 @@ div.content {
   transition: margin-left 0.3s ease;
 }
 
+.logout {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 150px;

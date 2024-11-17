@@ -14,18 +14,12 @@ const User = () => {
     return null;
   }
 
-  function logOut() {
-    window.localStorage.removeItem("token");
-    window.localStorage.removeItem("currentUser");
-    window.location.href = "/";
-  }
   return (
     <div>
       <div>
         <div>
           <Sidebar />
         </div>
-        <button onClick={() => logOut()}>Kijelentkezés</button>
       </div>
     </div>
   );

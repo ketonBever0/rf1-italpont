@@ -6,10 +6,10 @@ body {
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 240px;
+  position: absolute;
   background-color: #f1f1f1;
-  height: 100%;
-  overflow: auto;
+  overflow: hidden;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: width 0.3s ease;
   /* border-top-right-radius: 10px; */
@@ -19,7 +19,7 @@ body {
 .sidebar a {
   display: block;
   color: black;
-  padding: 16px;
+  padding: 25px;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;

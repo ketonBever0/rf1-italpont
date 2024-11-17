@@ -13,12 +13,13 @@ const Sidebar = () => {
           //itt adhatod meg a lista elem parametereit
           { name: "Adatok", isActive: true, linkTo: "/updateUser" },
           { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
+          { name: "Raktárak", isActive:false, linkTo: "/tables" },
           { name: "Admin", isActive: false, linkTo: "/admin" },
         ]
       : [
           { name: "Adatok", isActive: true, linkTo: "/updateUser" },
           { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
-          
+          { name: "Raktárak", isActive:false, linkTo: "/tables" },
         ]
   );
 
@@ -46,7 +47,7 @@ const Sidebar = () => {
       </a>
     );
   });
-
+  
   return (
     <div>
       <div className="sidebar">

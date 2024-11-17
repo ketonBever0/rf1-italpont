@@ -18,6 +18,7 @@ const Admin = () => {
     <div>
       <Sidebar />
       <div>
+       
         <button onClick={logOut}>Kijelentkezés</button>
       </div>
     </div>

@@ -5,12 +5,24 @@ import { dataProvider } from "ra-data-simple-prisma";
 const dataProvider = dataProvider("https://localhost:3306/")
   
 
-const Tables = () => <Admin dataProvider={dataProvider}>
-    <Resource  name="Warehouse" list={ListGuesser} edit={EditGuesser} />
-    
-</Admin>
+const Tables = () =>{
+    const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
+    const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
+    if (!isAdmin) {
+      window.location.href = "/";
+      return null;
+    }
+
 return (<div>
     <h1> Raktárak</h1>
-    <a href="Admin.jsx">Admin oldal</a>
-    </div>);
+    <Admin dataProvider={dataProvider}>
+    <Resource  name="Warehouse" list={ListGuesser} edit={EditGuesser} />
+    
+    </Admin>
+    <div>
+     
+        < a href="Admin.jsx">Admin oldal</a>
+    </div>
+</div>);
+};
 export default Tables;

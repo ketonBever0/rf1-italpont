@@ -1,11 +1,38 @@
 import React, { useContext } from "react";
 import "./CSS/Cart.css";
-import { ShopContext } from "../context/ShopContext";
-import icon_delete from "../assets/icon_delete.png";
+import { CartContext } from "../context/CartContext";
 
 const Cart = () => {
-  const { ital_product } = useContext(ShopContext);
-  let sum = 0;
+  const {
+    cartItems,
+    setCartItems,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    getCartTotal,
+  } = useContext(CartContext);
+
+  //TODO: mennyiség változtatása
+  function minusQuantity() {
+    /*
+    setCartItems(cartItems.map((cartItem) =>
+      cartItem.id === item.id
+        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+        : cartItem
+    ));*/
+  }
+  function plusQuantity() {
+    /*
+    setCartItems(cartItems.map((cartItem) =>
+      cartItem.id === item.id
+        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+        : cartItem
+    ));*/
+  }
+
+  function placeOrder() {
+    window.location.href = "/szallitas";
+  }
   return (
     <div className="cart">
       <div className="cartContainer">
@@ -15,36 +42,51 @@ const Cart = () => {
               <tr>
                 <th>Termék</th>
                 <th>Leírás</th>
-                <th>Ár</th>
+                <th>Ár / db</th>
                 <th>Mennyiség</th>
-                <th>Összeg</th>
+                <th>Összesen</th>
               </tr>
             </thead>
             <tbody>
-              {ital_product.slice(0, 3).map((item, i) => {
-                sum += item.price;
+              {cartItems.map((item, i) => {
                 return (
-                  <tr>
+                  <tr key={i}>
                     <td>
-                      <img src={item.image} alt="" />
-                    </td>
-                    <td>
-                      <b>{item.name}</b>
-                      <br />
-                      {item.volume}
-                    </td>
-                    <td>{item.price} Ft</td>
-                    <td>
-                      <input
-                        type="number"
-                        name="quantity"
-                        placeholder="1"
-                        min="1"
+                      <img
+                        src={`http://localhost:3000/product/image/${item.id}/${
+                          item.images.split('"')[1]
+                        }`}
+                        alt=""
                       />
                     </td>
+                    <td>
+                      <b className="itemName">{item.name}</b>
+                      <br />
+                      {item.volume > 30 ? (
+                        item.volume / 1000 + "l"
+                      ) : item.volume == 0 ? (
+                        <></>
+                      ) : (
+                        item.volume + "l"
+                      )}{" "}
+                    </td>
                     <td>{item.price} Ft</td>
                     <td>
-                      <button className="btn">
+                      {/*<button onClick={() => minusQuantity()}>-</button>
+                      
+                      <button onClick={() => plusQuantity()}>+</button>*/}
+                      <button>-</button>
+                      <p>{item.quantity} db</p>
+                      <button>+</button>
+                    </td>
+                    <td>{item.quantity * item.price} Ft</td>
+                    <td>
+                      <button
+                        className="btn"
+                        onClick={() => {
+                          removeFromCart(item);
+                        }}
+                      >
                         <i className="fa fa-trash"></i>
                       </button>
                     </td>
@@ -56,8 +98,10 @@ const Cart = () => {
         </div>
         <div className="cartOverview">
           <h2>Végösszeg</h2>
-          {sum} Ft
-          <button className="to-cart">Tovább a fizetéshez</button>
+          <div className="cartTotal">{getCartTotal()} Ft</div>
+          <button onClick={() => placeOrder()} className="to-cart">
+            Tovább a fizetéshez
+          </button>
         </div>
       </div>
     </div>

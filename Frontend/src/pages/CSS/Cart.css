@@ -11,7 +11,7 @@
   justify-content: center;
   background: white;
   margin: auto;
-  padding: 40px 60px;
+  padding: 30px 40px;
 }
 
 .to-cart {
@@ -30,6 +30,7 @@
 .cart img {
   height: 100px;
 }
+
 .cartItem {
   padding: 20px;
 }
@@ -42,13 +43,15 @@
   width: 50px;
 }
 
-.cart th {
-  padding: 10px;
+.cartItems td,
+.cartItems th {
+  padding: 15px 20px;
 }
-.cart td {
-  padding: 15px 0px;
-  padding-right: 25px;
+
+.itemName {
+  width: 30px;
 }
+
 .btn {
   width: 40px;
   height: 40px;
@@ -73,4 +76,9 @@
   font-weight: 500;
   width: 500px;
   color: red;
+}
+
+.cartTotal {
+  font-weight: bold;
+  font-size: 20px;
 }

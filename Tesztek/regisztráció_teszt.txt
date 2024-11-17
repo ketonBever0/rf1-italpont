@@ -1,0 +1,23 @@
+Teszteljárás
+ID: TP1
+Leírás: Regisztráció az oldalra
+Folyamat: Regisztráció
+Step0: megnyitjuk a bejelentkezés oldalt
+Step1: mivel nincs felhasználói fiókunk rámegyünk a az oldalon lévő linkre, ami átvisz a regisztrációhoz
+Step2: megadjuk a kívánt adatokat
+Step3: beleegyezünk a felhasználói feltételekbe és rámegyünk a regisztráció gombra
+
+Tesztesetek:
+TC1
+TP1
+Leírás: regisztráció a helyes adatokkal
+Inputs: vezetéknév, keresztnév, emailcím, város + irányítószám, utca, telefonszám, becenév, születési dátum, jelszó(kétszer)
+Action: rányomunk a regisztráció gombra
+Elfogadási kritérium: az oldal visszajelez, hogy a regisztráció sikeres
+
+TC2
+TP1
+Leírás: regisztráció már beregisztrált emailről
+Inputs: vezetéknév, keresztnév, emailcím, város + irányítószám, utca, telefonszám, becenév, születési dátum, jelszó(kétszer)
+Action: rányomunk a regisztráció gombra
+Elfogadási kritérium: az oldal visszajelez, hogy a regisztráció sikeres

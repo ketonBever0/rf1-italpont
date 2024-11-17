@@ -1,7 +1,7 @@
 .updateUser {
   width: 100%;
   /*height: 150vh;*/
-  background: #fce3fe;
+  background: #fce3fee1;
   padding-top: 35px;
   padding-bottom: 100px;
 }
@@ -10,13 +10,15 @@
 }
 .updateUser-container {
   width: 45vw;
-  /*height: 130vh;*/
-  background: white;
+  background: rgb(255, 255, 255);
   margin: auto;
   padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.1);
 }
 .updateUser-container h1 {
-  margin: 15px 0px;
+  margin: 0 10px 25px 10px;
+  text-align: center;
 }
 .updateUser-fields {
   display: flex;
@@ -38,12 +40,13 @@
   height: 72px;
   color: white;
   background: #ff4141;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin: 30px auto 15px auto;
   border: none;
   font-size: 24px;
   font-weight: 500;
   cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.12);
 }
 .updateUser-login {
   margin-top: 30px;

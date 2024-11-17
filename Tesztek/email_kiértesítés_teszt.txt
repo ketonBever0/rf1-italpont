@@ -1,0 +1,23 @@
+Teszteljárás
+ID: TP1
+Leírás: E-mail kiértesítés tesztelése egy rendelés leadása után.
+Folyamat: Leadunk egy rendelést
+Step0: Megnyitjuk az alkalmazást és bejelentkezünk/beregisztrálunk
+Step1: Hozzáadunk egy vagy több terméket a kosárhoz
+Step2: Megnyitjuk a kosarat
+Step3: Leadjuk a rendelést
+
+Tesztesetek
+TC1
+TP1
+Leírás: Rendelés szerződött partnerként
+Inputs: Kiválasztott termék
+Action: Megnyomjuk a @RENDELÉS gombot
+Elfogadási kritérium: Megkaptuk az értesítő e-mailt
+
+TC2
+TP1
+Leírás: Rendelés sima vásárlóként
+Inputs: Kiválasztott termék
+Action: Megnyomjuk a @RENDELÉS gombot
+Elfogadási kritérium: Megkaptuk az értesítő e-mailt

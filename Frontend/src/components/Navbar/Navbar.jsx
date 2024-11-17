@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import logo2 from "../../assets/italpont_logo.png";
 import cart_icon from "../../assets/cart_icon.png";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const Navbar = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const isLoggedIn = currentUser != null ? true : false;
   const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
 
-  const [menu, setMenu] = useState("italpont");
+  const [menu, setMenu] = useState();
+  const { getItemsQuantity, getCartTotal } = useContext(CartContext);
+
+  function logOut() {
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("currentUser");
+    window.location.href = "/";
+  }
   return (
     <div className="navbar">
       <Link to="/">
@@ -103,13 +111,20 @@ const Navbar = () => {
         )}
       </ul>
       <div className="nav-login-cart">
-        <Link to="/bejelentkezes">
-          <button>Belépés</button>
-        </Link>
+        {isLoggedIn ? (
+          <Link onClick={() => logOut()}>
+            <button>Kijelentkezés</button>
+          </Link>
+        ) : (
+          <Link to="/bejelentkezes">
+            <button>Belépés</button>
+          </Link>
+        )}
+
         <Link to="/kosar">
           <img src={cart_icon} alt="" />
         </Link>
-        <div className="nav-cart-count">0</div>
+        <div className="nav-cart-count">{getItemsQuantity()}</div>
       </div>
     </div>
   );

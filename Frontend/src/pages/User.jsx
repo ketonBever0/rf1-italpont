@@ -6,10 +6,10 @@ const User = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const isLoggedIn = currentUser != null ? true : false;
 
-  //if (!isLoggedIn) {
-   // window.location.href = "/";
-   // return null;
-  //}
+  if (!isLoggedIn) {
+    window.location.href = "/";
+    return null;
+  }
 
   return (
     <div>

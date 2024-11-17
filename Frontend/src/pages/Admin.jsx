@@ -16,7 +16,7 @@ const Admin = () => {
   }
   return (
     <div>
-      <Sidebar />
+      <Sidebar page="admin" />
       <div>
        
         <button onClick={logOut}>Kijelentkezés</button>

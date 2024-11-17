@@ -13,6 +13,12 @@ const Navbar = () => {
 
   const [menu, setMenu] = useState();
   const { getItemsQuantity, getCartTotal } = useContext(CartContext);
+
+  function logOut() {
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("currentUser");
+    window.location.href = "/";
+  }
   return (
     <div className="navbar">
       <Link to="/">
@@ -105,9 +111,16 @@ const Navbar = () => {
         )}
       </ul>
       <div className="nav-login-cart">
-        <Link to="/bejelentkezes">
-          <button>Belépés</button>
-        </Link>
+        {isLoggedIn ? (
+          <Link onClick={() => logOut()}>
+            <button>Kijelentkezés</button>
+          </Link>
+        ) : (
+          <Link to="/bejelentkezes">
+            <button>Belépés</button>
+          </Link>
+        )}
+
         <Link to="/kosar">
           <img src={cart_icon} alt="" />
         </Link>

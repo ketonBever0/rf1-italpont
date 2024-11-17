@@ -29,6 +29,10 @@ const Cart = () => {
         : cartItem
     ));*/
   }
+
+  function placeOrder() {
+    window.location.href = "/szallitas";
+  }
   return (
     <div className="cart">
       <div className="cartContainer">
@@ -71,7 +75,9 @@ const Cart = () => {
                       {/*<button onClick={() => minusQuantity()}>-</button>
                       
                       <button onClick={() => plusQuantity()}>+</button>*/}
+                      <button>-</button>
                       <p>{item.quantity} db</p>
+                      <button>+</button>
                     </td>
                     <td>{item.quantity * item.price} Ft</td>
                     <td>
@@ -93,7 +99,9 @@ const Cart = () => {
         <div className="cartOverview">
           <h2>Végösszeg</h2>
           <div className="cartTotal">{getCartTotal()} Ft</div>
-          <button className="to-cart">Tovább a fizetéshez</button>
+          <button onClick={() => placeOrder()} className="to-cart">
+            Tovább a fizetéshez
+          </button>
         </div>
       </div>
     </div>

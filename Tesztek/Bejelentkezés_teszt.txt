@@ -1,0 +1,31 @@
+Teszteljárás bejelentkezéshez
+ID: TP1
+Leírás: Email-cím és jelszó után a bejelentkezésre nyomunk
+Folyamat: Bejelentkezési folyamat
+Step0: A főoldalről indulva, a belépés gombra nyomunk a menüsávban
+Step1: Beírjuk az email-címet
+Step2: Beírjuk a jelszót.
+Step3: Bejelentkezésre nyomunk
+
+Tesztesetek:
+
+TC1
+Leírás: Bejelentkezés helyes adatokkal
+Inputs: érvényes email-cím, ami már szerpel az adatbázisban és érvényes jelszó
+Action: Rákattintunk a bejelentkezés gombra.
+Elfogadási kritérium: Az oldal automatikusan a felhasználó felületre navigál.
+Tényleges működés: A felhasználói felületre navigál az oldal.
+
+TC2
+Leírás: Bejelentkezés érvénytelen email-címmel
+Inputs: Nem email-címet adunk meg, jelszó helyes
+Action: Rákattintunk a bejelentkezés gombra.
+Elfogadási kritérium: Felugró ablakban megjelenik, hogy sikertelen bejelentkezés, az oldal a bejelentkezésnél marad.
+Tényleges működés: Felugró ablakban sikertelen bejelentkezés.
+
+TC3
+Leírás: Bejelentkezés rossz jelszóval.
+Inputs: email-cím helyes, jelszó nem jó
+Action: Rákattintunk a bejelentkezés gombra.
+Elfogadási kritérium: Felugró ablakban megjelenik, hogy sikertelen bejelentkezés, az oldal a bejelentkezésnél marad.
+Tényleges működés: Felugró ablakban sikertelen bejelentkezés.

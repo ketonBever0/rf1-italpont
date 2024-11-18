@@ -56,11 +56,17 @@ export class ProductController {
   }
 
   @Get("/image/:id/:file")
-  async getImage(@Param("id") id: string, @Param("file") fileName: string, @Res() res: Response) {
-    const file = fs.createReadStream(join(process.cwd(), `files/products/${id}/${fileName}`));
+  async getImage(
+    @Param("id") id: string,
+    @Param("file") fileName: string,
+    @Res() res: Response,
+  ) {
+    const filePath = `files/products/${id}/${fileName}`;
+    if (!fs.existsSync(filePath))
+      return res.status(500).json({ message: "Internal error!" });
+    const file = fs.createReadStream(join(process.cwd(), filePath));
     file.pipe(res);
   }
-
 
   @UseGuards(AuthGuard, RoleGuard)
   @Roles("ADMIN", "MODERATOR")

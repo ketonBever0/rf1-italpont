@@ -20,4 +20,4 @@ TP1
 Leírás: regisztráció már beregisztrált emailről
 Inputs: vezetéknév, keresztnév, emailcím, város + irányítószám, utca, telefonszám, becenév, születési dátum, jelszó(kétszer)
 Action: rányomunk a regisztráció gombra
-Elfogadási kritérium: az oldal visszajelez, hogy a regisztráció sikeres
+Elfogadási kritérium: az oldal kiírja, hogy ezzel az email-lel már létezik felhasználó

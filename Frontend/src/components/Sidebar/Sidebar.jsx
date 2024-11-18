@@ -4,21 +4,27 @@ import "./Sidebar.css";
 const Sidebar = (props) => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
-  const isAdminPage = props.page;
+  const isAdminPage = props.page == "admin";
 
   const [items, setItems] = useState(
     isAdmin
-      ? [
-          //itt adhatod meg a lista elem parametereit
-          { name: "Adatok", isActive: true, linkTo: "/updateUser" },
-          { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
-          { name: "Raktárak", isActive: false, linkTo: "/raktarak" },
-          { name: "Admin", isActive: false, linkTo: "/admin" },
-        ]
+      ? isAdminPage
+        ? [
+            { name: "Árúbevételezés", isActive: false, linkTo: "/arubevetel" },
+            { name: "Termékek", isActive: false, linkTo: "/termekek" },
+            { name: "Felhasználók", isActive: false, linkTo: "/vasarlok" },
+            { name: "Raktárak", isActive: false, linkTo: "/raktarak" },
+            { name: "Rendelések", isActive: false, linkTo: "/rendelesek" },
+          ]
+        : [
+            { name: "Adatok", isActive: false, linkTo: "/updateUser" },
+            { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
+            { name: "Raktárak", isActive: false, linkTo: "/raktarak" },
+            { name: "Admin", isActive: false, linkTo: "/admin" },
+          ]
       : [
-          { name: "Adatok", isActive: false, linkTo: "/adataim" },
+          { name: "Adataim", isActive: false, linkTo: "/adataim" },
           { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
-          { name: "Raktárak", isActive:false, linkTo: "/tables" },
         ]
   );
 
@@ -46,7 +52,7 @@ const Sidebar = (props) => {
       </a>
     );
   });
-  
+
   return (
     <div className="sidebar">
       {list}

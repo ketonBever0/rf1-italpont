@@ -27,7 +27,7 @@ const UpdateUser = () => {
     }));
   }
 
-  console.log(userData);
+  //console.log(userData);
 
   async function updateUser() {
     axios

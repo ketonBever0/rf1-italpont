@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
 import logo2 from "../../assets/italpont_logo.png";
 import cart_icon from "../../assets/cart_icon.png";
 import { Link } from "react-router-dom";

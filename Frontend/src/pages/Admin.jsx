@@ -1,30 +1,18 @@
 import React from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
 
-
-const Admin = () =>  {
+const Admin = () => {
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
 
   if (!isAdmin) {
-   window.location.href = "/";
+    window.location.href = "/";
     return null;
   }
-  function logOut() {
-    window.localStorage.removeItem("token");
-    window.localStorage.removeItem("currentUser");
 
-    window.location.href = "/";
-  }
   return (
     <div>
-      <Sidebar />
-      <div>Admin</div>
-      
-      <div>
-       
-        <button onClick={logOut}>Kijelentkezés</button>
-      </div>
+      <Sidebar page="admin" />
     </div>
   );
 };

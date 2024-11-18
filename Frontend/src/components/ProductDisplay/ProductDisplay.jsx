@@ -2,7 +2,6 @@ import React from "react";
 import { useContext, useEffect, useState } from "react";
 import "./ProductDisplay.css";
 import Stars from "../Stars/Stars";
-import defaultImage from "../../assets/Diplomatico.png";
 import { CartContext } from "../../context/CartContext";
 
 const ProductDisplay = (props) => {
@@ -27,7 +26,6 @@ const ProductDisplay = (props) => {
     <div className="productdisplay">
       <div className="productdisplay-left">
         <div className="productdisplay-img">
-          {/*TODO: rendes imaget berakni*/}
           <img
             className="productdisplay-main-img"
             src={`http://localhost:3000/product/image/${product.id}/${
@@ -40,7 +38,7 @@ const ProductDisplay = (props) => {
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
         <div className="productdisplay-right-stars">
-          <Stars iconSize={25} defaultRating={defaultRating} />
+          <Stars iconSize={25} defaultRating={5} />
           <p>(122)</p>
         </div>
         <div className="productdisplay-right-parameters">

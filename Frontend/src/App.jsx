@@ -39,10 +39,11 @@ function App() {
           <Route path="/rendeleseim" element={<Orders />} />
 
           <Route path="/admin" element={<Admin />} />
-          <Route path="/raktarak" element={<UpdateUser />} />
-          <Route path="/termekek" element={<UpdateUser />} />
-          <Route path="/arubevetel" element={<UpdateUser />} />
-          <Route path="/vasarlok" element={<UpdateUser />} />
+          <Route path="/raktarak" element={<Orders />} />
+          <Route path="/termekek" element={<Orders />} />
+          <Route path="/arubevetel" element={<Orders />} />
+          <Route path="/vasarlok" element={<Orders />} />
+          <Route path="/rendelesek" element={<Orders />} />
 
           <Route path="/szallitas" element={<PlaceOrder />} />
         </Routes>

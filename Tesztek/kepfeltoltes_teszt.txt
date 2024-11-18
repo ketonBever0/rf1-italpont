@@ -1,0 +1,25 @@
+Teszteljárás képfeltöltéshez
+Leírás: Képek feltöltése termékekhez
+Működés: Megnézi, hogy .jpg, .jpeg vagy .png kiterjesztésűek-e a fájlok, generál egy fájlnevet nekik, majd beteszi a termék images mezőjébe, mint string-é alakított tömb, illetve létrehozza a szerveren a fájlt.
+Folyamat: Képfeltöltési folyamat
+Step1: Kiválasztjuk a feltölteni kívánt képeket
+Step2: Feltöltjük
+Step3: Megnézzük, hogy megjelennek-e a termék oldalán
+
+Tesztesetek:
+
+TC1:
+Leírás: Megengedett képformátumokkal, a terméknek egy képe se volt eddig
+Kiválasztott fájlok: 2 .png, 1 .jpg
+Eredmény: A végpont visszaadta a terméket, aminek images mezőjében megjelentek a képek (relatív) elérési útja, illetve a fájlrendszerben is megjelent a megfelelő helyen.
+
+TC2:
+Leírás: Van benne egy hibás formátum
+Kiválasztott fájlok: 1 .png, 1 .css
+Eredmény: Visszaadja a "Csak kép formátum tölthető fel!" üzenetet 400-as hibakóddal.
+
+TC3:
+Leírás: Meglévő képek mellé töltünk fel
+Kiválasztott fájlok: 1 .png
+Eredmény: Hozzáíródik a többi kép elérési út mellé
+

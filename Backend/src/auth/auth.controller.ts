@@ -5,9 +5,12 @@ https://docs.nestjs.com/controllers#controllers
 import {
   Body,
   Controller,
+  Delete,
+  ForbiddenException,
   Get,
   HttpStatus,
   NotFoundException,
+  Param,
   Patch,
   Post,
   Res,
@@ -24,7 +27,7 @@ import { Response } from "express";
 import { Roles, User } from "./auth.decorator";
 import { AuthGuard } from "./guard/auth.guard";
 import { RoleGuard } from "./guard/role.guard";
-import { User as UserModel } from "@prisma/client";
+import { Role, User as UserModel } from "@prisma/client";
 import { plainToInstance } from "class-transformer";
 
 @Controller("/auth")
@@ -80,5 +83,27 @@ export class AuthController {
   @UseGuards(AuthGuard)
   async updatePassword(@User("id") user: any, @Body() dto: UpdatePasswordDto) {
     return await this.authService.updatePassword(user, dto);
+  }
+
+  @Patch("/moderator/:id")
+  @UseGuards(AuthGuard, RoleGuard)
+  @Roles("ADMIN")
+  async giveModerator(@Param("id") id: string, res: Response) {
+    if ((await this.authService.getRole(parseInt(id))) == Role.ADMIN)
+      throw new ForbiddenException({
+        message: "Admint nem tehetsz moderátorrá!",
+      });
+    return await this.authService.changeRole(parseInt(id), Role.MODERATOR);
+  }
+
+  @Delete("/moderator/:id")
+  @UseGuards(AuthGuard, RoleGuard)
+  @Roles("ADMIN")
+  async revokeModerator(@Param("id") id: string, res: Response) {
+    if ((await this.authService.getRole(parseInt(id))) == Role.ADMIN)
+      throw new ForbiddenException({
+        message: "Admint nem tehetsz mezei felhasználóvá!",
+      });
+    return await this.authService.changeRole(parseInt(id), Role.USER);
   }
 }

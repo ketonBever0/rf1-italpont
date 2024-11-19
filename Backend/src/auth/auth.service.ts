@@ -106,7 +106,7 @@ export class AuthService {
         postcode: dto.postcode,
         city: dto.city,
         address: dto.address,
-        mobile: dto.mobile
+        mobile: dto.mobile,
       },
     });
     delete user.password;
@@ -157,4 +157,17 @@ export class AuthService {
       },
     });
   }
+
+  async getRole(id: number) {
+    return (await this.prisma.user.findUnique({where: {id: id}, select: {role: true}})).role;
+  }
+
+  async changeRole(id: number, role: Role) {
+    await this.prisma.user.update({
+      where: { id: id },
+      data: { role: role },
+    });
+    return { message: "Felhasználó rangja megváltozott" };
+  }
+
 }

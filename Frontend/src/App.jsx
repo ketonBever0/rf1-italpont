@@ -12,7 +12,9 @@ import Category from "./pages/Category";
 import Main from "./pages/Main";
 import User from "./pages/User";
 import Admin from "./pages/Admin";
+import Orders from "./components/Orders/Orders";
 import UpdateUser from "./components/UpdateUser/UpdateUser";
+import PlaceOrder from "./pages/placeOrder";
 
 function App() {
   return (
@@ -27,13 +29,23 @@ function App() {
             path="/:category/:subcategory/:productName"
             element={<Product />}
           />
-          <Route path="/felhasznalo" element={<User />} />
-          <Route path="/admin" element={<Admin />} />
+
           <Route path="/regisztracio" element={<Signup />} />
           <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/kosar" element={<Cart />} />
-          <Route path="/updateUser" element={<UpdateUser />} />
 
+          <Route path="/felhasznalo" element={<User />} />
+          <Route path="/adataim" element={<UpdateUser />} />
+          <Route path="/rendeleseim" element={<Orders />} />
+
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/raktarak" element={<Orders />} />
+          <Route path="/termekek" element={<Orders />} />
+          <Route path="/arubevetel" element={<Orders />} />
+          <Route path="/vasarlok" element={<Orders />} />
+          <Route path="/rendelesek" element={<Orders />} />
+
+          <Route path="/szallitas" element={<PlaceOrder />} />
         </Routes>
         <Footer />
       </BrowserRouter>

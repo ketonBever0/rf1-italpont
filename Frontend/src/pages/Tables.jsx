@@ -1,0 +1,28 @@
+import React from "react";
+import { Admin, EditGuesser, ListGuesser, Resource } from "react-admin";
+import { dataProvider } from "ra-data-simple-prisma";
+
+const dataProvider = dataProvider("https://localhost:3306/");
+
+const Tables = () => {
+  const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
+  const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
+  if (!isAdmin) {
+    window.location.href = "/";
+    return null;
+  }
+
+  return (
+    <div>
+      <h1>Raktárak</h1>
+      <Admin dataProvider={dataProvider}>
+        <Resource name="Warehouse" list={ListGuesser} edit={EditGuesser} />
+      </Admin>
+      <div>
+        <a href="/admin">Admin oldal</a>
+      </div>
+    </div>
+  );
+};
+
+export default Tables;

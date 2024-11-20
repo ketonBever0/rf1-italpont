@@ -1,0 +1,29 @@
+Teszteljárás
+ID: TP1
+Leírás: Rendelés összeállítása és leadása
+Folyamat: Vásárlási folyamat
+Step0: Megnyitjuk az oldal főoldalát.
+Step1: Kiválasztjuk a terméket a termékkatalógusból és rákattintunk a „Kosárba” gombra.
+Step2: Megnyitjuk a kosarat, ellenőrizzük a termékeket, és szükség szerint módosítjuk a mennyiségeket.
+Step3: Tovább lépünk a fizetési oldalra, megadjuk a szükséges adatokat.
+Step4: Elfogadjuk a feltételeket, és rányomunk a „Megrendelés” gombra.
+
+Tesztesetek:
+
+TC1
+Leírás: Rendelés helyes adatokkal
+Inputs: termékek (2 db), név, cím, telefonszám, email, fizetési adatok
+Action: Rákattintunk a „Megrendelés” gombra.
+Elfogadási kritérium: Az oldal visszajelzést ad, hogy a rendelés sikeres, és megjelenik a visszaigazoló oldal.
+
+TC2
+Leírás: Rendelés hiányzó adatokkal (pl. cím nélkül)
+Inputs: termékek (1 db), név, telefonszám, email, fizetési adatok (cím nélkül)
+Action: Rákattintunk a „Megrendelés” gombra.
+Elfogadási kritérium: Az oldal hibajelzést ad, és nem engedi a rendelés leadását.
+
+TC3
+Leírás: Kosár tartalmának módosítása rendelés előtt
+Inputs: termékek (3 db), egy termék mennyiségének csökkentése
+Action: A kosárban módosítjuk a termékek mennyiségét, majd rákattintunk a „Tovább” gombra.
+Elfogadási kritérium: A kosár tartalma frissül a megadott módosításokkal, és a rendelési folyamat folytatható.

@@ -1,29 +1,45 @@
 import React from "react";
+import { useContext } from "react";
 import "./ProductDisplay.css";
 import Stars from "../Stars/Stars";
-import defaultImage from "../../assets/Diplomatico.png";
+import { CartContext } from "../../context/CartContext";
+import { CategoryContext } from "../../context/CategoryContext";
+
 
 const ProductDisplay = (props) => {
-  function toCart() {
-    //TODO: toCart fuggveny megirasa
+  const { url} = useContext(CategoryContext);
+  const { addToCart } = useContext(CartContext);
+
+  const cartButtons = document.querySelectorAll(".cart-button");
+
+  cartButtons.forEach((button) => {
+    button.addEventListener("click", cartClick);
+  });
+
+  function cartClick() {
+    let button = this;
+    button.classList.add("clicked");
   }
 
   const { product } = props;
   const volume =
     product.volume > 30 ? product.volume + " ml" : product.volume + " l";
-  const defaultRating = Math.round(product.rating);
+  const imageUrl = url + "product/image/" + product.id + "/" + product.images.split('"')[1];
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
         <div className="productdisplay-img">
-          {/*TODO: rendes imaget berakni*/}
-          <img className="productdisplay-main-img" src={defaultImage} alt="" />
+          <img
+            className="productdisplay-main-img"
+            src={imageUrl}
+            alt=""
+          />
         </div>
       </div>
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
         <div className="productdisplay-right-stars">
-          <Stars iconSize={25} defaultRating={defaultRating} />
+          <Stars iconSize={25} defaultRating={5} />
           <p>(122)</p>
         </div>
         <div className="productdisplay-right-parameters">
@@ -54,8 +70,12 @@ const ProductDisplay = (props) => {
         <div className="productdisplay-right-description">
           {product.description}
         </div>
-
-        <button onClick={() => toCart()}>Kosárba teszem</button>
+        <button onClick={() => addToCart(product)} className="cart-button">
+          <span className="add-to-cart">Kosárba teszem</span>
+          <span className="added">Hozzáadva</span>
+          <i className="fas fa-shopping-cart"></i>
+          <i className="fas fa-box"></i>
+        </button>
       </div>
     </div>
   );

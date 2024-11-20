@@ -97,7 +97,17 @@ export class AuthService {
   async updateUser(id: number, email: string, dto: UpdateUserDto) {
     const user = await this.prisma.user.update({
       where: { id: id, email: email },
-      data: dto,
+      data: {
+        // email: dto.email,
+        lastName: dto.lastName,
+        firstName: dto.firstName,
+        birthDate: dto.birthDate,
+        nick: dto.nick,
+        postcode: dto.postcode,
+        city: dto.city,
+        address: dto.address,
+        mobile: dto.mobile,
+      },
     });
     delete user.password;
     return { message: "User updated!", user };
@@ -147,4 +157,17 @@ export class AuthService {
       },
     });
   }
+
+  async getRole(id: number) {
+    return (await this.prisma.user.findUnique({where: {id: id}, select: {role: true}})).role;
+  }
+
+  async changeRole(id: number, role: Role) {
+    await this.prisma.user.update({
+      where: { id: id },
+      data: { role: role },
+    });
+    return { message: "Felhasználó rangja megváltozott" };
+  }
+
 }

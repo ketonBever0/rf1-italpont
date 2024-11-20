@@ -9,19 +9,10 @@ const Admin = () => {
     window.location.href = "/";
     return null;
   }
-  function logOut() {
-    window.localStorage.removeItem("token");
-    window.localStorage.removeItem("currentUser");
 
-    window.location.href = "/";
-  }
   return (
     <div>
-      <Sidebar />
-      <div>Admin</div>
-      <div>
-        <button onClick={logOut}>Kijelentkezés</button>
-      </div>
+      <Sidebar page="admin" />
     </div>
   );
 };

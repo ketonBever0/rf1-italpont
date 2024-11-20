@@ -1,6 +1,4 @@
-import React, { createContext, useState } from "react";
-import ital_product from "../scripts/ital_products";
-import products from "../scripts/products";
+import React, { createContext } from "react";
 import axios from "axios";
 
 export const ShopContext = createContext(null);
@@ -19,10 +17,10 @@ const ShopContextProvider = (props) => {
   //const contextValue = window.localStorage.getItem("product");
   //console.log(contextValue);
 
-  const contextValue = { ital_product };
+  //const contextValue = { ital_product };
 
   return (
-    <ShopContext.Provider value={contextValue}>
+    <ShopContext.Provider value={" "}>
       {props.children}
     </ShopContext.Provider>
   );

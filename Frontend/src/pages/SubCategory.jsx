@@ -3,10 +3,12 @@ import "./CSS/ShopCategory.css";
 import Item from "../Components/Items/Item";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { CategoryContext } from "../context/CategoryContext";
 
 const SubCategory = () => {
+  const { url } = useContext(CategoryContext);
   axios
-    .get("http://localhost:3000/product/all")
+    .get(url + "product/all")
     .then((response) => {
       window.localStorage.setItem("product", JSON.stringify(response.data));
     })
@@ -17,7 +19,6 @@ const SubCategory = () => {
 
   const products = JSON.parse(window.localStorage.getItem("product"));
 
-  //console.log(products);
   const url_category = useParams();
   let categoryNum = 0;
   products.map((item, i) => {
@@ -43,7 +44,7 @@ const SubCategory = () => {
                 name={item.name}
                 category={item.category}
                 subcategory={item.subCategory}
-                images={item.images}
+                images={item.images.split('"')[1]}
                 price={item.price}
                 volume={item.volume}
               />

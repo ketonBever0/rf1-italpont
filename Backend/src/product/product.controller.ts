@@ -12,6 +12,7 @@ import {
   Param,
   Patch,
   Post,
+  Req,
   Res,
   UploadedFiles,
   UseGuards,
@@ -25,7 +26,7 @@ import { RoleGuard } from "src/auth/guard/role.guard";
 import { Roles } from "src/auth/auth.decorator";
 import { FilesInterceptor } from "@nestjs/platform-express";
 import { diskStorage } from "multer";
-import { extname } from "path";
+import { extname, join } from "path";
 import * as fs from "fs";
 
 @Controller("/product")
@@ -52,6 +53,19 @@ export class ProductController {
     } else {
       throw new NotFoundException();
     }
+  }
+
+  @Get("/image/:id/:file")
+  async getImage(
+    @Param("id") id: string,
+    @Param("file") fileName: string,
+    @Res() res: Response,
+  ) {
+    const filePath = `files/products/${id}/${fileName}`;
+    if (!fs.existsSync(filePath))
+      return res.status(500).json({ message: "Internal error!" });
+    const file = fs.createReadStream(join(process.cwd(), filePath));
+    file.pipe(res);
   }
 
   @UseGuards(AuthGuard, RoleGuard)

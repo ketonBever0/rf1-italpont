@@ -1,7 +1,6 @@
 import React from "react";
 import "./Popular.css";
 import Item from "../Items/Item";
-import diplomatico from "../../assets/Diplomatico.png";
 
 const Popular = () => {
   const products = JSON.parse(window.localStorage.getItem("product"));
@@ -19,7 +18,7 @@ const Popular = () => {
                 category={item.category}
                 subcategory={item.subCategory}
                 name={item.name}
-                image={item.image}
+                images={item.images.split('"')[1]}
                 price={item.price}
                 volume={item.volume}
               />

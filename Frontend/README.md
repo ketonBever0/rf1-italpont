@@ -1,10 +1,16 @@
 # Frontend útmutató
 
+#### Szerver
+
+Categorycontext.jsx fájlban a `live = true`-t kell beállítani, ha az online adatbázis szeretnénk elérni. Ha localhostot szeretnénk használni, akkor a `live = false`.
+**const live = true;**
+**const url = live ? `https://rf1-italpont-production.up.railway.app/`: `http://localhost:3000/`;**
+
 #### Futtatás
-- crtl + ö -> terminál
-- cd frontend
-- npm install
-- npm run dev
+- `crtl + ö` -> terminál
+- `cd frontend`
+- `npm install`
+- `npm run dev`
 
 #### Felépítés
  A main.jsx rendereli ki az index.htmlben az oldalt. AZ App.jsx-ben vannak megadva az elérési útvonalak, valamint az oldal felépítése. A /pages/Main.jsx a főoldal componenseit tartalmazza. 

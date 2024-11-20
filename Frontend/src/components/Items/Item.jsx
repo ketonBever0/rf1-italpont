@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Item.css";
 import { Link, useParams } from "react-router-dom";
 import Stars from "../Stars/Stars";
-import defaultImage from "../../assets/Diplomatico.png";
+import { CategoryContext } from "../../context/CategoryContext";
 
 const Items = (props) => {
+  const { url } = useContext(CategoryContext);
   const volume = props.volume > 30 ? props.volume + " ml" : props.volume + " l";
-  const url = "/" + props.category + "/" + props.subcategory + "/" + props.name;
+  const imageUrl = url + "product/image/" + props.id + "/" + props.images;
+  const linkUrl =
+    "/" + props.category + "/" + props.subcategory + "/" + props.name;
   return (
     <div className="item">
-      <Link to={url}>
-        {/*TODO: rendes imaget berakni*/}
-        <img src={props.images} alt="" />
+      <Link to={linkUrl}>
+        <img src={imageUrl} alt="" />
       </Link>
       <p>{props.name}</p>
       <div className="item-prices">

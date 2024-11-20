@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./CSS/Login.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { CategoryContext } from "../context/CategoryContext";
 
 const Login = () => {
+  const { url } = useContext(CategoryContext);
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -16,12 +18,13 @@ const Login = () => {
   }
   async function login() {
     axios
-      .post("http://localhost:3000/auth/login", data)
+      .post(url + "auth/login", data)
       .catch((error) => {
         console.error(error);
         alert("Bejelentkezés sikertelen!");
       })
       .then((response) => {
+        console.log(response);
         window.localStorage.setItem("token", response.data.token);
         window.localStorage.setItem(
           "currentUser",

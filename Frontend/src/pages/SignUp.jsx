@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./CSS/signup.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { CategoryContext } from "../context/CategoryContext";
 
 const SignUp = () => {
+  const { url } = useContext(CategoryContext);
   const [data, setData] = useState({
     lastName: "",
     firstName: "",
@@ -27,7 +29,7 @@ const SignUp = () => {
     }
 
     axios
-      .post("http://localhost:3000/auth/registration", data)
+      .post(url + "auth/registration", data)
       .catch((error) => {
         console.error(error);
         alert("Sikertelen regisztráció!");
@@ -69,12 +71,12 @@ const SignUp = () => {
             placeholder="E-mail cím"
             required
           />
-          <div class="form-group">
+          <div className="form-group">
             <input
               type="city"
               value={data.city}
               onChange={(e) => onChange(e)}
-              class="form-control"
+              className="form-control"
               name="city"
               id="inputCity"
               placeholder="Város"
@@ -85,7 +87,7 @@ const SignUp = () => {
               type="zip"
               value={data.postcode}
               onChange={(e) => onChange(e)}
-              class="form-control"
+              className="form-control"
               name="postcode"
               id="inputZip"
               placeholder="Irányítószám"
@@ -95,7 +97,7 @@ const SignUp = () => {
               type="street"
               value={data.address}
               onChange={(e) => onChange(e)}
-              class="form-control"
+              className="form-control"
               name="address"
               id="autocomplete"
               placeholder="Utca"

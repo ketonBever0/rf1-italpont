@@ -78,6 +78,11 @@ export class LoginDto {
 }
 
 export class UpdateUserDto {
+
+  // @IsOptional()
+  // @IsEmail()
+  // email: string;
+
   @IsOptional()
   @IsNotEmpty()
   @IsString()

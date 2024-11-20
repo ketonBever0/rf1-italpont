@@ -4,7 +4,7 @@
 
 Categorycontext.jsx fájlban a `live = true`-t kell beállítani, ha az online adatbázis szeretnénk elérni. Ha localhostot szeretnénk használni, akkor a `live = false`.
 **const live = true;**
-**const url = live ? `https://rf1-italpont-production.up.railway.app/`: `http://localhost:3000/`;**
+**const url = live ? `https://rf1-italpont-production.up.railway.app/`: `hhhh`;**
 
 #### Futtatás
 - `crtl + ö` -> terminál

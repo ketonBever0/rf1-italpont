@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./UpdateUser.css";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
+import { CategoryContext } from "../../context/CategoryContext";
 
 const UpdateUser = () => {
+  const { url } = useContext(CategoryContext);
   const BEARER_TOKEN = window.localStorage.getItem("token");
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
   const [isEditing, setIsEditing] = useState(false);
@@ -31,7 +33,7 @@ const UpdateUser = () => {
 
   async function updateUser() {
     axios
-      .patch("http://localhost:3000/auth/me", userData, {
+      .patch(url + "auth/me", userData, {
         headers: {
           Authorization: `Bearer ${BEARER_TOKEN}`,
         },

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import "./CSS/Cart.css";
 import { CartContext } from "../context/CartContext";
+import { CategoryContext } from "../context/CategoryContext";
 
 const Cart = () => {
+  const { url } = useContext(CategoryContext);
   const {
     cartItems,
     setCartItems,
@@ -33,6 +35,7 @@ const Cart = () => {
   function placeOrder() {
     window.location.href = "/szallitas";
   }
+
   return (
     <div className="cart">
       <div className="cartContainer">
@@ -49,15 +52,16 @@ const Cart = () => {
             </thead>
             <tbody>
               {cartItems.map((item, i) => {
+                const imageUrl =
+                  url +
+                  "product/image/" +
+                  item.id +
+                  "/" +
+                  item.images.split('"')[1];
                 return (
                   <tr key={i}>
                     <td>
-                      <img
-                        src={`http://localhost:3000/product/image/${item.id}/${
-                          item.images.split('"')[1]
-                        }`}
-                        alt=""
-                      />
+                      <img src={imageUrl} alt="" />
                     </td>
                     <td>
                       <b className="itemName">{item.name}</b>

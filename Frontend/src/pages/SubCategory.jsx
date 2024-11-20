@@ -3,10 +3,12 @@ import "./CSS/ShopCategory.css";
 import Item from "../Components/Items/Item";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { CategoryContext } from "../context/CategoryContext";
 
 const SubCategory = () => {
+  const { url } = useContext(CategoryContext);
   axios
-    .get("http://localhost:3000/product/all")
+    .get(url + "product/all")
     .then((response) => {
       window.localStorage.setItem("product", JSON.stringify(response.data));
     })

@@ -6,7 +6,7 @@ import { CategoryContext } from "../context/CategoryContext";
 import { useParams } from "react-router-dom";
 
 const Category = () => {
-  const { categories } = useContext(CategoryContext);
+  const { categories, url } = useContext(CategoryContext);
   const props = useParams();
   let categoryNum = 0;
   categories.map((item, i) => {

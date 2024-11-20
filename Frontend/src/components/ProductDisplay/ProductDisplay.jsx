@@ -3,9 +3,12 @@ import { useContext } from "react";
 import "./ProductDisplay.css";
 import Stars from "../Stars/Stars";
 import { CartContext } from "../../context/CartContext";
+import { CategoryContext } from "../../context/CategoryContext";
+
 
 const ProductDisplay = (props) => {
-  const { cartItems, addToCart } = useContext(CartContext);
+  const { url} = useContext(CategoryContext);
+  const { addToCart } = useContext(CartContext);
 
   const cartButtons = document.querySelectorAll(".cart-button");
 
@@ -21,16 +24,14 @@ const ProductDisplay = (props) => {
   const { product } = props;
   const volume =
     product.volume > 30 ? product.volume + " ml" : product.volume + " l";
-  const defaultRating = Math.round(product.rating);
+  const imageUrl = url + "product/image/" + product.id + "/" + product.images.split('"')[1];
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
         <div className="productdisplay-img">
           <img
             className="productdisplay-main-img"
-            src={`http://localhost:3000/product/image/${product.id}/${
-              product.images.split('"')[1]
-            }`}
+            src={imageUrl}
             alt=""
           />
         </div>

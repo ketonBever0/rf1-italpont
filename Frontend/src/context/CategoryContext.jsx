@@ -4,7 +4,9 @@ import categories from "../scripts/categories";
 export const CategoryContext = createContext(null);
 
 const CategoryContextProvider = (props) => {
-  const contextValue = { categories };
+  const live = true;
+  const url = live ? "https://rf1-italpont-production.up.railway.app/" : "http://localhost:3000/";
+  const contextValue = { categories, url };
 
   return (
     <CategoryContext.Provider value={contextValue}>

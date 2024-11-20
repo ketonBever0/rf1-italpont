@@ -17,7 +17,7 @@ const Sidebar = (props) => {
             { name: "Rendelések", isActive: false, linkTo: "/rendelesek" },
           ]
         : [
-            { name: "Adatok", isActive: false, linkTo: "/updateUser" },
+            { name: "Adatok", isActive: false, linkTo: "/adataim" },
             { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
             { name: "Raktárak", isActive: false, linkTo: "/raktarak" },
             { name: "Admin", isActive: false, linkTo: "/admin" },

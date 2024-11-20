@@ -3,11 +3,15 @@ import "./Item.css";
 import { Link, useParams } from "react-router-dom";
 import Stars from "../Stars/Stars";
 import { CategoryContext } from "../../context/CategoryContext";
+import Diplomatico from "../../assets/Diplomatico.png";
 
 const Items = (props) => {
   const { url } = useContext(CategoryContext);
   const volume = props.volume > 30 ? props.volume + " ml" : props.volume + " l";
-  const imageUrl = url + "product/image/" + props.id + "/" + props.images;
+  const imageUrl =
+    props.images != null
+      ? url + "product/image/" + props.id + "/" + props.images
+      : Diplomatico;
   const linkUrl =
     "/" + props.category + "/" + props.subcategory + "/" + props.name;
   return (

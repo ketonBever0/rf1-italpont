@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./CSS/ShopCategory.css";
 import Item from "../Components/Items/Item";
 import { useParams } from "react-router-dom";
@@ -7,6 +7,7 @@ import { CategoryContext } from "../context/CategoryContext";
 
 const SubCategory = () => {
   const { url } = useContext(CategoryContext);
+  //try {
   axios
     .get(url + "product/all")
     .then((response) => {
@@ -14,8 +15,20 @@ const SubCategory = () => {
     })
     .catch((error) => {
       console.error(error);
-      console.log("Termékeket nem sikerült elérni");
+      console.log(url + "Termékeket nem sikerült elérni");
     });
+  /*} catch (error) {
+    window.localStorage.setItem("product", {
+      key: 1,
+      id: 1,
+      name: "default",
+      category: "uditok",
+      subcategory: "gyumolcsle",
+      images: "default",
+      price: "0",
+      volume: "0",
+    });
+  }*/
 
   const products = JSON.parse(window.localStorage.getItem("product"));
 

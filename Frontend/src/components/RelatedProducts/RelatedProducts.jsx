@@ -4,6 +4,10 @@ import Item from "../Items/Item";
 
 const RelatedProducts = () => {
   const products = JSON.parse(window.localStorage.getItem("product"));
+  if (products == null || products == undefined) {
+    return null; // Return early if no products are found in local storage.
+  }
+
   return (
     <div className="popular">
       <h1>Mindened a koktélozás?</h1>

@@ -1,3 +1,4 @@
+import { ProductWareModule } from './productware/productware.module';
 import { WarehouseModule } from './warehouse/warehouse.module';
 //import { StorageModule } from './storage/storage.module';
 import { ProductModule } from './product/product.module';
@@ -11,9 +12,10 @@ import { ConfigModule } from "@nestjs/config";
 
 @Module({
   imports: [
-        WarehouseModule, 
-        //StorageModule, 
-        ProductModule, 
+    ProductWareModule,
+    WarehouseModule,
+    //StorageModule, 
+    ProductModule,
     DemoModule,
     ConfigModule.forRoot({
       isGlobal: true,
@@ -24,4 +26,4 @@ import { ConfigModule } from "@nestjs/config";
   controllers: [AppController],
   providers: [AppService]
 })
-export class AppModule {}
+export class AppModule { }

@@ -12,7 +12,7 @@ import Category from "./pages/Category";
 import Main from "./pages/Main";
 import User from "./pages/User";
 import Admin from "./pages/Admin";
-import Orders from "./components/Orders/Orders";
+import MyOrders from "./components/MyOrders/MyOrders";
 import UpdateUser from "./components/UpdateUser/UpdateUser";
 import PlaceOrder from "./pages/placeOrder";
 
@@ -36,14 +36,14 @@ function App() {
 
           <Route path="/felhasznalo" element={<User />} />
           <Route path="/adataim" element={<UpdateUser />} />
-          <Route path="/rendeleseim" element={<Orders />} />
+          <Route path="/rendeleseim" element={<MyOrders />} />
 
           <Route path="/admin" element={<Admin />} />
-          <Route path="/raktarak" element={<Orders />} />
-          <Route path="/termekek" element={<Orders />} />
-          <Route path="/arubevetel" element={<Orders />} />
-          <Route path="/vasarlok" element={<Orders />} />
-          <Route path="/rendelesek" element={<Orders />} />
+          <Route path="/raktarak" element={<MyOrders />} />
+          <Route path="/termekek" element={<MyOrders />} />
+          <Route path="/arubevetel" element={<MyOrders />} />
+          <Route path="/vasarlok" element={<MyOrders />} />
+          <Route path="/rendelesek" element={<MyOrders />} />
 
           <Route path="/szallitas" element={<PlaceOrder />} />
         </Routes>

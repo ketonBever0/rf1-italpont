@@ -24,7 +24,6 @@ const Login = () => {
         alert("Bejelentkezés sikertelen!");
       })
       .then((response) => {
-        console.log(response);
         window.localStorage.setItem("token", response.data.token);
         window.localStorage.setItem(
           "currentUser",

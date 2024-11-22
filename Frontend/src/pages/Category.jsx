@@ -6,7 +6,7 @@ import { CategoryContext } from "../context/CategoryContext";
 import { useParams } from "react-router-dom";
 
 const Category = () => {
-  const { categories, url } = useContext(CategoryContext);
+  const { categories } = useContext(CategoryContext);
   const props = useParams();
   let categoryNum = 0;
   categories.map((item, i) => {
@@ -19,7 +19,7 @@ const Category = () => {
       {/*<img className="shopcategory-banner" src={props.banner} alt="" />*/}
       <div className="shopcategory-indexSort">
         <p>
-          <span>{categoryNum} </span> kategória megjelenítve {" "}
+          <span>{categoryNum} </span> kategória megjelenítve{" "}
           <span>{categories.length} </span> kategóriából
         </p>
         <div className="shopcategory-sort">

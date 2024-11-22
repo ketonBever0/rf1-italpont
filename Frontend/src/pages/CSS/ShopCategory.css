@@ -8,9 +8,14 @@
 }
 .shopcategory-indexSort {
   display: flex;
-  margin: 0px 170px;
+  margin: 50px 130px;
   justify-content: space-between;
   align-items: center;
+}
+
+.shopcategory-indexSort .filter input {
+  margin-left: 10px;
+  width: 80px;
 }
 .shopcategory-sort {
   padding: 10px 20px;

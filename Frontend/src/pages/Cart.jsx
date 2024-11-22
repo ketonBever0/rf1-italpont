@@ -11,26 +11,10 @@ const Cart = () => {
     addToCart,
     removeFromCart,
     clearCart,
+    plusQuantity,
+    minusQuantity,
     getCartTotal,
   } = useContext(CartContext);
-
-  //TODO: mennyiség változtatása
-  function minusQuantity() {
-    /*
-    setCartItems(cartItems.map((cartItem) =>
-      cartItem.id === item.id
-        ? { ...cartItem, quantity: cartItem.quantity + 1 }
-        : cartItem
-    ));*/
-  }
-  function plusQuantity() {
-    /*
-    setCartItems(cartItems.map((cartItem) =>
-      cartItem.id === item.id
-        ? { ...cartItem, quantity: cartItem.quantity + 1 }
-        : cartItem
-    ));*/
-  }
 
   function placeOrder() {
     window.location.href = "/szallitas";
@@ -76,12 +60,9 @@ const Cart = () => {
                     </td>
                     <td>{item.price} Ft</td>
                     <td>
-                      {/*<button onClick={() => minusQuantity()}>-</button>
-                      
-                      <button onClick={() => plusQuantity()}>+</button>*/}
-                      <button>-</button>
+                      <button onClick={() => minusQuantity(item)}>-</button>
                       <p>{item.quantity} db</p>
-                      <button>+</button>
+                      <button onClick={() => plusQuantity(item)}>+</button>
                     </td>
                     <td>{item.quantity * item.price} Ft</td>
                     <td>

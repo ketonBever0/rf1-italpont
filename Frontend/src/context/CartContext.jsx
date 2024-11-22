@@ -25,6 +25,26 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const plusQuantity = (item) => {
+    setCartItems(
+      cartItems.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
+      )
+    );
+  };
+
+  const minusQuantity = (item) => {
+    setCartItems(
+      cartItems.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity - 1 }
+          : cartItem
+      )
+    );
+  };
+
   const removeFromCart = (item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
@@ -70,6 +90,8 @@ export const CartProvider = ({ children }) => {
         clearCart,
         getCartTotal,
         getItemsQuantity,
+        plusQuantity,
+        minusQuantity,
       }}
     >
       {children}

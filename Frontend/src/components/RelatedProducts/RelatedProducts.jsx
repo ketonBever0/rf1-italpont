@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import "../Popular/Popular.css";
 import Item from "../Items/Item";
 import { ProductContext } from "../../context/ProductContext";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const RelatedProducts = () => {
   const { products, isLoading } = useContext(ProductContext);
@@ -29,7 +31,9 @@ const RelatedProducts = () => {
             }
           })
         ) : (
-          <h1>Betöltés...</h1>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <CircularProgress />
+          </Box>
         )}
       </div>
     </div>

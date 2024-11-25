@@ -1,0 +1,10 @@
+.myorders-content {
+    margin-bottom: 50px;
+    margin-left: 240px;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  .myorders-content h1 {
+    text-align: center;
+  }

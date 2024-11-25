@@ -3,6 +3,8 @@ import "./CSS/ShopCategory.css";
 import Item from "../components/Items/Item";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const SubCategory = () => {
   const { products, isLoading } = useContext(ProductContext);
@@ -95,7 +97,9 @@ const SubCategory = () => {
             }
           })
         ) : (
-          <h1>Termékek betöltése...</h1>
+          <Box sx={{ display: "flex", alignItems: "center"}}>
+            <CircularProgress />
+          </Box>
         )}
       </div>
     </div>

@@ -15,6 +15,7 @@ import Admin from "./pages/Admin";
 import MyOrders from "./components/MyOrders/MyOrders";
 import UpdateUser from "./components/UpdateUser/UpdateUser";
 import PlaceOrder from "./pages/placeOrder";
+import Customers from "./components/Customers/Customers";
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
           <Route path="/raktarak" element={<MyOrders />} />
           <Route path="/termekek" element={<MyOrders />} />
           <Route path="/arubevetel" element={<MyOrders />} />
-          <Route path="/vasarlok" element={<MyOrders />} />
+          <Route path="/vasarlok" element={<Customers />} />
           <Route path="/rendelesek" element={<MyOrders />} />
 
           <Route path="/szallitas" element={<PlaceOrder />} />

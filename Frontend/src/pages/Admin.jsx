@@ -1,4 +1,5 @@
 import React from "react";
+import "./CSS/User.css";
 import Sidebar from "../components/Sidebar/Sidebar";
 
 const Admin = () => {
@@ -11,8 +12,15 @@ const Admin = () => {
   }
 
   return (
-    <div>
+    <div className="user">
       <Sidebar page="admin" />
+      <div className="user-content">
+        <h1>Szia {currentUser.firstName}, Te admin vagy!</h1>
+        <p>
+          Ezen az admin oldal, itt tudsz a felhasználókkal, rendeléssekkel és
+          termékekkel foglalkozni.
+        </p>
+      </div>
     </div>
   );
 };

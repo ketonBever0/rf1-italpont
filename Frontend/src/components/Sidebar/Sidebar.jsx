@@ -17,14 +17,13 @@ const Sidebar = (props) => {
             { name: "Rendelések", isActive: false, linkTo: "/rendelesek" },
           ]
         : [
-            { name: "Adatok", isActive: false, linkTo: "/adataim" },
-            { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
-            { name: "Raktárak", isActive: false, linkTo: "/raktarak" },
+            { name: "Adataim", isActive: false, linkTo: "/adataim" },
+            { name: "Rendeléseim", isActive: false, linkTo: "/rendeleseim" },
             { name: "Admin", isActive: false, linkTo: "/admin" },
           ]
       : [
           { name: "Adataim", isActive: false, linkTo: "/adataim" },
-          { name: "Rendelések", isActive: false, linkTo: "/rendeleseim" },
+          { name: "Rendeléseim", isActive: false, linkTo: "/rendeleseim" },
         ]
   );
 

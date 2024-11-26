@@ -1,0 +1,16 @@
+.user-content {
+  margin-bottom: 50px;
+  margin-left: 240px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.user-content h1 {
+  margin-left: -240px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.user-content p {
+  margin-left: 60px;
+  font-size: 20px;
+}

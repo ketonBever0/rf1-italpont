@@ -16,6 +16,10 @@ import MyOrders from "./components/MyOrders/MyOrders";
 import UpdateUser from "./components/UpdateUser/UpdateUser";
 import PlaceOrder from "./pages/placeOrder";
 import Customers from "./components/Customers/Customers";
+import Warehouses from "./components/Warehouses/Warehouses";
+import AdminProducts from "./components/AdminProducts/AdminProducts";
+import AdminOrders from "./components/AdminOrders/AdminOrders";
+import UploadWarehouse from "./components/UploadWarehouse/UploadWarehouse";
 
 function App() {
   return (
@@ -40,11 +44,11 @@ function App() {
           <Route path="/rendeleseim" element={<MyOrders />} />
 
           <Route path="/admin" element={<Admin />} />
-          <Route path="/raktarak" element={<MyOrders />} />
-          <Route path="/termekek" element={<MyOrders />} />
-          <Route path="/arubevetel" element={<MyOrders />} />
+          <Route path="/raktarak" element={<Warehouses />} />
+          <Route path="/termekek" element={<AdminProducts />} />
+          <Route path="/arubevetel" element={<UploadWarehouse />} />
           <Route path="/vasarlok" element={<Customers />} />
-          <Route path="/rendelesek" element={<MyOrders />} />
+          <Route path="/rendelesek" element={<AdminOrders />} />
 
           <Route path="/szallitas" element={<PlaceOrder />} />
         </Routes>

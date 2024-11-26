@@ -1,19 +1,18 @@
 import React from "react";
-import "./Customers.css";
+import "../MyOrders/MyOrders.css";
 import Sidebar from "../Sidebar/Sidebar";
-import UsersTable from "./UsersTable";
+import AdminOrdersTable from "./AdminOrdersTable";
 
-const Customers = () => {
+const AdminOrders = () => {
   return (
     <div className="myorders">
       <Sidebar page="admin" />
       <div className="myorders-content">
-        <h1>Felhasználók</h1>
-
-        <UsersTable />
+        <h1>Rendelések</h1>
+        <AdminOrdersTable />
       </div>
     </div>
   );
 };
 
-export default Customers;
+export default AdminOrders;

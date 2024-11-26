@@ -243,11 +243,7 @@ function EnhancedTableToolbar(props) {
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
+        <></>
       )}
     </Toolbar>
   );
@@ -382,7 +378,11 @@ export default function EnhancedTable() {
                     <TableCell align="left">{row.street}</TableCell>
                     <TableCell align="left">{row.phone}</TableCell>
                     <TableCell align="center">
-                      <SettingsIcon onClick={() =>{return null} }/>
+                      <SettingsIcon
+                        onClick={() => {
+                          return null;
+                        }}
+                      />
                     </TableCell>
                   </TableRow>
                 );
@@ -409,10 +409,6 @@ export default function EnhancedTable() {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
     </Box>
   );
 }

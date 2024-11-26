@@ -12,8 +12,13 @@ const User = () => {
   }
 
   return (
-    <div>
+    <div className="user">
       <Sidebar page="user" />
+      <div className="user-content">
+        <h1>Szia {currentUser.firstName}!</h1>
+        <p>Ezen az oldalon tudsz megváltozni a személyes adataid, meglévő rendeléseid, stb.</p>
+        
+      </div>
     </div>
   );
 };

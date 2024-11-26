@@ -17,9 +17,8 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import DeleteIcon from "@mui/icons-material/Delete";
-import SettingsIcon from "@mui/icons-material/Settings";
 import { visuallyHidden } from "@mui/utils";
-import { ProductContext } from "../../context/ProductContext";
+import ProductUpdateDialog from "../ProductUpdateDialog/ProductUpdateDialog";
 
 function createData(
   id,
@@ -341,11 +340,7 @@ export default function EnhancedTable(props) {
                     </TableCell>
                     <TableCell align="left">{row.price} Ft</TableCell>
                     <TableCell align="center">
-                      <SettingsIcon
-                        onClick={() => {
-                          return null;
-                        }}
-                      />
+                      <ProductUpdateDialog product={row}/>
                     </TableCell>
                   </TableRow>
                 );

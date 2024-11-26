@@ -185,27 +185,38 @@ export default function EnhancedTable(props) {
 
   const { products } = props;
 
-  const headCellNames = [
-    "Név",
-    "Kategória",
-    "Alkategória",
-    "Márka",
-    "Űrtartalom",
-    "Alkoholszázalék",
-    "Ár",
-  ];
-  let headCells = [];
-  headCellNames.map((headCellName) => {
-    headCells.push({
-      id: headCellName,
+  let headCells = [
+    { id: "name", numeric: false, disablePadding: false, label: "Név" },
+    {
+      id: "category",
       numeric: false,
       disablePadding: false,
-      label: headCellName,
-    });
-  });
-
+      label: "Kategória",
+    },
+    {
+      id: "subCategory",
+      numeric: false,
+      disablePadding: false,
+      label: "Alkategória",
+    },
+    { id: "brand", numeric: false, disablePadding: false, label: "Márka" },
+    { id: "volume", numeric: true, disablePadding: false, label: "Űrtartalom" },
+    {
+      id: "alcoholPercentage",
+      numeric: true,
+      disablePadding: false,
+      label: "Alkoholszázalék",
+    },
+    {
+      id: "price",
+      numeric: true,
+      disablePadding: false,
+      label: "Ár",
+    },
+  ];
   const rows = [];
   products.map((product) => {
+    let volume = product.volume > 30 ? product.volume / 1000 : product.volume;
     rows.push(
       createData(
         product.id,
@@ -213,7 +224,7 @@ export default function EnhancedTable(props) {
         product.category,
         product.subCategory,
         product.brand,
-        product.volume,
+        volume,
         product.alcoholPercentage,
         product.price
       )
@@ -334,13 +345,15 @@ export default function EnhancedTable(props) {
                     <TableCell align="left">{row.category}</TableCell>
                     <TableCell align="left">{row.subCategory}</TableCell>
                     <TableCell align="left">{row.brand}</TableCell>
-                    <TableCell align="left">{row.volume} l</TableCell>
                     <TableCell align="left">
-                      {row.alcoholPercentage} %
+                      {row.volume != 0 ? row.volume + " l" : "-"}
+                    </TableCell>
+                    <TableCell align="left">
+                      {row.volume != 0 ? row.alcoholPercentage + " %" : "-"}
                     </TableCell>
                     <TableCell align="left">{row.price} Ft</TableCell>
                     <TableCell align="center">
-                      <ProductUpdateDialog product={row}/>
+                      <ProductUpdateDialog product={row} />
                     </TableCell>
                   </TableRow>
                 );

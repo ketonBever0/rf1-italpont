@@ -16,12 +16,10 @@ import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { visuallyHidden } from "@mui/utils";
+import axios from "axios";
 
 function createData(
   id,
@@ -46,6 +44,8 @@ function createData(
     update,
   };
 }
+
+axios;
 
 const rows = [
   createData(
@@ -261,6 +261,33 @@ export default function EnhancedTable() {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [warehouses, setWarehouses] = React.useState([
+    {
+      key: 1,
+      id: 1,
+      name: "Főraktár",
+      postcode: "6725",
+      city: "Szeged",
+      address: "Raktár utca 1",
+      capacity: 5000,
+      productWares: [],
+    },
+  ]);
+
+  React.useEffect(() => {
+    axios
+      .get("https://rf1-italpont-production.up.railway.app/warehouses")
+      .then((response) => {
+        setWarehouses(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  console.log(warehouses);
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");

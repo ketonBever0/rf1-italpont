@@ -7,10 +7,14 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { CategoryContext } from "../../context/CategoryContext"
+import axios from "axios";
 
 export default function FormDialog(props) {
   const { product } = props;
-
+  const BEARER_TOKEN = window.localStorage.getItem("token");
+  const { url } = React.useContext(CategoryContext);
+  //console.log(product);
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -20,6 +24,46 @@ export default function FormDialog(props) {
   const handleClose = () => {
     setOpen(false);
   };
+  const [productData, setProductData] = React.useState({
+    id: product.id,
+    name: product.name,
+    category: product.category,
+    subCategory: product.subCategory,
+    brand: product.brand,
+    discount: product.discount,
+    volume: product.volume,
+    alcoholPercentage: product.alcoholPercentage,
+    description: product.description,
+    images: product.images,
+    price: product.price,
+  });
+
+  console.log(productData);
+
+  function onChange(e) {
+    setProductData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  }
+
+  async function updateProduct() {
+    //TODO: valós api kell
+    axios
+      .patch(url + "product/update/" + productData.id, productData, {
+        headers: {
+          Authorization: `Bearer ${BEARER_TOKEN}`,
+        },
+      })
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+        console.log(response);
+        console.log("adatok elkuldve");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   return (
     <React.Fragment>
@@ -29,106 +73,119 @@ export default function FormDialog(props) {
         onClose={handleClose}
         PaperProps={{
           component: "form",
-          onSubmit: (event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            const email = formJson.email;
-            console.log(email);
-            handleClose();
-          },
         }}
       >
         <DialogTitle>Termék szerkesztése</DialogTitle>
         <DialogContent>
+          <label style={{ marginTop: "15px" }} htmlFor="name">
+            Név:
+          </label>
           <TextField
             autoFocus
             required
             margin="dense"
             id="name"
             name="name"
-            value={product.name}
-            //label="Név"
+            value={productData.name}
+            onChange={(e) => onChange(e)}
             type="text"
             fullWidth
             variant="standard"
           />
+          <label style={{ marginTop: "15px" }} htmlFor="category">
+            Kategória:
+          </label>
           <TextField
             autoFocus
             required
             margin="dense"
             id="category"
             name="category"
-            value={product.subCategory}
-            //label="Kategória"
+            value={productData.subCategory}
+            onChange={(e) => onChange(e)}
             type="text"
             fullWidth
             variant="standard"
           />
+          <label style={{ marginTop: "15px" }} htmlFor="subCategory">
+            Alkategória:
+          </label>
           <TextField
             autoFocus
             required
             margin="dense"
             id="subCategory"
             name="subCategory"
-            value={product.subCategory}
-            //label="Alkategória"
+            value={productData.subCategory}
+            onChange={(e) => onChange(e)}
             type="text"
             fullWidth
             variant="standard"
           />
+          <label style={{ marginTop: "15px" }} htmlFor="brand">
+            Márka:
+          </label>
           <TextField
             autoFocus
             required
             margin="dense"
             id="brand"
             name="brand"
-            value={product.brand}
-            //label="Márka"
+            value={productData.brand}
+            onChange={(e) => onChange(e)}
             type="text"
             fullWidth
             variant="standard"
           />
+          <label style={{ marginTop: "15px" }} htmlFor="volume">
+            Űrtartalom:
+          </label>
           <TextField
             autoFocus
             required
             margin="dense"
             id="volume"
             name="volume"
-            value={product.volume}
-            //label="Űrtartalom"
+            value={productData.volume}
+            onChange={(e) => onChange(e)}
             type="text"
             fullWidth
             variant="standard"
           />
+          <label style={{ marginTop: "15px" }} htmlFor="alcohol">
+            Alkoholszázalék:
+          </label>
           <TextField
             autoFocus
             required
             margin="dense"
             id="alcohol"
             name="alcohol"
-            value={product.alcoholPercentage}
-            //label="Alkoholszázalék"
+            value={productData.alcoholPercentage}
+            onChange={(e) => onChange(e)}
             type="text"
             fullWidth
             variant="standard"
           />
+          <label style={{ marginTop: "15px" }} htmlFor="price">
+            Ár:
+          </label>
           <TextField
             autoFocus
             required
             margin="dense"
             id="price"
             name="price"
-            value={product.price}
-            //label="Ár"
+            value={productData.price}
+            onChange={(e) => onChange(e)}
             type="text"
             fullWidth
             variant="standard"
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Subscribe</Button>
+          <Button onClick={handleClose}>Mégse</Button>
+          <Button onClick={() => updateProduct()}>Módosít</Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>

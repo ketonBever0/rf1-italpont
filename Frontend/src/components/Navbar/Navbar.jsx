@@ -11,7 +11,7 @@ const Navbar = () => {
   const isAdmin = currentUser != null ? currentUser.role === "ADMIN" : false;
 
   const [menu, setMenu] = useState();
-  const { getItemsQuantity, getCartTotal } = useContext(CartContext);
+  const { getItemsQuantity } = useContext(CartContext);
 
   function logOut() {
     window.localStorage.removeItem("token");

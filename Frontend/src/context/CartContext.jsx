@@ -42,7 +42,10 @@ export const CartProvider = ({ children }) => {
           ? { ...cartItem, quantity: cartItem.quantity - 1 }
           : cartItem
       )
-    );
+    )
+    if (item.quantity === 1) {
+      removeFromCart(item);
+    }
   };
 
   const removeFromCart = (item) => {

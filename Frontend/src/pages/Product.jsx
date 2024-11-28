@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useContext} from "react";
+import { ProductContext } from "../context/ProductContext";
 import { useParams } from "react-router-dom";
 import Breadcrum from "../Components/Breadcrums/Breadcrum";
 import ProductDisplay from "../Components/ProductDisplay/ProductDisplay";
 
 const Product = () => {
-  const products = JSON.parse(window.localStorage.getItem("product"));
+  const { products } = useContext(ProductContext);
 
   const { productName } = useParams();
 

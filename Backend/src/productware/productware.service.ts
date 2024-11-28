@@ -12,7 +12,6 @@ export class ProductWareService {
     });
   }
 
- 
   async getProductsByWarehouse(warehouseId: number) {
     return this.prisma.productWare.findMany({
       where: { warehouseId },
@@ -20,14 +19,12 @@ export class ProductWareService {
     });
   }
 
-
   async updateQuantity(id: number, data: { quantity: number }) {
     return this.prisma.productWare.update({
       where: { id },
       data,
     });
   }
-
 
   async deleteProductFromWarehouse(id: number) {
     return this.prisma.productWare.delete({

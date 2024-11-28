@@ -1,3 +1,5 @@
+import { AddProductService } from './add-product/add-product.service';
+import { AddProductController } from './add-product/add-product.controller';
 import { ProductWareModule } from './productware/productware.module';
 import { WarehouseModule } from './warehouse/warehouse.module';
 //import { StorageModule } from './storage/storage.module';
@@ -25,7 +27,9 @@ import { OrderModule } from './order/order.module';
     AuthModule,
     OrderModule
   ],
-  controllers: [AppController],
-  providers: [AppService]
+  controllers: [
+    AddProductController, AppController],
+  providers: [
+    AddProductService, AppService]
 })
 export class AppModule { }

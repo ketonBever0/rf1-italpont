@@ -7,6 +7,7 @@ import axios from "axios";
 const PlaceOrder = () => {
   const { url } = useContext(CategoryContext);
   const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
+  const BEARER_TOKEN = window.localStorage.getItem("token");
   const {
     cartItems,
     setCartItems,
@@ -44,16 +45,21 @@ const PlaceOrder = () => {
   }
 
   async function PlaceOrder() {
-    axios
-      .post(url + "order/add", orderData)
-      .catch((error) => {
-        console.error(error);
-        alert("Sikertelen rendelés!");
-      })
-      .then(() => {
-        alert("Sikeres rendelés!");
+    try {
+      await axios.post(url + "order/add", orderData, {
+        headers: {
+          Authorization: `Bearer ${BEARER_TOKEN}`,
+        },
       });
+      window.localStorage.removeItem("cartItems");
+      alert("Sikeres rendelés!");
+      window.location.href = "/";
+    } catch (error) {
+      console.error(error);
+      alert("Sikertelen rendelés!");
+    }
   }
+  
   return (
     <div className="order">
       <div className="order-container">

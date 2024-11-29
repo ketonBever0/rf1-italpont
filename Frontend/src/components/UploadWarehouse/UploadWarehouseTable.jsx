@@ -19,7 +19,7 @@ import Tooltip from "@mui/material/Tooltip";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import { visuallyHidden } from "@mui/utils";
-import ProductUpdateDialog from "../ProductUpdateDialog/ProductUpdateDialog";
+import ProductUpdateDialog from "../AdminProducts/ProductUpdateDialog";
 import UploadWarehouseDialog from "./UploadWarehouseDialog";
 
 function createData(

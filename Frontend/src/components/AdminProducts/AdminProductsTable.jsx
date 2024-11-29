@@ -18,7 +18,7 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { visuallyHidden } from "@mui/utils";
-import ProductUpdateDialog from "../ProductUpdateDialog/ProductUpdateDialog";
+import ProductUpdateDialog from "./ProductUpdateDialog";
 
 function createData(
   id,
@@ -200,7 +200,12 @@ export default function EnhancedTable(props) {
       label: "Alkategória",
     },
     { id: "brand", numeric: false, disablePadding: false, label: "Márka" },
-    { id: "volume", numeric: false, disablePadding: false, label: "Űrtartalom" },
+    {
+      id: "volume",
+      numeric: false,
+      disablePadding: false,
+      label: "Űrtartalom",
+    },
     {
       id: "alcoholPercentage",
       numeric: false,

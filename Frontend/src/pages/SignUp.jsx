@@ -30,15 +30,17 @@ const SignUp = () => {
 
     axios
       .post(url + "auth/registration", data)
+      .then((response) => {
+        if (response.status == 200) {
+          alert(
+            "Sikeres regisztráció! Kérlek jelentkezz be a felhasználói fiókodhoz!"
+          );
+          window.location.href = "/bejelentkezes";
+        }
+      })
       .catch((error) => {
         console.error(error);
-        alert("Sikertelen regisztráció!");
-      })
-      .then(() => {
-        alert(
-          "Sikeres regisztráció! Kérlek jelentkezz be a felhasználói fiókodhoz!"
-        );
-        window.location.href = "/bejelentkezes";
+        alert("Sikertelen regisztráció! Hiba:" + error);
       });
   }
   return (

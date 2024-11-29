@@ -16,10 +16,7 @@ import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { visuallyHidden } from "@mui/utils";
 
@@ -46,29 +43,6 @@ function createData(
     update,
   };
 }
-
-const rows = [
-  createData(
-    1,
-    "Szegedi Bence",
-    "benceszegedi43@gmail.com",
-    "2003-01-05",
-    "1106",
-    "Budapest",
-    "Szellőrózsa utca 11",
-    "06303167102"
-  ),
-  createData(
-    2,
-    "Valaki",
-    "benceszegedi43@gmail.com",
-    "2003-01-05",
-    "1106",
-    "Budapest",
-    "Szellőrózsa utca 11",
-    "06303167102"
-  ),
-];
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -253,13 +227,35 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable() {
+export default function EnhancedTable(props) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const { users } = props;
+  console.log(users);
+
+  const rows = [];
+  users.map((user) => {
+    const name = user.lastName + " " + user.firstName;
+    const birthdate = user.birthDate.substring(0, 10);
+    console.log(birthdate);
+    rows.push(
+      createData(
+        user.id,
+        name,
+        user.email,
+        birthdate,
+        user.postcode,
+        user.city,
+        user.address,
+        user.mobile
+      )
+    );
+  });
+  console.log(rows);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";

@@ -16,59 +16,33 @@ import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
-import FilterListIcon from "@mui/icons-material/FilterList";
-import SettingsIcon from "@mui/icons-material/Settings";
+import AddBoxIcon from "@mui/icons-material/AddBox";
 import { visuallyHidden } from "@mui/utils";
+import ProductUpdateDialog from "../ProductUpdateDialog/ProductUpdateDialog";
+import UploadWarehouseDialog from "./UploadWarehouseDialog";
 
 function createData(
   id,
   name,
-  email,
-  birthdate,
-  postcode,
-  city,
-  street,
-  phone,
-  update
+  category,
+  subCategory,
+  brand,
+  volume,
+  quantity,
+  warehouse
 ) {
   return {
     id,
     name,
-    email,
-    birthdate,
-    postcode,
-    city,
-    street,
-    phone,
-    update,
+    category,
+    subCategory,
+    brand,
+    volume,
+    quantity,
+    warehouse,
   };
 }
-
-const rows = [
-  createData(
-    1,
-    "Szegedi Bence",
-    "benceszegedi43@gmail.com",
-    "2003-01-05",
-    "1106",
-    "Budapest",
-    "Szellőrózsa utca 11",
-    "06303167102"
-  ),
-  createData(
-    2,
-    "Valaki",
-    "benceszegedi43@gmail.com",
-    "2003-01-05",
-    "1106",
-    "Budapest",
-    "Szellőrózsa utca 11",
-    "06303167102"
-  ),
-];
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -86,57 +60,6 @@ function getComparator(order, orderBy) {
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-const headCells = [
-  {
-    id: "name",
-    numeric: false,
-    disablePadding: true,
-    label: "Név",
-  },
-  {
-    id: "email",
-    numeric: false,
-    disablePadding: false,
-    label: "Email",
-  },
-  {
-    id: "birthdate",
-    numeric: false,
-    disablePadding: false,
-    label: "Születési idő",
-  },
-  {
-    id: "postcode",
-    numeric: false,
-    disablePadding: false,
-    label: "Irányítószám",
-  },
-  {
-    id: "city",
-    numeric: false,
-    disablePadding: false,
-    label: "Város",
-  },
-  {
-    id: "street",
-    numeric: false,
-    disablePadding: false,
-    label: "Cím",
-  },
-  {
-    id: "phone",
-    numeric: false,
-    disablePadding: false,
-    label: "Mobil",
-  },
-  {
-    id: "update",
-    numeric: false,
-    disablePadding: false,
-    label: "Szerkesztés",
-  },
-];
-
 function EnhancedTableHead(props) {
   const {
     onSelectAllClick,
@@ -145,6 +68,7 @@ function EnhancedTableHead(props) {
     numSelected,
     rowCount,
     onRequestSort,
+    headCells,
   } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
@@ -233,7 +157,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          Raktárkészlet
+          Termékek
         </Typography>
       )}
       {numSelected > 0 ? (
@@ -253,13 +177,69 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable() {
+export default function EnhancedTable(props) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(35);
+
+  const { products, warehouses, productWare } = props;
+
+  let headCells = [
+    { id: "name", numeric: false, disablePadding: false, label: "Név" },
+    {
+      id: "category",
+      numeric: false,
+      disablePadding: false,
+      label: "Kategória",
+    },
+    {
+      id: "subCategory",
+      numeric: false,
+      disablePadding: false,
+      label: "Alkategória",
+    },
+    { id: "brand", numeric: false, disablePadding: false, label: "Márka" },
+    {
+      id: "volume",
+      numeric: false,
+      disablePadding: false,
+      label: "Űrtartalom",
+    },
+    {
+      id: "quantity",
+      numeric: false,
+      disablePadding: false,
+      label: "Mennyiség",
+    },
+    {
+      id: "warehouse",
+      numeric: false,
+      disablePadding: false,
+      label: "Raktár",
+    },
+  ];
+  const rows = [];
+  productWare.map((prodWare) => {
+    const product = products[prodWare.productId - 1];
+    const warehouse = warehouses[prodWare.warehouseId - 1];
+    let volume = product.volume > 30 ? product.volume / 1000 : product.volume;
+
+    rows.push(
+      createData(
+        prodWare.id,
+        product.name,
+        product.category,
+        product.subCategory,
+        product.brand,
+        volume,
+        prodWare.quantity,
+        warehouse.name
+      )
+    );
+  });
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -337,6 +317,7 @@ export default function EnhancedTable() {
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
+              headCells={headCells}
             />
             <TableBody>
               {visibleRows.map((row, index) => {
@@ -371,18 +352,16 @@ export default function EnhancedTable() {
                     >
                       {row.name}
                     </TableCell>
-                    <TableCell align="left">{row.email}</TableCell>
-                    <TableCell align="left">{row.birthdate}</TableCell>
-                    <TableCell align="left">{row.postcode}</TableCell>
-                    <TableCell align="left">{row.city}</TableCell>
-                    <TableCell align="left">{row.street}</TableCell>
-                    <TableCell align="left">{row.phone}</TableCell>
+                    <TableCell align="left">{row.category}</TableCell>
+                    <TableCell align="left">{row.subCategory}</TableCell>
+                    <TableCell align="left">{row.brand}</TableCell>
+                    <TableCell align="left">
+                      {row.volume != 0 ? row.volume + " l" : "-"}
+                    </TableCell>
+                    <TableCell align="left">{row.quantity} db</TableCell>
+                    <TableCell align="left">{row.warehouse}</TableCell>
                     <TableCell align="center">
-                      <SettingsIcon
-                        onClick={() => {
-                          return null;
-                        }}
-                      />
+                      <UploadWarehouseDialog product={row} />
                     </TableCell>
                   </TableRow>
                 );
@@ -400,7 +379,7 @@ export default function EnhancedTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[35, 50, 100, 200]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}

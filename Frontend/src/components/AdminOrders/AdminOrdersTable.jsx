@@ -17,55 +17,28 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import DeleteIcon from "@mui/icons-material/Delete";
-import SettingsIcon from "@mui/icons-material/Settings";
 import { visuallyHidden } from "@mui/utils";
+import ProductUpdateDialog from "./ProductUpdateDialog";
 
 function createData(
   id,
-  name,
-  email,
-  birthdate,
+  orderDate,
   postcode,
   city,
-  street,
-  phone,
-  update
+  address,
+  price,
+  orderedProducts
 ) {
   return {
     id,
-    name,
-    email,
-    birthdate,
+    orderDate,
     postcode,
     city,
-    street,
-    phone,
-    update,
+    address,
+    price,
+    orderedProducts,
   };
 }
-
-const rows = [
-  createData(
-    1,
-    "Szegedi Bence",
-    "benceszegedi43@gmail.com",
-    "2003-01-05",
-    "1106",
-    "Budapest",
-    "Szellőrózsa utca 11",
-    "06303167102"
-  ),
-  createData(
-    2,
-    "Valaki",
-    "benceszegedi43@gmail.com",
-    "2003-01-05",
-    "1106",
-    "Budapest",
-    "Szellőrózsa utca 11",
-    "06303167102"
-  ),
-];
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -83,57 +56,6 @@ function getComparator(order, orderBy) {
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-const headCells = [
-  {
-    id: "name",
-    numeric: false,
-    disablePadding: true,
-    label: "Név",
-  },
-  {
-    id: "email",
-    numeric: false,
-    disablePadding: false,
-    label: "Email",
-  },
-  {
-    id: "birthdate",
-    numeric: false,
-    disablePadding: false,
-    label: "Születési idő",
-  },
-  {
-    id: "postcode",
-    numeric: false,
-    disablePadding: false,
-    label: "Irányítószám",
-  },
-  {
-    id: "city",
-    numeric: false,
-    disablePadding: false,
-    label: "Város",
-  },
-  {
-    id: "street",
-    numeric: false,
-    disablePadding: false,
-    label: "Cím",
-  },
-  {
-    id: "phone",
-    numeric: false,
-    disablePadding: false,
-    label: "Mobil",
-  },
-  {
-    id: "update",
-    numeric: false,
-    disablePadding: false,
-    label: "Szerkesztés",
-  },
-];
-
 function EnhancedTableHead(props) {
   const {
     onSelectAllClick,
@@ -142,6 +64,7 @@ function EnhancedTableHead(props) {
     numSelected,
     rowCount,
     onRequestSort,
+    headCells,
   } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
@@ -250,13 +173,64 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable() {
+export default function EnhancedTable(props) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(35);
+
+  const { orders } = props;
+
+  let headCells = [
+    {
+      id: "orderDate",
+      numeric: false,
+      disablePadding: false,
+      label: "Dátum",
+    },
+    {
+      id: "postcode",
+      numeric: false,
+      disablePadding: false,
+      label: "Irányítószám",
+    },
+    {
+      id: "city",
+      numeric: false,
+      disablePadding: false,
+      label: "Város",
+    },
+    { id: "address", numeric: false, disablePadding: false, label: "Cím" },
+    {
+      id: "price",
+      numeric: false,
+      disablePadding: false,
+      label: "Ár",
+    },
+    {
+      id: "orderedProducts",
+      numeric: false,
+      disablePadding: false,
+      label: "Termékek",
+    },
+  ];
+
+  const rows = [];
+  orders.map((order) => {
+    rows.push(
+      createData(
+        order.id,
+        order.orderDate,
+        order.postcode,
+        order.city,
+        order.address,
+        order.price,
+        order.orderedProducts
+      )
+    );
+  });
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -334,6 +308,7 @@ export default function EnhancedTable() {
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
+              headCells={headCells}
             />
             <TableBody>
               {visibleRows.map((row, index) => {
@@ -366,20 +341,14 @@ export default function EnhancedTable() {
                       scope="row"
                       padding="none"
                     >
-                      {row.name}
+                      {row.orderDate.substring(0, 10)}
                     </TableCell>
-                    <TableCell align="left">{row.email}</TableCell>
-                    <TableCell align="left">{row.birthdate}</TableCell>
                     <TableCell align="left">{row.postcode}</TableCell>
                     <TableCell align="left">{row.city}</TableCell>
-                    <TableCell align="left">{row.street}</TableCell>
-                    <TableCell align="left">{row.phone}</TableCell>
+                    <TableCell align="left">{row.address}</TableCell>
+                    <TableCell align="left">{row.price} Ft</TableCell>
                     <TableCell align="center">
-                      <SettingsIcon
-                        onClick={() => {
-                          return null;
-                        }}
-                      />
+                      <ProductUpdateDialog product={row} />
                     </TableCell>
                   </TableRow>
                 );
@@ -397,7 +366,7 @@ export default function EnhancedTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[35, 50, 100, 200]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}

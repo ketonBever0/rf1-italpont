@@ -5,7 +5,7 @@ import axios from "axios";
 export const CategoryContext = createContext(null);
 
 const CategoryContextProvider = (props) => {
-  const live = true;
+  const live = false;
   const url = live
     ? "https://rf1-italpont-production.up.railway.app/"
     : "http://localhost:3000/";

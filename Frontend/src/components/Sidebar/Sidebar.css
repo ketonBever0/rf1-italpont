@@ -4,13 +4,13 @@ body {
 }
 
 .sidebar {
-  margin: 0;
+  margin: 1px 0 0 0;
   padding: 0;
   width: 240px;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #f0f8ff;
   overflow: hidden;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
   transition: width 0.3s ease;
   /* border-top-right-radius: 10px; */
   border-bottom-right-radius: 10px;

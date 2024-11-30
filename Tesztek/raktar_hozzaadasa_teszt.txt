@@ -1,0 +1,98 @@
+
+
+1. Tesztterv (TP)
+
+Cél: A raktárak hozzáadását biztosító funkciók tesztelése.  
+Tesztesetek:  
+- TC1: Sikeres raktár hozzáadás.  
+- TC2: Raktár hozzáadása név nélkül.  
+- TC3: Duplikált raktár név hozzáadása.  
+- TC4: Raktár hozzáadása nagyon hosszú névvel.  
+- TC5: Raktár hozzáadása üres mezőkkel.  
+
+
+
+2. Tesztesetek (TC)  
+
+ TC1
+
+- Leírás: Sikeres raktár hozzáadás  
+- Előfeltétel: Nincs még raktár hozzáadva az adatbázishoz.  
+- Bemenet:  
+  - Név: "Raktár 1"  
+  - Cím: "Példa utca 10."  
+- Lépések:  
+  1. Navigálj a raktár hozzáadása oldalra.  
+  2. Töltsd ki a nevet és címet.  
+  3. Nyomd meg a "Hozzáadás" gombot.  
+- Várt eredmény:  
+  - Az új raktár megjelenik a listában.  
+  - A rendszer sikeres hozzáadásról értesítést küld.  
+
+
+
+ TC2
+
+- Leírás: Raktár hozzáadása név nélkül  
+- Előfeltétel: Nincs még raktár hozzáadva az adatbázishoz.  
+- Bemenet:  
+  - Név: Üres  
+  - Cím: "Példa utca 10."  
+- Lépések:  
+  1. Navigálj a raktár hozzáadása oldalra.  
+  2. Töltsd ki a címet, de hagyd üresen a nevet.  
+  3. Nyomd meg a "Hozzáadás" gombot.  
+- Várt eredmény:  
+  - A rendszer hibát jelez, miszerint a név mező kitöltése kötelező.  
+  - A raktár nem kerül hozzáadásra.  
+
+
+
+ TC3
+
+- Leírás: Duplikált raktár név hozzáadása  
+- Előfeltétel: Egy "Raktár 1" nevű raktár már létezik.  
+- Bemenet:  
+  - Név: "Raktár 1"  
+  - Cím: "Másik utca 20."  
+- Lépések:  
+  1. Navigálj a raktár hozzáadása oldalra.  
+  2. Töltsd ki a nevet "Raktár 1"-re és a címet tetszőlegesen.  
+  3. Nyomd meg a "Hozzáadás" gombot.  
+- Várt eredmény:  
+  - A rendszer hibát jelez, miszerint a név már foglalt.  
+  - A raktár nem kerül hozzáadásra.  
+
+
+
+ TC4
+
+- Leírás:Raktár hozzáadása nagyon hosszú névvel  
+- Előfeltétel: Nincs korlátozás a név hosszára az adatbázisban.  
+- Bemenet:  
+  - Név: "Raktár" + 256 karakter (pl. `"Raktár" + "a".repeat(256)`)  
+  - Cím: "Példa utca 10."  
+- Lépések:  
+  1. Navigálj a raktár hozzáadása oldalra.  
+  2. Írj be egy 256 karakteres nevet.  
+  3. Nyomd meg a "Hozzáadás" gombot.  
+- Várt eredmény:  
+  - Ha van névkorlátozás: Hibát jelez, miszerint a név túl hosszú.  
+  - Ha nincs névkorlátozás: Az új raktár sikeresen hozzáadódik.  
+
+
+
+ TC5
+
+- Leírás:Raktár hozzáadása üres mezőkkel  
+- Előfeltétel: Nincs előzetes raktár az adatbázisban.  
+- Bemenet:  
+  - Név: Üres  
+  - Cím: Üres  
+- Lépések:  
+  1. Navigálj a raktár hozzáadása oldalra.  
+  2. Hagyd üresen mindkét mezőt.  
+  3. Nyomd meg a "Hozzáadás" gombot.  
+- Várt eredmény:  
+  - A rendszer hibát jelez, hogy minden mező kitöltése kötelező.  
+  - A raktár nem kerül hozzáadásra.  

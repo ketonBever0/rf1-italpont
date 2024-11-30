@@ -44,21 +44,23 @@ export default function FormDialog(props) {
   console.log(productData);
 
   async function newProduct() {
-    axios
-      .post(url + "product/add", productData, {
+    try {
+      const response = await axios.post(url + "product/add", productData, {
         headers: {
           Authorization: `Bearer ${BEARER_TOKEN}`,
         },
-      })
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-        console.log(response);
-        console.log("adatok elkuldve");
-      })
-      .catch((error) => {
-        console.log(error);
       });
+      console.log(JSON.stringify(response.data));
+      console.log(response);
+      alert("Adatok elküldve");
+      handleClose();
+    }
+     catch (error) {
+      console.log(error);
+      alert("Hiba történt!");
+    }
   }
+  
 
   return (
     <React.Fragment>

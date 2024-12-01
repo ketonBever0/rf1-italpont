@@ -20,7 +20,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import WarehouseUpdateDialog from "./WarehouseUpdateDialog";
 import { visuallyHidden } from "@mui/utils";
 
-function createData(id, name, postcode, city, address, capacity, productWare) {
+function createData(id, name, postcode, city, address, capacity, productsQuantity) {
   return {
     id,
     name,
@@ -28,7 +28,7 @@ function createData(id, name, postcode, city, address, capacity, productWare) {
     city,
     address,
     capacity,
-    productWare,
+    productsQuantity,
   };
 }
 
@@ -176,6 +176,7 @@ export default function EnhancedTable(props) {
 
   const rows = [];
   warehouses.map((warehouse) => {
+    const productsQuantity = warehouse.productWares.length;
     rows.push(
       createData(
         warehouse.id,
@@ -184,10 +185,12 @@ export default function EnhancedTable(props) {
         warehouse.city,
         warehouse.address,
         warehouse.capacity,
-        warehouse.productWares
+        productsQuantity
       )
     );
   });
+
+  console.log(rows);
 
   const headCells = [
     {
@@ -221,11 +224,12 @@ export default function EnhancedTable(props) {
       label: "Kapacitás",
     },
     {
-      id: "productWare",
+      id: "productsQuantity",
       numeric: false,
       disablePadding: false,
-      label: "Szerkesztés",
+      label: "Termékek (db)",
     },
+    
   ];
 
   const handleRequestSort = (event, property) => {
@@ -343,7 +347,7 @@ export default function EnhancedTable(props) {
                     <TableCell align="left">{row.city}</TableCell>
                     <TableCell align="left">{row.address}</TableCell>
                     <TableCell align="left">{row.capacity}</TableCell>
-                    <TableCell align="left">{row.productWare}</TableCell>
+                    <TableCell align="left">{row.productsQuantity}</TableCell>
                     <TableCell align="center">
                       <WarehouseUpdateDialog product={row} />
                     </TableCell>

@@ -4,7 +4,7 @@ import axios from "axios";
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const live = true;
+  const live = false;
   const url = live
     ? "https://rf1-italpont-production.up.railway.app/"
     : "http://localhost:3000/";

@@ -1,5 +1,6 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
+import Input from "@mui/material/Input";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -9,11 +10,18 @@ import DialogTitle from "@mui/material/DialogTitle";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import { CategoryContext } from "../../context/CategoryContext";
 import axios from "axios";
+import { stepButtonClasses } from "@mui/material";
+import Diplomatico from "../../assets/Diplomatico.png";
 
 export default function FormDialog(props) {
   const BEARER_TOKEN = window.localStorage.getItem("token");
   const { url } = React.useContext(CategoryContext);
   const [open, setOpen] = React.useState(false);
+  const [image, setImage] = React.useState(Diplomatico);
+
+  const handleNewImage = (e) => {
+    setImage(e.target.files[0]);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -36,12 +44,23 @@ export default function FormDialog(props) {
   });
 
   function onChange(e) {
-    setProductData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    if (
+      e.target.name == "discount" ||
+      e.target.name == "volume" ||
+      e.target.name == "alcoholPercentage" ||
+      e.target.name == "price"
+    ) {
+      setProductData((prev) => ({
+        ...prev,
+        [e.target.name]: parseInt(e.target.value),
+      }));
+    } else {
+      setProductData((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value,
+      }));
+    }
   }
-  console.log(productData);
 
   async function newProduct() {
     try {
@@ -50,17 +69,29 @@ export default function FormDialog(props) {
           Authorization: `Bearer ${BEARER_TOKEN}`,
         },
       });
-      console.log(JSON.stringify(response.data));
-      console.log(response);
-      alert("Adatok elküldve");
-      handleClose();
-    }
-     catch (error) {
+      const productId = response.data.product.id;
+      const formData = new FormData();
+      formData.append("images", image);
+
+      axios
+        .post(url + productId, formData, {
+          headers: {
+            Authorization: `Bearer ${BEARER_TOKEN}`
+          },
+        })
+        .then((response) => {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      alert("Termék sikeresen hozzáadva");
+      //handleClose();
+    } catch (error) {
       console.log(error);
-      alert("Hiba történt!");
+      alert("Hiba történt!" + error.message);
     }
   }
-  
 
   return (
     <React.Fragment>
@@ -147,6 +178,7 @@ export default function FormDialog(props) {
             onChange={(e) => onChange(e)}
             type="number"
             fullWidth
+            min="0"
             variant="standard"
           />
           <label style={{ marginTop: "15px" }} htmlFor="volume">
@@ -209,6 +241,13 @@ export default function FormDialog(props) {
             fullWidth
             variant="standard"
           />
+          <Input
+            type="file"
+            id="image"
+            name="image"
+            accept=".png, .jpg"
+            onChange={(e) => handleNewImage(e)}
+          ></Input>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Mégse</Button>
